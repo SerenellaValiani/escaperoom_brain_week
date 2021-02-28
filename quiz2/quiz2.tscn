@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://welcome/background.png" type="Texture" id=1]
 [ext_resource path="res://welcome/Home Education DEMO.otf" type="DynamicFontData" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://welcome/bottone.png" type="Texture" id=6]
 [ext_resource path="res://quiz2/Retry.gd" type="Script" id=7]
 [ext_resource path="res://quiz2/Continue.gd" type="Script" id=8]
+[ext_resource path="res://quiz1/cervello_02_thinking.png" type="Texture" id=9]
+[ext_resource path="res://quiz1/cervello_03_wrong.png" type="Texture" id=10]
+[ext_resource path="res://quiz1/cervello_04_correct.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -17,22 +20,22 @@ font_data = ExtResource( 2 )
 size = 150
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.85098, 0.705882, 0.4, 1 )
 
-[sub_resource type="DynamicFont" id=8]
-size = 100
-font_data = ExtResource( 2 )
-
 [sub_resource type="DynamicFont" id=4]
-size = 150
+size = 100
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 100
+size = 150
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=6]
+size = 100
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
 size = 100
 font_data = ExtResource( 2 )
 
@@ -77,8 +80,8 @@ margin_left = -424.263
 margin_top = 125.35
 margin_right = 424.737
 margin_bottom = 250.35
-custom_styles/normal = SubResource( 7 )
-custom_fonts/font = SubResource( 8 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/selection_color = Color( 0, 0, 0, 1 )
 custom_colors/cursor_color = Color( 0, 0, 0, 1 )
 custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
@@ -93,11 +96,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="brain" type="Sprite" parent="background"]
-position = Vector2( 359.634, 851.585 )
-scale = Vector2( 0.350054, 0.410731 )
-texture = ExtResource( 5 )
-
 [node name="PanelMap" type="Sprite" parent="background"]
 position = Vector2( 359.634, 331.788 )
 scale = Vector2( 0.396567, 0.578445 )
@@ -108,6 +106,22 @@ position = Vector2( 4.24097, 0.665161 )
 scale = Vector2( 0.882712, 0.710061 )
 z_index = 1
 texture = ExtResource( 5 )
+
+[node name="BrainSprites" type="Node" parent="background"]
+
+[node name="brain_thinking" type="Sprite" parent="background/BrainSprites"]
+position = Vector2( 385.542, 871.384 )
+texture = ExtResource( 9 )
+
+[node name="brain_wrong" type="Sprite" parent="background/BrainSprites"]
+visible = false
+position = Vector2( 390.767, 867.393 )
+texture = ExtResource( 10 )
+
+[node name="brain_correct" type="Sprite" parent="background/BrainSprites"]
+visible = false
+position = Vector2( 413.445, 877.473 )
+texture = ExtResource( 11 )
 
 [node name="PanelWrong" type="Sprite" parent="."]
 visible = false
@@ -121,7 +135,7 @@ margin_left = -480.679
 margin_top = -343.0
 margin_right = 517.321
 margin_bottom = -139.0
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 5 )
 custom_colors/default_color = Color( 1, 0, 0, 1 )
 text = "risposta sbagliata!"
 __meta__ = {
@@ -133,7 +147,7 @@ margin_left = -591.085
 margin_top = -139.0
 margin_right = -61.085
 margin_bottom = -1.99997
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 6 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "hint: blablabla"
 __meta__ = {
@@ -157,7 +171,7 @@ margin_left = 87.6539
 margin_top = 6.89148
 margin_right = 337.654
 margin_bottom = 121.891
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "ritenta"
 __meta__ = {
@@ -176,7 +190,7 @@ margin_left = -431.321
 margin_top = -343.0
 margin_right = 495.679
 margin_bottom = -139.0
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 5 )
 custom_colors/default_color = Color( 1, 0, 0, 1 )
 text = "Risposta esatta!"
 __meta__ = {
@@ -188,7 +202,7 @@ margin_left = -591.0
 margin_top = -139.0
 margin_right = 396.0
 margin_bottom = -2.0
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 6 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Lo sapevi che blablabla?"
 __meta__ = {
@@ -212,7 +226,7 @@ margin_left = 63.9635
 margin_top = 6.89148
 margin_right = 349.964
 margin_bottom = 121.891
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Continua"
 __meta__ = {

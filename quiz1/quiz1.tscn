@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://welcome/background.png" type="Texture" id=1]
 [ext_resource path="res://welcome/Home Education DEMO.otf" type="DynamicFontData" id=2]
@@ -9,6 +9,9 @@
 [ext_resource path="res://quiz1/Retry.gd" type="Script" id=7]
 [ext_resource path="res://quiz1/ButtonCorrect.gd" type="Script" id=8]
 [ext_resource path="res://quiz1/Continue.gd" type="Script" id=9]
+[ext_resource path="res://quiz1/cervello_04_correct.png" type="Texture" id=10]
+[ext_resource path="res://quiz1/cervello_02_thinking.png" type="Texture" id=11]
+[ext_resource path="res://quiz1/cervello_03_wrong.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -172,10 +175,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="brain" type="Sprite" parent="background"]
+[node name="BrainSprites" type="Node" parent="background"]
+
+[node name="brain_thinking" type="Sprite" parent="background/BrainSprites"]
 position = Vector2( 359.634, 851.585 )
-scale = Vector2( 0.350054, 0.410731 )
-texture = ExtResource( 5 )
+texture = ExtResource( 11 )
+
+[node name="brain_wrong" type="Sprite" parent="background/BrainSprites"]
+visible = false
+position = Vector2( 385.542, 871.734 )
+texture = ExtResource( 12 )
+
+[node name="brain_correct" type="Sprite" parent="background/BrainSprites"]
+visible = false
+position = Vector2( 387.542, 871.734 )
+texture = ExtResource( 10 )
 
 [node name="PanelMap" type="Sprite" parent="background"]
 position = Vector2( 359.634, 331.788 )
