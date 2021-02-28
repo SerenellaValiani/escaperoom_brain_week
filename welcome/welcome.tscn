@@ -1,3 +1,64 @@
-[gd_scene format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://welcome/background.png" type="Texture" id=1]
+[ext_resource path="res://welcome/bottone.png" type="Texture" id=2]
+[ext_resource path="res://welcome/Home Education DEMO.otf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 120
+outline_color = Color( 0.0235294, 0.0235294, 0.0235294, 1 )
+font_data = ExtResource( 3 )
 
 [node name="Node2D" type="Node2D"]
+
+[node name="background" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Button" type="Button" parent="background"]
+light_mask = 0
+margin_left = 684.487
+margin_top = 603.951
+margin_right = 1223.49
+margin_bottom = 780.951
+icon = ExtResource( 2 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="background/Button"]
+margin_left = 139.784
+margin_top = 19.6932
+margin_right = 520.784
+margin_bottom = 159.693
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="background"]
+light_mask = 0
+margin_left = 684.487
+margin_top = 852.231
+margin_right = 1223.49
+margin_bottom = 1029.23
+icon = ExtResource( 2 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="background/Button2"]
+margin_left = 139.784
+margin_top = 19.6932
+margin_right = 520.784
+margin_bottom = 159.693
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Info"
+__meta__ = {
+"_edit_use_anchors_": false
+}

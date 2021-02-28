@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://welcome/background.png" type="Texture" id=1]
+[ext_resource path="res://instructions/brain.png" type="Texture" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="background" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="brain" type="Sprite" parent="background"]
+position = Vector2( 929.594, 554.325 )
+texture = ExtResource( 2 )
