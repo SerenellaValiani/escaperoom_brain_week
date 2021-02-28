@@ -1,0 +1,302 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://welcome/background.png" type="Texture" id=1]
+[ext_resource path="res://welcome/Home Education DEMO.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://quiz1/panel.png" type="Texture" id=3]
+[ext_resource path="res://quiz1/ButtonWrong.gd" type="Script" id=4]
+[ext_resource path="res://instructions/brain.png" type="Texture" id=5]
+[ext_resource path="res://welcome/bottone.png" type="Texture" id=6]
+[ext_resource path="res://quiz1/Retry.gd" type="Script" id=7]
+[ext_resource path="res://quiz1/ButtonCorrect.gd" type="Script" id=8]
+[ext_resource path="res://quiz1/Continue.gd" type="Script" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 150
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 90
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 150
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 100
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 100
+font_data = ExtResource( 2 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="background" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="PanelQuiz" type="Sprite" parent="background"]
+position = Vector2( 1268.65, 525.521 )
+scale = Vector2( 0.884574, 1.09011 )
+z_as_relative = false
+texture = ExtResource( 3 )
+
+[node name="QuizText" type="RichTextLabel" parent="background/PanelQuiz"]
+margin_left = -607.79
+margin_top = -205.134
+margin_right = 613.21
+margin_bottom = 83.8657
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "qui chiediamo cose cervellose"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuizTitle" type="RichTextLabel" parent="background/PanelQuiz"]
+margin_left = -145.0
+margin_top = -401.134
+margin_right = 192.0
+margin_bottom = -205.134
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 1, 0, 0, 1 )
+text = "QUIZ 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="Node" parent="background/PanelQuiz"]
+
+[node name="Button1" type="Button" parent="background/PanelQuiz/Options"]
+margin_left = 682.594
+margin_top = 508.377
+margin_right = 1256.6
+margin_bottom = 710.377
+icon = ExtResource( 6 )
+flat = true
+expand_icon = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="background/PanelQuiz/Options/Button1"]
+margin_left = 147.0
+margin_top = 50.0
+margin_right = 457.0
+margin_bottom = 154.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "sbagliato"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="background/PanelQuiz/Options"]
+margin_left = 1256.6
+margin_top = 508.377
+margin_right = 1830.6
+margin_bottom = 710.377
+icon = ExtResource( 6 )
+flat = true
+expand_icon = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="background/PanelQuiz/Options/Button2"]
+margin_left = 147.0
+margin_top = 50.0
+margin_right = 457.0
+margin_bottom = 154.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "sbagliato"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="background/PanelQuiz/Options"]
+margin_left = 682.594
+margin_top = 710.377
+margin_right = 1256.6
+margin_bottom = 912.377
+icon = ExtResource( 6 )
+flat = true
+expand_icon = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="background/PanelQuiz/Options/Button3"]
+margin_left = 147.0
+margin_top = 50.0
+margin_right = 457.0
+margin_bottom = 154.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "sbagliato"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Button" parent="background/PanelQuiz/Options"]
+margin_left = 1256.6
+margin_top = 710.377
+margin_right = 1830.6
+margin_bottom = 912.377
+icon = ExtResource( 6 )
+flat = true
+expand_icon = true
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="background/PanelQuiz/Options/Button4"]
+margin_left = 147.0
+margin_top = 50.0
+margin_right = 457.0
+margin_bottom = 154.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "corretto"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="brain" type="Sprite" parent="background"]
+position = Vector2( 359.634, 851.585 )
+scale = Vector2( 0.350054, 0.410731 )
+texture = ExtResource( 5 )
+
+[node name="PanelMap" type="Sprite" parent="background"]
+position = Vector2( 359.634, 331.788 )
+scale = Vector2( 0.396567, 0.578445 )
+texture = ExtResource( 3 )
+
+[node name="Map" type="Sprite" parent="background/PanelMap"]
+position = Vector2( 4.24097, 0.665161 )
+scale = Vector2( 0.882712, 0.710061 )
+z_index = 1
+texture = ExtResource( 5 )
+
+[node name="PanelWrong" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1102.15, 457.685 )
+scale = Vector2( 0.709909, 0.725538 )
+z_index = 1
+texture = ExtResource( 3 )
+
+[node name="WrongTitle" type="RichTextLabel" parent="PanelWrong"]
+margin_left = -480.679
+margin_top = -343.0
+margin_right = 517.321
+margin_bottom = -139.0
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 0, 0, 1 )
+text = "risposta sbagliata!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hint" type="RichTextLabel" parent="PanelWrong"]
+margin_left = -591.085
+margin_top = -139.0
+margin_right = -61.085
+margin_bottom = -1.99997
+custom_fonts/normal_font = SubResource( 5 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "hint: blablabla"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Retry" type="Button" parent="PanelWrong"]
+margin_left = -226.441
+margin_top = 159.942
+margin_right = 183.559
+margin_bottom = 293.942
+icon = ExtResource( 6 )
+flat = true
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PanelWrong/Retry"]
+margin_left = 87.6539
+margin_top = 6.89148
+margin_right = 337.654
+margin_bottom = 121.891
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "ritenta"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelCorrect" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1102.15, 457.685 )
+scale = Vector2( 0.709909, 0.725538 )
+z_index = 1
+texture = ExtResource( 3 )
+
+[node name="CorrectTitle" type="RichTextLabel" parent="PanelCorrect"]
+margin_left = -431.321
+margin_top = -343.0
+margin_right = 495.679
+margin_bottom = -139.0
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 0, 0, 1 )
+text = "Risposta esatta!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CorrectText" type="RichTextLabel" parent="PanelCorrect"]
+margin_left = -591.0
+margin_top = -139.0
+margin_right = 396.0
+margin_bottom = -2.0
+custom_fonts/normal_font = SubResource( 5 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Lo sapevi che blablabla?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" type="Button" parent="PanelCorrect"]
+margin_left = -226.441
+margin_top = 159.942
+margin_right = 183.559
+margin_bottom = 293.942
+icon = ExtResource( 6 )
+flat = true
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PanelCorrect/Continue"]
+margin_left = 63.9635
+margin_top = 6.89148
+margin_right = 349.964
+margin_bottom = 121.891
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Continua"
+[connection signal="pressed" from="background/PanelQuiz/Options/Button1" to="background/PanelQuiz/Options/Button1" method="_on_Button1_pressed"]
+[connection signal="pressed" from="background/PanelQuiz/Options/Button2" to="background/PanelQuiz/Options/Button2" method="_on_Button1_pressed"]
+[connection signal="pressed" from="background/PanelQuiz/Options/Button3" to="background/PanelQuiz/Options/Button3" method="_on_Button1_pressed"]
+[connection signal="pressed" from="background/PanelQuiz/Options/Button4" to="background/PanelQuiz/Options/Button4" method="_on_Button4_pressed"]
+[connection signal="pressed" from="PanelWrong/Retry" to="PanelWrong/Retry" method="_on_Retry_pressed"]
+[connection signal="pressed" from="PanelCorrect/Continue" to="PanelCorrect/Continue" method="_on_Continue_pressed"]

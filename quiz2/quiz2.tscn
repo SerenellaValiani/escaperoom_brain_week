@@ -1,0 +1,223 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://welcome/background.png" type="Texture" id=1]
+[ext_resource path="res://welcome/Home Education DEMO.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://quiz1/panel.png" type="Texture" id=3]
+[ext_resource path="res://quiz2/Answer.gd" type="Script" id=4]
+[ext_resource path="res://instructions/brain.png" type="Texture" id=5]
+[ext_resource path="res://welcome/bottone.png" type="Texture" id=6]
+[ext_resource path="res://quiz2/Retry.gd" type="Script" id=7]
+[ext_resource path="res://quiz2/Continue.gd" type="Script" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 150
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.85098, 0.705882, 0.4, 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 100
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 150
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 100
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 100
+font_data = ExtResource( 2 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="background" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="PanelQuiz" type="Sprite" parent="background"]
+position = Vector2( 1268.65, 525.521 )
+scale = Vector2( 0.884574, 1.09011 )
+z_as_relative = false
+texture = ExtResource( 3 )
+
+[node name="QuizText" type="RichTextLabel" parent="background/PanelQuiz"]
+margin_left = -608.0
+margin_top = -205.0
+margin_right = 563.0
+margin_bottom = 44.0
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "qui devi scrivere \"anna\" (premi invio per inviare la tua risposta)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuizTitle" type="RichTextLabel" parent="background/PanelQuiz"]
+margin_left = -145.0
+margin_top = -401.134
+margin_right = 192.0
+margin_bottom = -205.134
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 1, 0, 0, 1 )
+text = "QUIZ 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnswerLine" type="LineEdit" parent="background/PanelQuiz"]
+margin_left = -424.263
+margin_top = 125.35
+margin_right = 424.737
+margin_bottom = 250.35
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+clear_button_enabled = true
+placeholder_text = "Inserisci qua"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="brain" type="Sprite" parent="background"]
+position = Vector2( 359.634, 851.585 )
+scale = Vector2( 0.350054, 0.410731 )
+texture = ExtResource( 5 )
+
+[node name="PanelMap" type="Sprite" parent="background"]
+position = Vector2( 359.634, 331.788 )
+scale = Vector2( 0.396567, 0.578445 )
+texture = ExtResource( 3 )
+
+[node name="Map" type="Sprite" parent="background/PanelMap"]
+position = Vector2( 4.24097, 0.665161 )
+scale = Vector2( 0.882712, 0.710061 )
+z_index = 1
+texture = ExtResource( 5 )
+
+[node name="PanelWrong" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1102.15, 457.685 )
+scale = Vector2( 0.709909, 0.725538 )
+z_index = 1
+texture = ExtResource( 3 )
+
+[node name="WrongTitle" type="RichTextLabel" parent="PanelWrong"]
+margin_left = -480.679
+margin_top = -343.0
+margin_right = 517.321
+margin_bottom = -139.0
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 0, 0, 1 )
+text = "risposta sbagliata!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hint" type="RichTextLabel" parent="PanelWrong"]
+margin_left = -591.085
+margin_top = -139.0
+margin_right = -61.085
+margin_bottom = -1.99997
+custom_fonts/normal_font = SubResource( 5 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "hint: blablabla"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Retry" type="Button" parent="PanelWrong"]
+margin_left = -226.441
+margin_top = 159.942
+margin_right = 183.559
+margin_bottom = 293.942
+icon = ExtResource( 6 )
+flat = true
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PanelWrong/Retry"]
+margin_left = 87.6539
+margin_top = 6.89148
+margin_right = 337.654
+margin_bottom = 121.891
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "ritenta"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelCorrect" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1102.15, 457.685 )
+scale = Vector2( 0.709909, 0.725538 )
+z_index = 1
+texture = ExtResource( 3 )
+
+[node name="CorrectTitle" type="RichTextLabel" parent="PanelCorrect"]
+margin_left = -431.321
+margin_top = -343.0
+margin_right = 495.679
+margin_bottom = -139.0
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 0, 0, 1 )
+text = "Risposta esatta!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CorrectText" type="RichTextLabel" parent="PanelCorrect"]
+margin_left = -591.0
+margin_top = -139.0
+margin_right = 396.0
+margin_bottom = -2.0
+custom_fonts/normal_font = SubResource( 5 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Lo sapevi che blablabla?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" type="Button" parent="PanelCorrect"]
+margin_left = -226.441
+margin_top = 159.942
+margin_right = 183.559
+margin_bottom = 293.942
+icon = ExtResource( 6 )
+flat = true
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PanelCorrect/Continue"]
+margin_left = 63.9635
+margin_top = 6.89148
+margin_right = 349.964
+margin_bottom = 121.891
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Continua"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="text_entered" from="background/PanelQuiz/AnswerLine" to="background/PanelQuiz/AnswerLine" method="_on_Answer_text_entered"]
+[connection signal="pressed" from="PanelWrong/Retry" to="PanelWrong/Retry" method="_on_Retry_pressed"]
+[connection signal="pressed" from="PanelCorrect/Continue" to="PanelCorrect/Continue" method="_on_Continue_pressed"]
