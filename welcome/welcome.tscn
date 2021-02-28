@@ -5,9 +5,8 @@
 [ext_resource path="res://welcome/Home Education DEMO.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://welcome/Start.gd" type="Script" id=4]
 
-[sub_resource type="DynamicFont" id=1]
-size = 120
-outline_color = Color( 0.0235294, 0.0235294, 0.0235294, 1 )
+[sub_resource type="DynamicFont" id=2]
+size = 100
 font_data = ExtResource( 3 )
 
 [node name="Node2D" type="Node2D"]
@@ -31,24 +30,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="background/Start"]
-margin_left = 139.784
-margin_top = 19.6932
-margin_right = 520.784
-margin_bottom = 159.693
-custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
+[node name="Label" type="Label" parent="background/Start"]
+margin_left = 155.379
+margin_top = 33.8702
+margin_right = 426.379
+margin_bottom = 148.87
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Start"
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_editor_description_": ""
 }
 
 [node name="Info" type="Button" parent="background"]
-light_mask = 0
+light_mask = -2147483648
 margin_left = 684.487
-margin_top = 852.231
+margin_top = 821.101
 margin_right = 1223.49
-margin_bottom = 1029.23
+margin_bottom = 998.101
 icon = ExtResource( 2 )
 flat = true
 expand_icon = true
@@ -56,15 +56,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="background/Info"]
-margin_left = 139.784
-margin_top = 19.6932
-margin_right = 520.784
-margin_bottom = 159.693
-custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
+[node name="Label" type="Label" parent="background/Info"]
+margin_left = 155.379
+margin_top = 33.8702
+margin_right = 426.379
+margin_bottom = 148.87
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Info"
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_editor_description_": ""
 }
 [connection signal="pressed" from="background/Start" to="background/Start" method="_on_Start_pressed"]
