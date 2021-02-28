@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://welcome/background.png" type="Texture" id=1]
 [ext_resource path="res://welcome/bottone.png" type="Texture" id=2]
 [ext_resource path="res://welcome/Home Education DEMO.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://welcome/Start.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 120
@@ -12,22 +13,25 @@ font_data = ExtResource( 3 )
 [node name="Node2D" type="Node2D"]
 
 [node name="background" type="Sprite" parent="."]
+z_index = -1
 texture = ExtResource( 1 )
 centered = false
 
-[node name="Button" type="Button" parent="background"]
-light_mask = 0
+[node name="Start" type="Button" parent="background"]
+light_mask = -2147483648
 margin_left = 684.487
-margin_top = 603.951
+margin_top = 623.693
 margin_right = 1223.49
-margin_bottom = 780.951
+margin_bottom = 800.693
 icon = ExtResource( 2 )
+flat = true
 expand_icon = true
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="background/Button"]
+[node name="RichTextLabel" type="RichTextLabel" parent="background/Start"]
 margin_left = 139.784
 margin_top = 19.6932
 margin_right = 520.784
@@ -39,19 +43,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button2" type="Button" parent="background"]
+[node name="Info" type="Button" parent="background"]
 light_mask = 0
 margin_left = 684.487
 margin_top = 852.231
 margin_right = 1223.49
 margin_bottom = 1029.23
 icon = ExtResource( 2 )
+flat = true
 expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="background/Button2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="background/Info"]
 margin_left = 139.784
 margin_top = 19.6932
 margin_right = 520.784
@@ -62,3 +67,4 @@ text = "Info"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="pressed" from="background/Start" to="background/Start" method="_on_Start_pressed"]
