@@ -10,5 +10,8 @@ func _ready():
 	#answer_line = get_tree().get_root().get_node("/root/Node2D/background/PanelQuiz/AnswerLine")
 	pass
 
-func _on_Retry_pressed():
-	get_parent().set_visible(false)
+func _on_Continue_pressed():
+	#get_parent().set_visible(false)
+	get_tree().change_scene("res://end/end.tscn")
+
+

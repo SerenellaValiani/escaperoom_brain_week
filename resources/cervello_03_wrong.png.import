@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bottone.png-36e4d3bb6254f7ff238ec7c22d554fd9.stex"
+path="res://.import/cervello_03_wrong.png-ebac72f725e3fae6c907ccb205154e07.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://welcome/bottone.png"
-dest_files=[ "res://.import/bottone.png-36e4d3bb6254f7ff238ec7c22d554fd9.stex" ]
+source_file="res://resources/cervello_03_wrong.png"
+dest_files=[ "res://.import/cervello_03_wrong.png-ebac72f725e3fae6c907ccb205154e07.stex" ]
 
 [params]
 

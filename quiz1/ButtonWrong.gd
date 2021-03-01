@@ -1,7 +1,7 @@
 extends Button
 
 
-# Declare member variables here. Examples:
+# Declare member variables here.
 var panel_wrong
 var brain_sprites
 

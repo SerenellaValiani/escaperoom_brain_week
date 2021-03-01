@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cervello_04_correct.png-1f5bc6427daaf90a83a4bcd7bd9940d8.stex"
+path="res://.import/icon.png-e9340f3172b6e3151758cbd23c21cb71.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://quiz1/cervello_04_correct.png"
-dest_files=[ "res://.import/cervello_04_correct.png-1f5bc6427daaf90a83a4bcd7bd9940d8.stex" ]
+source_file="res://resources/icon.png"
+dest_files=[ "res://.import/icon.png-e9340f3172b6e3151758cbd23c21cb71.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cervello_03_wrong.png-efd6a9afbab5e8799e34ced02f954912.stex"
+path="res://.import/brain.png-32a425562163cbcb887f203ccf707939.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://quiz1/cervello_03_wrong.png"
-dest_files=[ "res://.import/cervello_03_wrong.png-efd6a9afbab5e8799e34ced02f954912.stex" ]
+source_file="res://resources/brain.png"
+dest_files=[ "res://.import/brain.png-32a425562163cbcb887f203ccf707939.stex" ]
 
 [params]
 
