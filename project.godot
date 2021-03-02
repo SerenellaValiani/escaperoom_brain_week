@@ -19,6 +19,10 @@ config/name="brainweek"
 run/main_scene="res://welcome/welcome.tscn"
 config/icon="res://resources/icon.png"
 
+[autoload]
+
+Cards="*res://quiz3/Cards.gd"
+
 [display]
 
 window/size/width=1920
