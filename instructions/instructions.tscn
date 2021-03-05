@@ -1,76 +1,83 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://resources/background.png" type="Texture" id=1]
-[ext_resource path="res://resources/brain.png" type="Texture" id=2]
+[ext_resource path="res://instructions/ForwardButton.gd" type="Script" id=1]
+[ext_resource path="res://resources/fumetto2.png" type="Texture" id=2]
 [ext_resource path="res://instructions/StartButton.gd" type="Script" id=3]
-[ext_resource path="res://resources/bottone.png" type="Texture" id=4]
-[ext_resource path="res://resources/Home Education DEMO.otf" type="DynamicFontData" id=5]
-[ext_resource path="res://resources/cervello_01_hello.png" type="Texture" id=6]
-[ext_resource path="res://instructions/InstructionsBackButton.gd" type="Script" id=7]
+[ext_resource path="res://resources/03_freccia_destra.png" type="Texture" id=4]
+[ext_resource path="res://resources/03_mappa.png" type="Texture" id=5]
+[ext_resource path="res://resources/CantedComic Regular.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://resources/bottone_freccia.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
-size = 100
-font_data = ExtResource( 5 )
+size = 40
+font_data = ExtResource( 6 )
 
 [node name="Node2D" type="Node2D"]
 
 [node name="background" type="Sprite" parent="."]
-texture = ExtResource( 1 )
+texture = ExtResource( 5 )
 centered = false
 
-[node name="brain" type="Sprite" parent="background"]
-position = Vector2( 935.251, 554.325 )
-texture = ExtResource( 2 )
+[node name="RichTextLabel" type="RichTextLabel" parent="background"]
+margin_left = 1152.0
+margin_top = 191.0
+margin_right = 1677.0
+margin_bottom = 481.0
+rect_clip_content = false
+mouse_filter = 2
+size_flags_vertical = 4
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Ciao! io sono ____!
+ti accompagnerò in questo viaggio nel cervello!"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
 
-[node name="StartButton" type="Button" parent="background"]
-margin_left = 1480.05
-margin_top = 779.439
-margin_right = 1890.05
-margin_bottom = 913.439
+[node name="ForwardButton" type="Button" parent="background"]
+margin_left = 1399.15
+margin_top = 371.244
+margin_right = 1541.15
+margin_bottom = 499.244
 icon = ExtResource( 4 )
+flat = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text2" type="Sprite" parent="background"]
+visible = false
+texture = ExtResource( 2 )
+centered = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="background/Text2"]
+margin_left = 1152.0
+margin_top = 191.0
+margin_right = 1627.0
+margin_bottom = 437.0
+rect_clip_content = false
+mouse_filter = 2
+size_flags_vertical = 4
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "per iniziare clicca sul primo livello"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="StartButton2" type="Button" parent="background/Text2"]
+margin_left = -4.0
+margin_top = -3.0
+margin_right = 1928.0
+margin_bottom = 1083.0
+icon = ExtResource( 7 )
 flat = true
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Label" type="Label" parent="background/StartButton"]
-margin_left = 98.6606
-margin_top = 7.28174
-margin_right = 312.661
-margin_bottom = 122.282
-rect_pivot_offset = Vector2( -180.522, -88.7579 )
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "START"
-
-[node name="InstructionsBackButton" type="Button" parent="background"]
-margin_left = 1481.94
-margin_top = 924.796
-margin_right = 1891.94
-margin_bottom = 1058.8
-icon = ExtResource( 4 )
-flat = true
-script = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="background/InstructionsBackButton"]
-margin_left = 79.7832
-margin_top = 7.28174
-margin_right = 337.783
-margin_bottom = 122.282
-rect_pivot_offset = Vector2( -180.522, -88.7579 )
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "indietro"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="cervello_01_hello" type="Sprite" parent="background"]
-position = Vector2( 353.227, 792.13 )
-texture = ExtResource( 6 )
-[connection signal="pressed" from="background/StartButton" to="background/StartButton" method="_on_StartButton_pressed"]
-[connection signal="pressed" from="background/InstructionsBackButton" to="background/InstructionsBackButton" method="_on_InstructionsBackButton_pressed"]
+[connection signal="pressed" from="background/ForwardButton" to="background/ForwardButton" method="_on_ForwardButton_pressed"]
+[connection signal="pressed" from="background/Text2/StartButton2" to="background/Text2/StartButton2" method="_on_StartButton_pressed"]

@@ -18,3 +18,7 @@ func _ready():
 
 func _on_Continue_pressed():
 	get_tree().change_scene("res://quiz2/quiz2.tscn")
+
+
+func _on_Retry_pressed():
+	pass # Replace with function body.

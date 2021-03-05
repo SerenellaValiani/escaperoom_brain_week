@@ -1,16 +1,19 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=23 format=2]
 
-[ext_resource path="res://resources/background.png" type="Texture" id=1]
+[ext_resource path="res://quiz2/ForwardButton.gd" type="Script" id=1]
 [ext_resource path="res://resources/Home Education DEMO.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://resources/panel.png" type="Texture" id=3]
 [ext_resource path="res://quiz2/Answer.gd" type="Script" id=4]
-[ext_resource path="res://resources/brain.png" type="Texture" id=5]
+[ext_resource path="res://resources/fumetto.png" type="Texture" id=5]
 [ext_resource path="res://resources/bottone.png" type="Texture" id=6]
 [ext_resource path="res://quiz2/Retry.gd" type="Script" id=7]
 [ext_resource path="res://quiz2/Continue.gd" type="Script" id=8]
-[ext_resource path="res://resources/cervello_02_thinking.png" type="Texture" id=9]
-[ext_resource path="res://resources/cervello_03_wrong.png" type="Texture" id=10]
-[ext_resource path="res://resources/cervello_04_correct.png" type="Texture" id=11]
+[ext_resource path="res://resources/brainy_wrong.png" type="Texture" id=9]
+[ext_resource path="res://resources/brainy_base.png" type="Texture" id=10]
+[ext_resource path="res://resources/brainy_correct.png" type="Texture" id=11]
+[ext_resource path="res://resources/03_freccia_destra.png" type="Texture" id=12]
+[ext_resource path="res://resources/quiz2.png" type="Texture" id=13]
+[ext_resource path="res://resources/CantedComic Regular.otf" type="DynamicFontData" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -28,28 +31,31 @@ size = 100
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 150
-font_data = ExtResource( 2 )
+size = 40
+font_data = ExtResource( 14 )
 
 [sub_resource type="DynamicFont" id=6]
-size = 100
+size = 150
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 100
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFont" id=8]
+size = 100
+font_data = ExtResource( 2 )
+
 [node name="Node2D" type="Node2D"]
 
 [node name="background" type="Sprite" parent="."]
-texture = ExtResource( 1 )
+texture = ExtResource( 13 )
 centered = false
 
 [node name="PanelQuiz" type="Sprite" parent="background"]
 position = Vector2( 1268.65, 525.521 )
 scale = Vector2( 0.884574, 1.09011 )
 z_as_relative = false
-texture = ExtResource( 3 )
 
 [node name="QuizText" type="RichTextLabel" parent="background/PanelQuiz"]
 margin_left = -608.0
@@ -70,7 +76,7 @@ margin_right = 192.0
 margin_bottom = -205.134
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 1, 0, 0, 1 )
-text = "QUIZ 2"
+text = "CRt 1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -90,38 +96,69 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
 clear_button_enabled = true
-placeholder_text = "Inserisci qua"
+placeholder_text = "inserisci qui"
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PanelMap" type="Sprite" parent="background"]
-position = Vector2( 359.634, 331.788 )
-scale = Vector2( 0.396567, 0.578445 )
-texture = ExtResource( 3 )
-
-[node name="Map" type="Sprite" parent="background/PanelMap"]
-position = Vector2( 4.24097, 0.665161 )
-scale = Vector2( 0.882712, 0.710061 )
-z_index = 1
-texture = ExtResource( 5 )
-
 [node name="BrainSprites" type="Node" parent="background"]
 
-[node name="brain_thinking" type="Sprite" parent="background/BrainSprites"]
-position = Vector2( 385.542, 871.384 )
-texture = ExtResource( 9 )
+[node name="brain_base" type="Sprite" parent="background/BrainSprites"]
+texture = ExtResource( 10 )
+centered = false
 
 [node name="brain_wrong" type="Sprite" parent="background/BrainSprites"]
 visible = false
-position = Vector2( 390.767, 867.393 )
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
+centered = false
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="brain_correct" type="Sprite" parent="background/BrainSprites"]
 visible = false
-position = Vector2( 413.445, 877.473 )
 texture = ExtResource( 11 )
+centered = false
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Comic" type="Sprite" parent="background"]
+position = Vector2( -742.888, 404.461 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( 742.888, -404.461 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="background/Comic"]
+margin_left = 1503.8
+margin_top = -102.559
+margin_right = 2113.8
+margin_bottom = 147.441
+rect_clip_content = false
+mouse_filter = 2
+size_flags_vertical = 4
+custom_fonts/normal_font = SubResource( 5 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "siamo adesso nel __________
+rispondi al secondo "
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="ForwardButton" type="Button" parent="background/Comic"]
+margin_left = 1975.35
+margin_top = 51.7729
+margin_right = 2113.35
+margin_bottom = 187.773
+icon = ExtResource( 12 )
+flat = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
 
 [node name="PanelWrong" type="Sprite" parent="."]
 visible = false
@@ -135,7 +172,7 @@ margin_left = -480.679
 margin_top = -343.0
 margin_right = 517.321
 margin_bottom = -139.0
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 6 )
 custom_colors/default_color = Color( 1, 0, 0, 1 )
 text = "risposta sbagliata!"
 __meta__ = {
@@ -147,7 +184,7 @@ margin_left = -591.085
 margin_top = -139.0
 margin_right = -61.085
 margin_bottom = -1.99997
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "hint: blablabla"
 __meta__ = {
@@ -155,10 +192,10 @@ __meta__ = {
 }
 
 [node name="Retry" type="Button" parent="PanelWrong"]
-margin_left = -226.441
-margin_top = 159.942
-margin_right = 183.559
-margin_bottom = 293.942
+margin_left = -480.679
+margin_top = 173.725
+margin_right = -70.6788
+margin_bottom = 307.725
 icon = ExtResource( 6 )
 flat = true
 script = ExtResource( 7 )
@@ -171,15 +208,38 @@ margin_left = 87.6539
 margin_top = 6.89148
 margin_right = 337.654
 margin_bottom = 121.891
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "ritenta"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Continue" type="Button" parent="PanelWrong"]
+margin_left = 123.523
+margin_top = 173.725
+margin_right = 533.523
+margin_bottom = 307.725
+icon = ExtResource( 6 )
+flat = true
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PanelWrong/Continue"]
+margin_left = 63.9635
+margin_top = 6.89148
+margin_right = 349.964
+margin_bottom = 121.891
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Continua"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="PanelCorrect" type="Sprite" parent="."]
-visible = false
 position = Vector2( 1102.15, 457.685 )
 scale = Vector2( 0.709909, 0.725538 )
 z_index = 1
@@ -190,7 +250,7 @@ margin_left = -431.321
 margin_top = -343.0
 margin_right = 495.679
 margin_bottom = -139.0
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 6 )
 custom_colors/default_color = Color( 1, 0, 0, 1 )
 text = "Risposta esatta!"
 __meta__ = {
@@ -202,7 +262,7 @@ margin_left = -591.0
 margin_top = -139.0
 margin_right = 396.0
 margin_bottom = -2.0
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Lo sapevi che blablabla?"
 __meta__ = {
@@ -210,10 +270,10 @@ __meta__ = {
 }
 
 [node name="Continue" type="Button" parent="PanelCorrect"]
-margin_left = -226.441
-margin_top = 159.942
-margin_right = 183.559
-margin_bottom = 293.942
+margin_left = 53.8616
+margin_top = 166.833
+margin_right = 463.862
+margin_bottom = 300.833
 icon = ExtResource( 6 )
 flat = true
 script = ExtResource( 8 )
@@ -226,12 +286,39 @@ margin_left = 63.9635
 margin_top = 6.89148
 margin_right = 349.964
 margin_bottom = 121.891
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Continua"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Retry" type="Button" parent="PanelCorrect"]
+margin_left = -480.679
+margin_top = 173.725
+margin_right = -70.6787
+margin_bottom = 307.725
+icon = ExtResource( 6 )
+flat = true
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PanelCorrect/Retry"]
+margin_left = 87.6539
+margin_top = 6.89148
+margin_right = 337.654
+margin_bottom = 121.891
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "ritenta"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="text_entered" from="background/PanelQuiz/AnswerLine" to="background/PanelQuiz/AnswerLine" method="_on_Answer_text_entered"]
+[connection signal="pressed" from="background/Comic/ForwardButton" to="background/Comic/ForwardButton" method="_on_ForwardButton_pressed"]
 [connection signal="pressed" from="PanelWrong/Retry" to="PanelWrong/Retry" method="_on_Retry_pressed"]
+[connection signal="pressed" from="PanelWrong/Continue" to="PanelWrong/Continue" method="_on_Continue_pressed"]
 [connection signal="pressed" from="PanelCorrect/Continue" to="PanelCorrect/Continue" method="_on_Continue_pressed"]
+[connection signal="pressed" from="PanelCorrect/Retry" to="PanelCorrect/Retry" method="_on_Retry_pressed"]

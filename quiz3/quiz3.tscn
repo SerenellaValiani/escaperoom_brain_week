@@ -13,6 +13,8 @@
 [ext_resource path="res://resources/cervello_04_correct.png" type="Texture" id=11]
 [ext_resource path="res://quiz3/Answer.gd" type="Script" id=12]
 
+
+
 [sub_resource type="DynamicFont" id=1]
 size = 100
 font_data = ExtResource( 1 )
@@ -37,11 +39,11 @@ font_data = ExtResource( 1 )
 size = 100
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=7]
 size = 90
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=8]
 size = 100
 font_data = ExtResource( 1 )
 
@@ -305,7 +307,7 @@ margin_left = 63.9635
 margin_top = 19.3248
 margin_right = 373.964
 margin_bottom = 134.325
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "sbagliato"
 __meta__ = {
@@ -361,7 +363,7 @@ margin_left = 63.9635
 margin_top = 6.89148
 margin_right = 349.964
 margin_bottom = 121.891
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Continua"
 __meta__ = {
