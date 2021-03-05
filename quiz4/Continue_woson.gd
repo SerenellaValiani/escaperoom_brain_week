@@ -17,4 +17,4 @@ func _ready():
 
 
 func _on_Continue_pressed():
-	get_tree().change_scene("res://quiz3/quiz5.tscn") # Replace with function body.
+	get_tree().change_scene("res://quiz5/quiz5.tscn") # Replace with function body.

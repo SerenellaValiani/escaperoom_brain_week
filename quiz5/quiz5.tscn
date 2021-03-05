@@ -1,0 +1,532 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://resources/Amarillo.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://quiz4/Retry_wason.gd" type="Script" id=2]
+[ext_resource path="res://resources/clear_panel.png" type="Texture" id=3]
+[ext_resource path="res://resources/brainy_base.png" type="Texture" id=4]
+[ext_resource path="res://resources/brainy_wrong.png" type="Texture" id=5]
+[ext_resource path="res://quiz4/Options.gd" type="Script" id=6]
+[ext_resource path="res://resources/fumetto.png" type="Texture" id=7]
+[ext_resource path="res://resources/CantedComic Regular.otf" type="DynamicFontData" id=8]
+[ext_resource path="res://resources/panel.png" type="Texture" id=9]
+[ext_resource path="res://resources/brain.png" type="Texture" id=10]
+[ext_resource path="res://resources/bottone_def.png" type="Texture" id=11]
+[ext_resource path="res://quiz4/Answer.gd" type="Script" id=12]
+[ext_resource path="res://resources/quiz5.png" type="Texture" id=13]
+[ext_resource path="res://resources/brainy_thinking.png" type="Texture" id=14]
+[ext_resource path="res://resources/brainy_correct.png" type="Texture" id=15]
+[ext_resource path="res://quiz5/Continue.gd" type="Script" id=16]
+[ext_resource path="res://quiz4/ForwardB_wason.gd" type="Script" id=17]
+[ext_resource path="res://resources/03_freccia_destra.png" type="Texture" id=18]
+[ext_resource path="res://quiz5/Forward.gd" type="Script" id=19]
+[ext_resource path="res://quiz3/Forward2.gd" type="Script" id=20]
+
+[sub_resource type="DynamicFont" id=1]
+size = 35
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 80
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 300
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 60
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 80
+outline_color = Color( 0.74902, 0.32549, 0.32549, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 60
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 45
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 35
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 60
+font_data = ExtResource( 8 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="background" type="Sprite" parent="."]
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Comic" type="Sprite" parent="background"]
+position = Vector2( -743.637, 405.21 )
+z_index = 1
+texture = ExtResource( 7 )
+centered = false
+offset = Vector2( 742.888, -404.461 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="background/Comic"]
+margin_left = 1494.51
+margin_top = -40.3185
+margin_right = 2204.51
+margin_bottom = 235.681
+rect_clip_content = false
+mouse_filter = 2
+size_flags_vertical = 4
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Rispondi al quinto indovinello!
+"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="ForwardB" type="Button" parent="background/Comic"]
+margin_left = 1959.82
+margin_top = 93.1806
+margin_right = 2097.82
+margin_bottom = 229.181
+icon = ExtResource( 18 )
+flat = true
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="PanelQuiz" type="Sprite" parent="background"]
+visible = false
+position = Vector2( 1268.65, 525.521 )
+scale = Vector2( 0.884574, 1.09011 )
+z_as_relative = false
+
+[node name="QuizText" type="RichTextLabel" parent="background/PanelQuiz"]
+margin_left = -619.971
+margin_top = -295.386
+margin_right = 591.029
+margin_bottom = -154.386
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "seleziona la carta B e C"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuizTitle" type="RichTextLabel" parent="background/PanelQuiz"]
+margin_left = -195.0
+margin_top = -401.0
+margin_right = 192.0
+margin_bottom = -205.0
+custom_fonts/normal_font = SubResource( 3 )
+custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
+text = "Wason 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="Node2D" parent="background/PanelQuiz"]
+script = ExtResource( 6 )
+
+[node name="Card1" type="TextureButton" parent="background/PanelQuiz/Options"]
+margin_left = -619.971
+margin_top = -154.386
+margin_right = 766.031
+margin_bottom = 736.615
+rect_scale = Vector2( 0.2, 0.4 )
+toggle_mode = true
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="background/PanelQuiz/Options/Card1"]
+margin_left = 551.424
+margin_top = 200.677
+margin_right = 792.424
+margin_bottom = 1931.68
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "A
+
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Card2" type="TextureButton" parent="background/PanelQuiz/Options"]
+margin_left = -302.315
+margin_top = -154.386
+margin_right = 1083.69
+margin_bottom = 736.615
+rect_scale = Vector2( 0.2, 0.4 )
+toggle_mode = true
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="background/PanelQuiz/Options/Card2"]
+margin_left = 560.364
+margin_top = 165.454
+margin_right = 802.364
+margin_bottom = 1896.45
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "B
+
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Card3" type="TextureButton" parent="background/PanelQuiz/Options"]
+margin_left = 0.472656
+margin_top = -151.615
+margin_right = 1386.47
+margin_bottom = 739.386
+rect_scale = Vector2( 0.2, 0.4 )
+toggle_mode = true
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="background/PanelQuiz/Options/Card3"]
+margin_left = 560.333
+margin_top = 169.495
+margin_right = 824.333
+margin_bottom = 1900.5
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "C
+
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Card4" type="TextureButton" parent="background/PanelQuiz/Options"]
+margin_left = 304.556
+margin_top = -150.004
+margin_right = 1690.56
+margin_bottom = 740.997
+rect_scale = Vector2( 0.2, 0.4 )
+toggle_mode = true
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="background/PanelQuiz/Options/Card4"]
+margin_left = 533.606
+margin_top = 178.404
+margin_right = 800.606
+margin_bottom = 1909.41
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "D
+
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Answer" type="Button" parent="background/PanelQuiz"]
+margin_left = -152.625
+margin_top = 261.056
+margin_right = 257.375
+margin_bottom = 395.056
+rect_scale = Vector2( 0.7, 0.7 )
+disabled = true
+icon = ExtResource( 11 )
+flat = true
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="background/PanelQuiz/Answer"]
+margin_left = 73.7685
+margin_top = 37.3602
+margin_right = 371.769
+margin_bottom = 152.36
+rect_clip_content = true
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "rispondi"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="BrainSprites" type="Node" parent="background"]
+
+[node name="brain_base" type="Sprite" parent="background/BrainSprites"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="brain_thinking" type="Sprite" parent="background/BrainSprites"]
+visible = false
+texture = ExtResource( 14 )
+centered = false
+
+[node name="brain_wrong" type="Sprite" parent="background/BrainSprites"]
+visible = false
+texture = ExtResource( 5 )
+centered = false
+
+[node name="brain_correct" type="Sprite" parent="background/BrainSprites"]
+visible = false
+texture = ExtResource( 15 )
+centered = false
+
+[node name="LoSapeviChe" type="Sprite" parent="background"]
+visible = false
+texture = ExtResource( 3 )
+centered = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="background/LoSapeviChe"]
+margin_left = 730.52
+margin_top = 100.491
+margin_right = 1514.52
+margin_bottom = 307.491
+custom_fonts/normal_font = SubResource( 9 )
+custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
+text = "
+Lo sapevi che..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Forward" type="Button" parent="background/LoSapeviChe"]
+margin_left = 1530.86
+margin_top = 890.278
+margin_right = 1944.86
+margin_bottom = 1055.28
+rect_scale = Vector2( 0.6, 0.6 )
+icon = ExtResource( 11 )
+flat = true
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="background/LoSapeviChe/Forward"]
+margin_left = 98.8201
+margin_top = 42.2596
+margin_right = 348.82
+margin_bottom = 126.26
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "Avanti"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Forward2" type="Button" parent="background/LoSapeviChe"]
+visible = false
+margin_left = 1666.21
+margin_top = 865.844
+margin_right = 1804.21
+margin_bottom = 1001.84
+icon = ExtResource( 18 )
+flat = true
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="PanelWrong" type="Sprite" parent="."]
+visible = false
+z_index = 1
+texture = ExtResource( 7 )
+centered = false
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="WrongTitle" type="RichTextLabel" parent="PanelWrong"]
+margin_left = 800.0
+margin_top = 276.0
+margin_right = 1359.0
+margin_bottom = 367.0
+custom_fonts/normal_font = SubResource( 6 )
+custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
+text = "Risposta Sbagliata!"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Hint" type="RichTextLabel" parent="PanelWrong"]
+margin_left = 675.231
+margin_top = 360.244
+margin_right = 1001.23
+margin_bottom = 418.244
+custom_fonts/normal_font = SubResource( 7 )
+custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "Hint: blablabla"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Retry" type="Button" parent="PanelWrong"]
+margin_left = 797.671
+margin_top = 524.396
+margin_right = 1211.67
+margin_bottom = 689.396
+rect_scale = Vector2( 0.6, 0.6 )
+icon = ExtResource( 11 )
+flat = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="PanelWrong/Retry"]
+margin_left = 80.4871
+margin_top = 42.2596
+margin_right = 367.487
+margin_bottom = 146.26
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "ritenta"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Continue" type="Button" parent="PanelWrong"]
+margin_left = 1057.04
+margin_top = 524.055
+margin_right = 1471.04
+margin_bottom = 689.055
+rect_scale = Vector2( 0.6, 0.6 )
+icon = ExtResource( 11 )
+flat = true
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="PanelWrong/Continue"]
+margin_left = 61.3804
+margin_top = 42.3697
+margin_right = 353.38
+margin_bottom = 157.37
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "Continua"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="PanelCorrect" type="Sprite" parent="."]
+visible = false
+z_index = 1
+texture = ExtResource( 7 )
+centered = false
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CorrectTitle" type="RichTextLabel" parent="PanelCorrect"]
+margin_left = 842.0
+margin_top = 282.0
+margin_right = 1280.0
+margin_bottom = 362.0
+custom_fonts/normal_font = SubResource( 6 )
+custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
+text = "Risposta esatta!"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="CorrectText" type="RichTextLabel" parent="PanelCorrect"]
+margin_left = 658.285
+margin_top = 394.367
+margin_right = 1645.28
+margin_bottom = 531.367
+custom_fonts/normal_font = SubResource( 7 )
+custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+text = "COngratulazioni!"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Continue" type="Button" parent="PanelCorrect"]
+margin_left = 928.673
+margin_top = 498.391
+margin_right = 1342.67
+margin_bottom = 663.391
+rect_scale = Vector2( 0.6, 0.6 )
+icon = ExtResource( 11 )
+flat = true
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="PanelCorrect/Continue"]
+margin_left = 61.3804
+margin_top = 42.3697
+margin_right = 353.38
+margin_bottom = 157.37
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "Continua"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+[connection signal="pressed" from="background/Comic/ForwardB" to="background/Comic/ForwardB" method="_on_ForwardB_pressed"]
+[connection signal="pressed" from="background/PanelQuiz/Options/Card1" to="background/PanelQuiz/Options" method="_on_Card1_pressed"]
+[connection signal="pressed" from="background/PanelQuiz/Options/Card2" to="background/PanelQuiz/Options" method="_on_Card2_pressed"]
+[connection signal="pressed" from="background/PanelQuiz/Options/Card3" to="background/PanelQuiz/Options" method="_on_Card3_pressed"]
+[connection signal="pressed" from="background/PanelQuiz/Options/Card4" to="background/PanelQuiz/Options" method="_on_Card4_pressed"]
+[connection signal="pressed" from="background/PanelQuiz/Answer" to="background/PanelQuiz/Answer" method="_on_Answer_pressed"]
+[connection signal="pressed" from="background/LoSapeviChe/Forward" to="background/LoSapeviChe/Forward" method="_on_Forward_pressed"]
+[connection signal="pressed" from="background/LoSapeviChe/Forward2" to="background/LoSapeviChe/Forward2" method="_on_Forward2_pressed"]
+[connection signal="pressed" from="PanelWrong/Retry" to="PanelWrong/Retry" method="_on_Retry_pressed"]
+[connection signal="pressed" from="PanelWrong/Continue" to="PanelWrong/Continue" method="_on_Continue_pressed"]
+[connection signal="pressed" from="PanelCorrect/Continue" to="PanelCorrect/Continue" method="_on_Continue_pressed"]

@@ -1,15 +1,17 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://resources/bottone.png" type="Texture" id=1]
-[ext_resource path="res://resources/background.png" type="Texture" id=2]
-[ext_resource path="res://resources/brain.png" type="Texture" id=3]
-[ext_resource path="res://resources/cervello_05_victory.png" type="Texture" id=4]
+[ext_resource path="res://resources/bottone_def.png" type="Texture" id=1]
+[ext_resource path="res://resources/09_background.png" type="Texture" id=2]
+[ext_resource path="res://resources/CantedComic Regular.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://end/FinishButton.gd" type="Script" id=5]
-[ext_resource path="res://resources/Home Education DEMO.otf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=2]
+size = 70
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=1]
-size = 100
-font_data = ExtResource( 6 )
+size = 80
+font_data = ExtResource( 3 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -19,17 +21,29 @@ centered = false
 
 [node name="cervello_05_victory" type="Sprite" parent="background"]
 position = Vector2( 348.11, 767.383 )
-texture = ExtResource( 4 )
 
-[node name="brain" type="Sprite" parent="background"]
-position = Vector2( 935.251, 554.325 )
-texture = ExtResource( 3 )
+[node name="RichTextLabel" type="RichTextLabel" parent="background/cervello_05_victory"]
+margin_left = 418.044
+margin_top = -570.238
+margin_right = 1090.04
+margin_bottom = -254.238
+rect_pivot_offset = Vector2( -180.522, -88.7579 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_vertical = 4
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "bravissimo! hai completato con me il viaggio!"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
 
 [node name="FinishButton" type="Button" parent="background"]
-margin_left = 1474.39
-margin_top = 881.377
-margin_right = 1884.39
-margin_bottom = 1015.38
+margin_left = 1348.4
+margin_top = 767.383
+margin_right = 1762.4
+margin_bottom = 932.383
 icon = ExtResource( 1 )
 flat = true
 script = ExtResource( 5 )
@@ -38,10 +52,10 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="background/FinishButton"]
-margin_left = 110.553
-margin_top = 9.66016
-margin_right = 375.553
-margin_bottom = 124.66
+margin_left = 87.8745
+margin_top = 27.2777
+margin_right = 391.875
+margin_bottom = 167.278
 rect_pivot_offset = Vector2( -180.522, -88.7579 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )

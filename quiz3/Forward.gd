@@ -17,4 +17,4 @@ func _ready():
 
 
 func _on_Forward_pressed():
-	get_tree().change_scene("res://quiz3/quiz4.tscn") # Replace with function body.
+	get_tree().change_scene("res://quiz4/quiz4.tscn") # Replace with function body.

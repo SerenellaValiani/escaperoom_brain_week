@@ -37,20 +37,20 @@ font_data = ExtResource( 14 )
 size = 35
 font_data = ExtResource( 14 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=6]
 size = 80
 outline_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=7]
 size = 60
 font_data = ExtResource( 14 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=8]
 size = 45
 font_data = ExtResource( 14 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=9]
 size = 35
 font_data = ExtResource( 14 )
 
@@ -61,6 +61,7 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="PanelQuiz" type="Sprite" parent="background"]
+visible = false
 position = Vector2( 1268.65, 525.521 )
 scale = Vector2( 0.884574, 1.09011 )
 z_as_relative = false
@@ -103,7 +104,6 @@ custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
-editable = false
 clear_button_enabled = true
 placeholder_text = "Inserisci qui"
 script = ExtResource( 4 )
@@ -185,7 +185,7 @@ margin_left = 730.52
 margin_top = 100.491
 margin_right = 1514.52
 margin_bottom = 307.491
-custom_fonts/normal_font = SubResource( 9 )
+custom_fonts/normal_font = SubResource( 6 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 text = "
 Lo sapevi che..."
@@ -212,7 +212,7 @@ margin_left = 98.8201
 margin_top = 42.2596
 margin_right = 348.82
 margin_bottom = 126.26
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Avanti"
 __meta__ = {
@@ -245,7 +245,7 @@ margin_left = 800.0
 margin_top = 276.0
 margin_right = 1359.0
 margin_bottom = 367.0
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 text = "Risposta Sbagliata!"
 __meta__ = {
@@ -257,7 +257,7 @@ margin_left = 675.231
 margin_top = 360.244
 margin_right = 1001.23
 margin_bottom = 418.244
-custom_fonts/normal_font = SubResource( 7 )
+custom_fonts/normal_font = SubResource( 9 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Hint: blablabla"
 __meta__ = {
@@ -282,7 +282,7 @@ margin_left = 80.4871
 margin_top = 42.2596
 margin_right = 330.487
 margin_bottom = 126.26
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "ritenta"
 __meta__ = {
@@ -307,7 +307,7 @@ margin_left = 61.3804
 margin_top = 42.3697
 margin_right = 353.38
 margin_bottom = 157.37
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Continua"
 __meta__ = {
@@ -325,7 +325,7 @@ margin_left = 842.0
 margin_top = 282.0
 margin_right = 1280.0
 margin_bottom = 362.0
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 text = "Risposta esatta!"
 __meta__ = {
@@ -337,7 +337,7 @@ margin_left = 658.285
 margin_top = 394.367
 margin_right = 1645.28
 margin_bottom = 531.367
-custom_fonts/normal_font = SubResource( 7 )
+custom_fonts/normal_font = SubResource( 9 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 custom_colors/selection_color = Color( 0, 0, 0, 1 )
 text = "Congratulazioni!"
@@ -363,7 +363,7 @@ margin_left = 62.527
 margin_top = 40.7457
 margin_right = 354.527
 margin_bottom = 155.745
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Continua"
 __meta__ = {

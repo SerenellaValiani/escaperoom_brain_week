@@ -17,7 +17,8 @@ func _ready():
 
 
 func _on_Continue_pressed():
-	get_tree().change_scene("res://quiz2/quiz2.tscn")
+	get_parent().set_visible(false)
+	get_tree().get_root().get_node("/root/Node2D/background/LoSapeviChe").set_visible(true)
 
 
 func _on_Retry_pressed():

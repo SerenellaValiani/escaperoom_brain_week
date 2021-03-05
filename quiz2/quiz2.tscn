@@ -52,6 +52,7 @@ texture = ExtResource( 13 )
 centered = false
 
 [node name="PanelQuiz" type="Sprite" parent="background"]
+visible = false
 position = Vector2( 1268.65, 525.521 )
 scale = Vector2( 0.884574, 1.09011 )
 z_as_relative = false
@@ -94,7 +95,6 @@ custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
-editable = false
 clear_button_enabled = true
 placeholder_text = "Inserisci qui"
 script = ExtResource( 4 )

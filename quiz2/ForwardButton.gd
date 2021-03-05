@@ -18,7 +18,8 @@ func _ready():
 
 
 func _on_ForwardButton_pressed():
-	get_parent().set_visible(false) # Replace with function body.
+	get_parent().set_visible(false)
+	get_tree().get_root().get_node("/root/Node2D/background/PanelQuiz").set_visible(true)
 	brain_sprites[0].set_visible(false)
 	brain_sprites[1].set_visible(true)
-	get_tree().get_root().get_node("/root/Node2D/background/PanelQuiz").get_child(2).set_editable(true)
+	#get_tree().get_root().get_node("/root/Node2D/background/PanelQuiz").get_child(2).set_editable(true)

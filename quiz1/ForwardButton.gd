@@ -17,4 +17,5 @@ func _ready():
 
 
 func _on_ForwardButton_pressed():
-	get_parent().set_visible(false) # Replace with function body.
+	get_parent().set_visible(false) 
+	get_tree().get_root().get_node("/root/Node2D/background/PanelQuiz").set_visible(true)
