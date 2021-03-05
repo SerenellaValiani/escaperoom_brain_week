@@ -21,7 +21,7 @@ config/icon="res://resources/icon.png"
 
 [autoload]
 
-Cards="*res://quiz3/Cards.gd"
+Cards="*res://quiz4/Cards.gd"
 
 [display]
 

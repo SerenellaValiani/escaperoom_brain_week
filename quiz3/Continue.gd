@@ -12,6 +12,6 @@ func _ready():
 
 func _on_Continue_pressed():
 	#get_parent().set_visible(false)
-	get_tree().change_scene("res://end/end.tscn")
+	get_tree().change_scene("res://quiz3/quiz3.tscn")
 
 

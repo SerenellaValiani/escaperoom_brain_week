@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://resources/01_background.png" type="Texture" id=1]
 [ext_resource path="res://resources/03_freccia_destra.png" type="Texture" id=2]
 [ext_resource path="res://info/BackButton.gd" type="Script" id=3]
 [ext_resource path="res://resources/CantedComic Regular.otf" type="DynamicFontData" id=4]
 [ext_resource path="res://resources/Home Education DEMO.otf" type="DynamicFontData" id=5]
-[ext_resource path="res://resources/cervello_01_hello.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -51,7 +50,6 @@ __meta__ = {
 
 [node name="cervello_01_hello" type="Sprite" parent="background"]
 position = Vector2( 355.227, 792.13 )
-texture = ExtResource( 6 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="background"]
 margin_left = 530.0

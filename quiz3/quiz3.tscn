@@ -1,378 +1,378 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=27 format=2]
 
-[ext_resource path="res://resources/Home Education DEMO.otf" type="DynamicFontData" id=1]
-[ext_resource path="res://resources/background.png" type="Texture" id=2]
-[ext_resource path="res://resources/bottone.png" type="Texture" id=3]
-[ext_resource path="res://quiz3/Continue.gd" type="Script" id=4]
-[ext_resource path="res://quiz2/Retry.gd" type="Script" id=5]
-[ext_resource path="res://quiz3/Options.gd" type="Script" id=6]
-[ext_resource path="res://resources/cervello_02_thinking.png" type="Texture" id=7]
-[ext_resource path="res://resources/cervello_03_wrong.png" type="Texture" id=8]
-[ext_resource path="res://resources/panel.png" type="Texture" id=9]
-[ext_resource path="res://resources/brain.png" type="Texture" id=10]
-[ext_resource path="res://resources/cervello_04_correct.png" type="Texture" id=11]
-[ext_resource path="res://quiz3/Answer.gd" type="Script" id=12]
-
-
+[ext_resource path="res://quiz2/ForwardButton.gd" type="Script" id=1]
+[ext_resource path="res://resources/brainy_thinking.png" type="Texture" id=2]
+[ext_resource path="res://resources/quiz3.png" type="Texture" id=3]
+[ext_resource path="res://quiz2/Answer.gd" type="Script" id=4]
+[ext_resource path="res://resources/fumetto.png" type="Texture" id=5]
+[ext_resource path="res://resources/Amarillo.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://quiz2/Retry.gd" type="Script" id=7]
+[ext_resource path="res://quiz3/Continue1.gd" type="Script" id=8]
+[ext_resource path="res://resources/brainy_wrong.png" type="Texture" id=9]
+[ext_resource path="res://resources/brainy_base.png" type="Texture" id=10]
+[ext_resource path="res://resources/brainy_correct.png" type="Texture" id=11]
+[ext_resource path="res://resources/03_freccia_destra.png" type="Texture" id=12]
+[ext_resource path="res://quiz3/Forward.gd" type="Script" id=13]
+[ext_resource path="res://resources/CantedComic Regular.otf" type="DynamicFontData" id=14]
+[ext_resource path="res://resources/bottone_def.png" type="Texture" id=15]
+[ext_resource path="res://resources/clear_panel.png" type="Texture" id=16]
+[ext_resource path="res://quiz3/Forward2.gd" type="Script" id=17]
 
 [sub_resource type="DynamicFont" id=1]
-size = 100
-font_data = ExtResource( 1 )
+size = 50
+font_data = ExtResource( 14 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 150
-font_data = ExtResource( 1 )
+size = 80
+font_data = ExtResource( 14 )
 
-[sub_resource type="DynamicFont" id=3]
-size = 500
-font_data = ExtResource( 1 )
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.784314, 0.294118, 0.0941176, 1 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 100
-font_data = ExtResource( 1 )
+size = 60
+font_data = ExtResource( 14 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 150
-font_data = ExtResource( 1 )
+size = 35
+font_data = ExtResource( 14 )
 
-[sub_resource type="DynamicFont" id=6]
-size = 100
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=7]
-size = 90
-font_data = ExtResource( 1 )
+[sub_resource type="DynamicFont" id=9]
+size = 80
+outline_color = Color( 0.74902, 0.32549, 0.32549, 1 )
+font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=8]
-size = 100
-font_data = ExtResource( 1 )
+size = 60
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 45
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 35
+font_data = ExtResource( 14 )
 
 [node name="Node2D" type="Node2D"]
 
 [node name="background" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 centered = false
 
 [node name="PanelQuiz" type="Sprite" parent="background"]
 position = Vector2( 1268.65, 525.521 )
 scale = Vector2( 0.884574, 1.09011 )
 z_as_relative = false
-texture = ExtResource( 9 )
 
 [node name="QuizText" type="RichTextLabel" parent="background/PanelQuiz"]
 margin_left = -608.0
-margin_top = -226.599
+margin_top = -205.0
 margin_right = 563.0
-margin_bottom = -85.5989
+margin_bottom = 44.0
 custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "seleziona la carta B e C"
+custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "qui devi scrivere \"anna\" (premi invio per inviare la tua risposta)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="QuizTitle" type="RichTextLabel" parent="background/PanelQuiz"]
-margin_left = -145.0
-margin_top = -401.134
-margin_right = 192.0
-margin_bottom = -205.134
+margin_left = -167.0
+margin_top = -386.0
+margin_right = 90.0
+margin_bottom = -263.0
 custom_fonts/normal_font = SubResource( 2 )
-custom_colors/default_color = Color( 1, 0, 0, 1 )
-text = "QUIZ 3"
+custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
+text = "Crt 2"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Options" type="Node" parent="background/PanelQuiz"]
-script = ExtResource( 6 )
-
-[node name="Card1" type="TextureButton" parent="background/PanelQuiz/Options"]
-margin_left = 700.048
-margin_top = 432.209
-margin_right = 2086.05
-margin_bottom = 1323.21
-rect_scale = Vector2( 0.2, 0.4 )
-toggle_mode = true
-texture_normal = ExtResource( 9 )
-texture_pressed = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="background/PanelQuiz/Options/Card1"]
-margin_left = 595.969
-margin_top = 111.587
-margin_right = 781.969
-margin_bottom = 1842.59
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "A
-
-"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Card2" type="TextureButton" parent="background/PanelQuiz/Options"]
-margin_left = 977.248
-margin_top = 432.209
-margin_right = 2363.25
-margin_bottom = 1323.21
-rect_scale = Vector2( 0.2, 0.4 )
-toggle_mode = true
-texture_normal = ExtResource( 9 )
-texture_pressed = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="background/PanelQuiz/Options/Card2"]
-margin_left = 595.969
-margin_top = 111.587
-margin_right = 781.969
-margin_bottom = 1842.59
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "B
-
-"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Card3" type="TextureButton" parent="background/PanelQuiz/Options"]
-margin_left = 1254.45
-margin_top = 432.209
-margin_right = 2640.45
-margin_bottom = 1323.21
-rect_scale = Vector2( 0.2, 0.4 )
-toggle_mode = true
-texture_normal = ExtResource( 9 )
-texture_pressed = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="background/PanelQuiz/Options/Card3"]
-margin_left = 595.969
-margin_top = 111.587
-margin_right = 781.969
-margin_bottom = 1842.59
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "C
-
-"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Card4" type="TextureButton" parent="background/PanelQuiz/Options"]
-margin_left = 1531.65
-margin_top = 432.209
-margin_right = 2917.65
-margin_bottom = 1323.21
-rect_scale = Vector2( 0.2, 0.4 )
-toggle_mode = true
-texture_normal = ExtResource( 9 )
-texture_pressed = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="background/PanelQuiz/Options/Card4"]
-margin_left = 595.969
-margin_top = 111.587
-margin_right = 781.969
-margin_bottom = 1842.59
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "D
-
-"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Answer" type="Button" parent="background/PanelQuiz"]
-margin_left = -152.625
-margin_top = 261.056
-margin_right = 257.375
-margin_bottom = 395.056
-rect_scale = Vector2( 0.7, 0.7 )
-disabled = true
-icon = ExtResource( 3 )
-flat = true
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="background/PanelQuiz/Answer"]
-margin_left = 76.6459
-margin_right = 374.646
-margin_bottom = 115.0
-rect_clip_content = true
-size_flags_vertical = 1
+[node name="AnswerLine" type="LineEdit" parent="background/PanelQuiz"]
+margin_left = -461.767
+margin_top = 167.392
+margin_right = 396.233
+margin_bottom = 251.392
+custom_styles/normal = SubResource( 3 )
 custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "rispondi"
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+editable = false
+clear_button_enabled = true
+placeholder_text = "Inserisci qui"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BrainSprites" type="Node" parent="background"]
+
+[node name="brain_base" type="Sprite" parent="background/BrainSprites"]
+texture = ExtResource( 10 )
+centered = false
+
+[node name="brain_thinking" type="Sprite" parent="background/BrainSprites"]
+visible = false
+texture = ExtResource( 2 )
+centered = false
+
+[node name="brain_wrong" type="Sprite" parent="background/BrainSprites"]
+visible = false
+texture = ExtResource( 9 )
+centered = false
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="brain_correct" type="Sprite" parent="background/BrainSprites"]
+visible = false
+texture = ExtResource( 11 )
+centered = false
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Comic" type="Sprite" parent="background"]
+position = Vector2( -743.637, 405.21 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( 742.888, -404.461 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="background/Comic"]
+margin_left = 1494.51
+margin_top = -40.3185
+margin_right = 2204.51
+margin_bottom = 235.681
+rect_clip_content = false
+mouse_filter = 2
+size_flags_vertical = 4
+custom_fonts/normal_font = SubResource( 5 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Siamo adesso nel ________!
+Rispondi al terzo indovinello!
+"
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
-[node name="PanelMap" type="Sprite" parent="background"]
-position = Vector2( 359.634, 331.788 )
-scale = Vector2( 0.396567, 0.578445 )
-texture = ExtResource( 9 )
+[node name="ForwardButton" type="Button" parent="background/Comic"]
+margin_left = 2013.56
+margin_top = 89.9798
+margin_right = 2151.56
+margin_bottom = 225.98
+icon = ExtResource( 12 )
+flat = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
 
-[node name="Map" type="Sprite" parent="background/PanelMap"]
-position = Vector2( 4.24097, 0.665161 )
-scale = Vector2( 0.882712, 0.710061 )
-z_index = 1
-texture = ExtResource( 10 )
-
-[node name="BrainSprites" type="Node" parent="background"]
-
-[node name="brain_thinking" type="Sprite" parent="background/BrainSprites"]
-position = Vector2( 385.542, 871.384 )
-texture = ExtResource( 7 )
-
-[node name="brain_wrong" type="Sprite" parent="background/BrainSprites"]
+[node name="LoSapeviChe" type="Sprite" parent="background"]
 visible = false
-position = Vector2( 390.767, 867.393 )
-texture = ExtResource( 8 )
+texture = ExtResource( 16 )
+centered = false
 
-[node name="brain_correct" type="Sprite" parent="background/BrainSprites"]
+[node name="RichTextLabel" type="RichTextLabel" parent="background/LoSapeviChe"]
+margin_left = 730.52
+margin_top = 100.491
+margin_right = 1514.52
+margin_bottom = 307.491
+custom_fonts/normal_font = SubResource( 9 )
+custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
+text = "
+Lo sapevi che..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Forward" type="Button" parent="background/LoSapeviChe"]
+margin_left = 1530.86
+margin_top = 890.278
+margin_right = 1944.86
+margin_bottom = 1055.28
+rect_scale = Vector2( 0.6, 0.6 )
+icon = ExtResource( 15 )
+flat = true
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Label" type="Label" parent="background/LoSapeviChe/Forward"]
+margin_left = 98.8201
+margin_top = 42.2596
+margin_right = 348.82
+margin_bottom = 126.26
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "Avanti"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Forward2" type="Button" parent="background/LoSapeviChe"]
 visible = false
-position = Vector2( 413.445, 877.473 )
-texture = ExtResource( 11 )
+margin_left = 1666.21
+margin_top = 865.844
+margin_right = 1804.21
+margin_bottom = 1001.84
+icon = ExtResource( 12 )
+flat = true
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
 
 [node name="PanelWrong" type="Sprite" parent="."]
 visible = false
-position = Vector2( 1102.15, 457.685 )
-scale = Vector2( 0.709909, 0.725538 )
 z_index = 1
-texture = ExtResource( 9 )
+texture = ExtResource( 5 )
+centered = false
 
 [node name="WrongTitle" type="RichTextLabel" parent="PanelWrong"]
-margin_left = -480.679
-margin_top = -343.0
-margin_right = 517.321
-margin_bottom = -139.0
-custom_fonts/normal_font = SubResource( 5 )
-custom_colors/default_color = Color( 1, 0, 0, 1 )
-text = "risposta sbagliata!"
+margin_left = 800.0
+margin_top = 276.0
+margin_right = 1359.0
+margin_bottom = 367.0
+custom_fonts/normal_font = SubResource( 6 )
+custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
+text = "Risposta Sbagliata!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Hint" type="RichTextLabel" parent="PanelWrong"]
-margin_left = -591.085
-margin_top = -139.0
-margin_right = -61.085
-margin_bottom = -1.99997
-custom_fonts/normal_font = SubResource( 6 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "hint: blablabla"
+margin_left = 675.231
+margin_top = 360.244
+margin_right = 1001.23
+margin_bottom = 418.244
+custom_fonts/normal_font = SubResource( 7 )
+custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "Hint: blablabla"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Retry" type="Button" parent="PanelWrong"]
-margin_left = -226.441
-margin_top = 159.942
-margin_right = 183.559
-margin_bottom = 293.942
-icon = ExtResource( 3 )
+margin_left = 797.671
+margin_top = 524.396
+margin_right = 1211.67
+margin_bottom = 689.396
+rect_scale = Vector2( 0.6, 0.6 )
+icon = ExtResource( 15 )
 flat = true
-script = ExtResource( 5 )
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="PanelWrong/Retry"]
-margin_left = 63.9635
-margin_top = 19.3248
-margin_right = 373.964
-margin_bottom = 134.325
-custom_fonts/font = SubResource( 7 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "sbagliato"
+margin_left = 80.4871
+margin_top = 42.2596
+margin_right = 330.487
+margin_bottom = 126.26
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "ritenta"
 __meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": ""
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" type="Button" parent="PanelWrong"]
+margin_left = 1057.04
+margin_top = 524.055
+margin_right = 1471.04
+margin_bottom = 689.055
+rect_scale = Vector2( 0.6, 0.6 )
+icon = ExtResource( 15 )
+flat = true
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PanelWrong/Continue"]
+margin_left = 61.3804
+margin_top = 42.3697
+margin_right = 353.38
+margin_bottom = 157.37
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "Continua"
+__meta__ = {
+"_edit_use_anchors_": false
 }
 
 [node name="PanelCorrect" type="Sprite" parent="."]
 visible = false
-position = Vector2( 1102.15, 457.685 )
-scale = Vector2( 0.709909, 0.725538 )
 z_index = 1
-texture = ExtResource( 9 )
+texture = ExtResource( 5 )
+centered = false
 
 [node name="CorrectTitle" type="RichTextLabel" parent="PanelCorrect"]
-margin_left = -431.321
-margin_top = -343.0
-margin_right = 495.679
-margin_bottom = -139.0
-custom_fonts/normal_font = SubResource( 5 )
-custom_colors/default_color = Color( 1, 0, 0, 1 )
+margin_left = 842.0
+margin_top = 282.0
+margin_right = 1280.0
+margin_bottom = 362.0
+custom_fonts/normal_font = SubResource( 6 )
+custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 text = "Risposta esatta!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CorrectText" type="RichTextLabel" parent="PanelCorrect"]
-margin_left = -591.0
-margin_top = -139.0
-margin_right = 396.0
-margin_bottom = -2.0
-custom_fonts/normal_font = SubResource( 6 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Lo sapevi che blablabla?"
+margin_left = 658.285
+margin_top = 394.367
+margin_right = 1645.28
+margin_bottom = 531.367
+custom_fonts/normal_font = SubResource( 7 )
+custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+text = "Congratulazioni!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Continue" type="Button" parent="PanelCorrect"]
-margin_left = -226.441
-margin_top = 159.942
-margin_right = 183.559
-margin_bottom = 293.942
-icon = ExtResource( 3 )
+margin_left = 936.288
+margin_top = 523.193
+margin_right = 1350.29
+margin_bottom = 688.193
+rect_scale = Vector2( 0.6, 0.6 )
+icon = ExtResource( 15 )
 flat = true
-script = ExtResource( 4 )
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="PanelCorrect/Continue"]
-margin_left = 63.9635
-margin_top = 6.89148
-margin_right = 349.964
-margin_bottom = 121.891
+margin_left = 62.527
+margin_top = 40.7457
+margin_right = 354.527
+margin_bottom = 155.745
 custom_fonts/font = SubResource( 8 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Continua"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="background/PanelQuiz/Options/Card1" to="background/PanelQuiz/Options" method="_on_Card1_pressed"]
-[connection signal="pressed" from="background/PanelQuiz/Options/Card2" to="background/PanelQuiz/Options" method="_on_Card2_pressed"]
-[connection signal="pressed" from="background/PanelQuiz/Options/Card3" to="background/PanelQuiz/Options" method="_on_Card3_pressed"]
-[connection signal="pressed" from="background/PanelQuiz/Options/Card4" to="background/PanelQuiz/Options" method="_on_Card4_pressed"]
-[connection signal="pressed" from="background/PanelQuiz/Answer" to="background/PanelQuiz/Answer" method="_on_Answer_pressed"]
+[connection signal="text_entered" from="background/PanelQuiz/AnswerLine" to="background/PanelQuiz/AnswerLine" method="_on_Answer_text_entered"]
+[connection signal="pressed" from="background/Comic/ForwardButton" to="background/Comic/ForwardButton" method="_on_ForwardButton_pressed"]
+[connection signal="pressed" from="background/LoSapeviChe/Forward" to="background/LoSapeviChe/Forward" method="_on_Forward_pressed"]
+[connection signal="pressed" from="background/LoSapeviChe/Forward2" to="background/LoSapeviChe/Forward2" method="_on_Forward2_pressed"]
 [connection signal="pressed" from="PanelWrong/Retry" to="PanelWrong/Retry" method="_on_Retry_pressed"]
+[connection signal="pressed" from="PanelWrong/Continue" to="PanelWrong/Continue" method="_on_Continue_pressed"]
 [connection signal="pressed" from="PanelCorrect/Continue" to="PanelCorrect/Continue" method="_on_Continue_pressed"]

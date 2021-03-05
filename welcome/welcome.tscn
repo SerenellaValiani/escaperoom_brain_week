@@ -33,10 +33,10 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="background/WelcomeStartButton"]
-margin_left = 94.9061
-margin_top = 30.5957
-margin_right = 447.906
-margin_bottom = 170.596
+margin_left = 93.6123
+margin_top = 29.0668
+margin_right = 446.612
+margin_bottom = 169.067
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Start"
