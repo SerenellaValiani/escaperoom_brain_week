@@ -1,15 +1,26 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://instructions/ForwardButton.gd" type="Script" id=1]
 [ext_resource path="res://resources/fumetto2.png" type="Texture" id=2]
 [ext_resource path="res://instructions/StartButton.gd" type="Script" id=3]
 [ext_resource path="res://resources/03_freccia_destra.png" type="Texture" id=4]
-[ext_resource path="res://resources/03_mappa.png" type="Texture" id=5]
+[ext_resource path="res://resources/brackgprund01_2.png" type="Texture" id=5]
 [ext_resource path="res://resources/CantedComic Regular.otf" type="DynamicFontData" id=6]
 [ext_resource path="res://resources/bottone_freccia.png" type="Texture" id=7]
+[ext_resource path="res://instructions/LineEdit.gd" type="Script" id=8]
+[ext_resource path="res://instructions/ForwardButton1.gd" type="Script" id=9]
+[ext_resource path="res://instructions/ForwardButton2.gd" type="Script" id=10]
 
-[sub_resource type="DynamicFont" id=1]
-size = 40
+[sub_resource type="DynamicFont" id=5]
+size = 35
+extra_spacing_bottom = 2
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.886275, 0.478431, 0.447059, 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 30
 font_data = ExtResource( 6 )
 
 [node name="Node2D" type="Node2D"]
@@ -19,56 +30,171 @@ texture = ExtResource( 5 )
 centered = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="background"]
-margin_left = 1152.0
-margin_top = 191.0
-margin_right = 1677.0
-margin_bottom = 481.0
+margin_left = 1128.64
+margin_top = 203.727
+margin_right = 1653.64
+margin_bottom = 321.727
 rect_clip_content = false
 mouse_filter = 2
 size_flags_vertical = 4
-custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Ciao! io sono ____!
-ti accompagnerò in questo viaggio nel cervello!"
+custom_fonts/normal_font = SubResource( 5 )
+custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "   Ciao! Sono Brainy!
+ E tu come ti chiami?"
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
 [node name="ForwardButton" type="Button" parent="background"]
-margin_left = 1399.15
-margin_top = 371.244
-margin_right = 1541.15
-margin_bottom = 499.244
+margin_left = 1528.83
+margin_top = 392.289
+margin_right = 1670.83
+margin_bottom = 520.289
+rect_scale = Vector2( 0.6, 0.6 )
 icon = ExtResource( 4 )
 flat = true
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Text2" type="Sprite" parent="background"]
-visible = false
-texture = ExtResource( 2 )
-centered = false
-
-[node name="RichTextLabel" type="RichTextLabel" parent="background/Text2"]
-margin_left = 1152.0
-margin_top = 191.0
-margin_right = 1627.0
-margin_bottom = 437.0
-rect_clip_content = false
-mouse_filter = 2
-size_flags_vertical = 4
-custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "per iniziare clicca sul primo livello"
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
-[node name="StartButton2" type="Button" parent="background/Text2"]
+[node name="LineEdit" type="LineEdit" parent="background"]
+margin_left = 1120.0
+margin_top = 333.0
+margin_right = 1634.0
+margin_bottom = 382.0
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+clear_button_enabled = true
+placeholder_text = "Scrivi qui il tuo nome"
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Comic2" type="Sprite" parent="background"]
+visible = false
+texture = ExtResource( 2 )
+centered = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="background/Comic2"]
+margin_left = 1154.0
+margin_top = 221.0
+margin_right = 1586.0
+margin_bottom = 284.0
+rect_clip_content = false
+mouse_filter = 2
+size_flags_vertical = 4
+custom_fonts/normal_font = SubResource( 5 )
+custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "Ciao"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="background/Comic2"]
+margin_left = 1091.0
+margin_top = 280.5
+margin_right = 1710.0
+margin_bottom = 487.5
+rect_clip_content = false
+mouse_filter = 2
+size_flags_vertical = 4
+custom_fonts/normal_font = SubResource( 5 )
+custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "  Iniziamo il nostro viaggio 
+alla scoperta del cervello!"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="ForwardButton1" type="Button" parent="background/Comic2"]
+margin_left = 1528.83
+margin_top = 392.289
+margin_right = 1670.83
+margin_bottom = 520.289
+rect_scale = Vector2( 0.6, 0.6 )
+icon = ExtResource( 4 )
+flat = true
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Comic3" type="Sprite" parent="background"]
+visible = false
+texture = ExtResource( 2 )
+centered = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="background/Comic3"]
+margin_left = 1061.0
+margin_top = 220.091
+margin_right = 1756.0
+margin_bottom = 488.091
+rect_clip_content = false
+mouse_filter = 2
+size_flags_vertical = 4
+custom_fonts/normal_font = SubResource( 5 )
+custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "        Insieme affronteremo 
+ 	cinque livelli rispondendo 
+  a delle domande e scopriremo
+       come ragioniamo!!"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="ForwardButton2" type="Button" parent="background/Comic3"]
+margin_left = 1528.83
+margin_top = 392.289
+margin_right = 1670.83
+margin_bottom = 520.289
+rect_scale = Vector2( 0.6, 0.6 )
+icon = ExtResource( 4 )
+flat = true
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Comic4" type="Sprite" parent="background"]
+visible = false
+texture = ExtResource( 2 )
+centered = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="background/Comic4"]
+margin_left = 1130.14
+margin_top = 280.317
+margin_right = 1655.14
+margin_bottom = 398.317
+rect_clip_content = false
+mouse_filter = 2
+size_flags_vertical = 4
+custom_fonts/normal_font = SubResource( 5 )
+custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "Clicca su primo bottone 
+            e partiamo!!"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="StartButton2" type="Button" parent="background/Comic4"]
 margin_left = -4.0
 margin_top = -3.0
 margin_right = 1928.0
@@ -80,4 +206,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="background/ForwardButton" to="background/ForwardButton" method="_on_ForwardButton_pressed"]
-[connection signal="pressed" from="background/Text2/StartButton2" to="background/Text2/StartButton2" method="_on_StartButton_pressed"]
+[connection signal="mouse_exited" from="background/LineEdit" to="background/LineEdit" method="_on_LineEdit_mouse_exited"]
+[connection signal="text_changed" from="background/LineEdit" to="background/LineEdit" method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="background/LineEdit" to="background/LineEdit" method="_on_LineEdit_text_entered"]
+[connection signal="pressed" from="background/Comic2/ForwardButton1" to="background/Comic2/ForwardButton1" method="_on_ForwardButton1_pressed"]
+[connection signal="pressed" from="background/Comic3/ForwardButton2" to="background/Comic3/ForwardButton2" method="_on_ForwardButton2_pressed"]
+[connection signal="pressed" from="background/Comic4/StartButton2" to="background/Comic4/StartButton2" method="_on_StartButton_pressed"]

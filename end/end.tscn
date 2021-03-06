@@ -5,11 +5,11 @@
 [ext_resource path="res://resources/CantedComic Regular.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://end/FinishButton.gd" type="Script" id=5]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 70
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 80
 font_data = ExtResource( 3 )
 
@@ -31,7 +31,7 @@ rect_pivot_offset = Vector2( -180.522, -88.7579 )
 rect_clip_content = false
 mouse_filter = 2
 size_flags_vertical = 4
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "bravissimo! hai completato con me il viaggio!"
 __meta__ = {
@@ -57,7 +57,7 @@ margin_top = 27.2777
 margin_right = 391.875
 margin_bottom = 167.278
 rect_pivot_offset = Vector2( -180.522, -88.7579 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "chiudi"
 __meta__ = {

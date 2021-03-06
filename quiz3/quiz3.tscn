@@ -27,10 +27,10 @@ size = 80
 font_data = ExtResource( 14 )
 
 [sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.784314, 0.294118, 0.0941176, 1 )
+bg_color = Color( 0.886275, 0.478431, 0.447059, 1 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 60
+size = 30
 font_data = ExtResource( 14 )
 
 [sub_resource type="DynamicFont" id=5]
@@ -61,7 +61,6 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="PanelQuiz" type="Sprite" parent="background"]
-visible = false
 position = Vector2( 1268.65, 525.521 )
 scale = Vector2( 0.884574, 1.09011 )
 z_as_relative = false
@@ -73,6 +72,7 @@ margin_right = 563.0
 margin_bottom = 44.0
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
 text = "qui devi scrivere \"anna\" (premi invio per inviare la tua risposta)"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -186,7 +186,7 @@ margin_top = 100.491
 margin_right = 1514.52
 margin_bottom = 307.491
 custom_fonts/normal_font = SubResource( 6 )
-custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
+custom_colors/default_color = Color( 0.666667, 0.278431, 0.278431, 1 )
 text = "
 Lo sapevi che..."
 __meta__ = {

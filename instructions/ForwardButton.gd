@@ -17,4 +17,4 @@ func _ready():
 
 
 func _on_ForwardButton_pressed():
-	get_tree().get_root().get_node("/root/Node2D/background/Text2").set_visible(true)
+		get_tree().get_root().get_node("/root/Node2D/background/Comic2").set_visible(true)

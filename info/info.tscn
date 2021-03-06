@@ -1,18 +1,29 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://resources/01_background.png" type="Texture" id=1]
+[ext_resource path="res://resources/brackgprund01_1.png" type="Texture" id=1]
 [ext_resource path="res://resources/03_freccia_destra.png" type="Texture" id=2]
 [ext_resource path="res://info/BackButton.gd" type="Script" id=3]
 [ext_resource path="res://resources/CantedComic Regular.otf" type="DynamicFontData" id=4]
 [ext_resource path="res://resources/Home Education DEMO.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://resources/Amarillo.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://resources/logo/logo.png" type="Texture" id=7]
+[ext_resource path="res://resources/logo/momilab.png" type="Texture" id=8]
+[ext_resource path="res://resources/logo/sysma.png" type="Texture" id=9]
+[ext_resource path="res://resources/logo/GameScienceRC.png" type="Texture" id=10]
+[ext_resource path="res://resources/logo/baw.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 100
-outline_color = Color( 0, 0, 0, 1 )
+size = 62
+outline_color = Color( 0.666667, 0.278431, 0.278431, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+outline_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 font_data = ExtResource( 4 )
 
 [node name="Node2D" type="Node2D"]
@@ -22,11 +33,11 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="BackButton" type="Button" parent="background"]
-margin_left = 1574.0
-margin_top = 759.451
-margin_right = 1711.0
-margin_bottom = 893.451
-rect_scale = Vector2( 1.6, 1.6 )
+margin_left = 1621.57
+margin_top = 833.182
+margin_right = 1758.57
+margin_bottom = 967.182
+rect_scale = Vector2( 1.2, 1.2 )
 icon = ExtResource( 2 )
 flat = true
 script = ExtResource( 3 )
@@ -51,15 +62,70 @@ __meta__ = {
 [node name="cervello_01_hello" type="Sprite" parent="background"]
 position = Vector2( 355.227, 792.13 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="background"]
-margin_left = 530.0
-margin_top = 220.0
-margin_right = 1538.0
-margin_bottom = 696.0
+[node name="Title" type="RichTextLabel" parent="background"]
+margin_left = 189.0
+margin_top = 146.675
+margin_right = 1720.0
+margin_bottom = 346.675
 custom_fonts/normal_font = SubResource( 2 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Benvenuti alla Settimana del Cervello"
+custom_colors/default_color = Color( 0.666667, 0.278431, 0.278431, 1 )
+text = "
+La Settimana Mondiale del Cervello"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Text1" type="RichTextLabel" parent="background"]
+margin_left = 235.0
+margin_top = 357.0
+margin_right = 1706.0
+margin_bottom = 744.0
+custom_fonts/normal_font = SubResource( 3 )
+custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "La Settimana Mondiale del Cervello è un evento internazionale dedicato ad accrescere la consapevolezza del pubblico sulla ricerca che ha per oggetto questo organo straordinario.
+
+Iniziato nel 1996 negli Stati Uniti, ha coinvolto negli anni oltre 7.300 partner in 117 paesi. Si svolge ancora oggi ogni anno in contemporanea in tutto il mondo."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text2" type="RichTextLabel" parent="background"]
+margin_left = 252.0
+margin_top = 666.0
+margin_right = 1747.0
+margin_bottom = 795.0
+custom_fonts/normal_font = SubResource( 3 )
+custom_colors/default_color = Color( 0.733333, 0.270588, 0.270588, 1 )
+text = "Anche quest'anno l'evento non si ferma  e sara` di nuovo fruibile interamente online."
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="loghi" type="Sprite" parent="background"]
+
+[node name="baw" type="Sprite" parent="background/loghi"]
+position = Vector2( 251.887, 869.272 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 11 )
+
+[node name="imt" type="Sprite" parent="background/loghi"]
+position = Vector2( 575.43, 866.856 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 7 )
+
+[node name="sysma" type="Sprite" parent="background/loghi"]
+position = Vector2( 1161.67, 863.11 )
+scale = Vector2( 0.812308, 0.768787 )
+texture = ExtResource( 9 )
+
+[node name="momilab" type="Sprite" parent="background/loghi"]
+position = Vector2( 819.447, 864.765 )
+scale = Vector2( 0.293182, 0.264793 )
+texture = ExtResource( 8 )
+
+[node name="grs" type="Sprite" parent="background/loghi"]
+position = Vector2( 982.124, 864.255 )
+scale = Vector2( 0.19579, 0.191579 )
+texture = ExtResource( 10 )
 [connection signal="pressed" from="background/BackButton" to="background/BackButton" method="_on_BackButton_pressed"]
