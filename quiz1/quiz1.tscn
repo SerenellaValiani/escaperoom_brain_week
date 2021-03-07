@@ -1,6 +1,7 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://quiz1/ForwardButton.gd" type="Script" id=1]
+[ext_resource path="res://resources/VID_20210104_104801.ogv" type="VideoStream" id=2]
 [ext_resource path="res://resources/brainy_wrong.png" type="Texture" id=3]
 [ext_resource path="res://quiz1/ButtonWrong.gd" type="Script" id=4]
 [ext_resource path="res://resources/fumetto.png" type="Texture" id=5]
@@ -17,6 +18,7 @@
 [ext_resource path="res://quiz1/Forward.gd" type="Script" id=16]
 [ext_resource path="res://quiz3/Forward2.gd" type="Script" id=17]
 [ext_resource path="res://resources/illusione.png" type="Texture" id=18]
+[ext_resource path="res://quiz1/Play.gd" type="Script" id=19]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -38,6 +40,10 @@ font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 60
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 50
 font_data = ExtResource( 15 )
 
 [sub_resource type="DynamicFont" id=6]
@@ -289,7 +295,6 @@ __meta__ = {
 }
 
 [node name="LoSapeviChe" type="Sprite" parent="background"]
-visible = false
 texture = ExtResource( 7 )
 centered = false
 
@@ -346,6 +351,46 @@ __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
+
+[node name="VideoPlayer" type="VideoPlayer" parent="background/LoSapeviChe"]
+margin_left = 864.0
+margin_top = 328.0
+margin_right = 1666.0
+margin_bottom = 774.0
+stream = ExtResource( 2 )
+autoplay = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="background/LoSapeviChe/VideoPlayer"]
+margin_left = 192.0
+margin_top = 482.0
+margin_right = 512.0
+margin_bottom = 604.0
+icon = ExtResource( 14 )
+flat = true
+expand_icon = true
+script = ExtResource( 19 )
+
+[node name="LabelPlay" type="Label" parent="background/LoSapeviChe/VideoPlayer/Play"]
+visible = false
+margin_left = 93.3163
+margin_top = 32.141
+margin_right = 222.316
+margin_bottom = 102.141
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "play"
+
+[node name="LabelPause" type="Label" parent="background/LoSapeviChe/VideoPlayer/Play"]
+margin_left = 93.3163
+margin_top = 32.141
+margin_right = 222.316
+margin_bottom = 102.141
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "pause"
 
 [node name="PanelWrong" type="Sprite" parent="."]
 visible = false
@@ -483,5 +528,6 @@ __meta__ = {
 [connection signal="pressed" from="background/Comic/ForwardButton" to="background/Comic/ForwardButton" method="_on_ForwardButton_pressed"]
 [connection signal="pressed" from="background/LoSapeviChe/Forward" to="background/LoSapeviChe/Forward" method="_on_Forward_pressed"]
 [connection signal="pressed" from="background/LoSapeviChe/Forward2" to="background/LoSapeviChe/Forward2" method="_on_Forward2_pressed"]
+[connection signal="pressed" from="background/LoSapeviChe/VideoPlayer/Play" to="background/LoSapeviChe/VideoPlayer/Play" method="_on_Play_pressed"]
 [connection signal="pressed" from="PanelWrong/Continue" to="PanelWrong/Continue" method="_on_Continue_pressed"]
 [connection signal="pressed" from="PanelCorrect/Continue" to="PanelCorrect/Continue" method="_on_Continue_pressed"]
