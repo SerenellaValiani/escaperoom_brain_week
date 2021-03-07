@@ -10,4 +10,6 @@ func _ready():
 #	pass
 
 func _on_InfoButton_pressed():
+	# TODO remove this line and replace with "mute" button
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), true)
 	get_tree().change_scene("res://info/info.tscn")
