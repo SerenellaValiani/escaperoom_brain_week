@@ -42,15 +42,15 @@ font_data = ExtResource( 6 )
 size = 60
 font_data = ExtResource( 15 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=6]
 size = 50
 font_data = ExtResource( 15 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=7]
 size = 45
 font_data = ExtResource( 15 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=8]
 size = 60
 font_data = ExtResource( 15 )
 
@@ -295,6 +295,7 @@ __meta__ = {
 }
 
 [node name="LoSapeviChe" type="Sprite" parent="background"]
+visible = false
 texture = ExtResource( 7 )
 centered = false
 
@@ -359,6 +360,7 @@ margin_right = 1666.0
 margin_bottom = 774.0
 stream = ExtResource( 2 )
 autoplay = true
+paused = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -374,21 +376,21 @@ expand_icon = true
 script = ExtResource( 19 )
 
 [node name="LabelPlay" type="Label" parent="background/LoSapeviChe/VideoPlayer/Play"]
+margin_left = 93.3163
+margin_top = 32.141
+margin_right = 222.316
+margin_bottom = 102.141
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "play"
+
+[node name="LabelPause" type="Label" parent="background/LoSapeviChe/VideoPlayer/Play"]
 visible = false
 margin_left = 93.3163
 margin_top = 32.141
 margin_right = 222.316
 margin_bottom = 102.141
-custom_fonts/font = SubResource( 8 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "play"
-
-[node name="LabelPause" type="Label" parent="background/LoSapeviChe/VideoPlayer/Play"]
-margin_left = 93.3163
-margin_top = 32.141
-margin_right = 222.316
-margin_bottom = 102.141
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "pause"
 
@@ -403,7 +405,7 @@ margin_left = 842.0
 margin_top = 282.0
 margin_right = 1333.0
 margin_bottom = 377.0
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 text = "Risposta sbaliata!"
 __meta__ = {
@@ -450,7 +452,7 @@ margin_left = 61.3804
 margin_top = 42.3697
 margin_right = 353.38
 margin_bottom = 157.37
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Continua"
 __meta__ = {
@@ -468,7 +470,7 @@ margin_left = 842.0
 margin_top = 282.0
 margin_right = 1280.0
 margin_bottom = 362.0
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 text = "Risposta esatta!"
 __meta__ = {
@@ -515,7 +517,7 @@ margin_left = 61.3804
 margin_top = 42.3697
 margin_right = 353.38
 margin_bottom = 157.37
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Continua"
 __meta__ = {

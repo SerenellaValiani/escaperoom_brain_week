@@ -6,7 +6,7 @@ var stream_pos
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	stream_pos = get_parent().get_stream_position() # Replace with function body.
 
 
 func _on_Play_pressed():

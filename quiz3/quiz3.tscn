@@ -140,7 +140,6 @@ __meta__ = {
 }
 
 [node name="Comic" type="Sprite" parent="background"]
-visible = false
 position = Vector2( -743.637, 405.21 )
 texture = ExtResource( 5 )
 centered = false
