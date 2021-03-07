@@ -22,6 +22,7 @@ config/icon="res://resources/icon.png"
 [autoload]
 
 Cards="*res://quiz4/Cards.gd"
+Music="*res://music.tscn"
 
 [display]
 
