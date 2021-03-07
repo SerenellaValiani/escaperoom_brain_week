@@ -26,4 +26,4 @@ func _on_LineEdit_text_entered(text):
 func _on_LineEdit_text_changed(new_text):
 	player_name = new_text # Replace with function body
 	get_tree().get_root().get_node("/root/Node2D/background/Comic2").get_child(0).set_text("Ciao " + player_name + "!")
-	print(new_text)
+	#print(new_text)

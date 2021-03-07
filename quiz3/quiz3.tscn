@@ -18,8 +18,8 @@
 [ext_resource path="res://resources/clear_panel.png" type="Texture" id=16]
 [ext_resource path="res://quiz3/Forward2.gd" type="Script" id=17]
 
-[sub_resource type="DynamicFont" id=1]
-size = 50
+[sub_resource type="DynamicFont" id=9]
+size = 35
 font_data = ExtResource( 14 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -51,7 +51,7 @@ font_data = ExtResource( 14 )
 size = 45
 font_data = ExtResource( 14 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=10]
 size = 35
 font_data = ExtResource( 14 )
 
@@ -62,31 +62,31 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="PanelQuiz" type="Sprite" parent="background"]
-visible = false
 position = Vector2( 1268.65, 525.521 )
 z_as_relative = false
 
 [node name="QuizText" type="RichTextLabel" parent="background/PanelQuiz"]
-margin_left = -608.0
+margin_left = -554.0
 margin_top = -205.0
-margin_right = 563.0
-margin_bottom = 44.0
-custom_fonts/normal_font = SubResource( 1 )
+margin_right = 510.0
+margin_bottom = 98.0
+custom_fonts/normal_font = SubResource( 9 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 custom_colors/selection_color = Color( 0, 0, 0, 1 )
-text = "qui devi scrivere \"anna\" (premi invio per inviare la tua risposta)"
+text = "5 macchinari producono 5 telefoni in 5 minuti.
+Quanti minuti impiegano 100 macchinari a produrre 100 telefoni?"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="QuizTitle" type="RichTextLabel" parent="background/PanelQuiz"]
-margin_left = -167.0
-margin_top = -386.0
-margin_right = 90.0
-margin_bottom = -263.0
+margin_left = -240.0
+margin_top = -366.0
+margin_right = 246.0
+margin_bottom = -243.0
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
-text = "Crt 2"
+text = "i telefoni"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -159,9 +159,8 @@ mouse_filter = 2
 size_flags_vertical = 4
 custom_fonts/normal_font = SubResource( 5 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
-text = "Siamo adesso nel ________!
-Rispondi al terzo indovinello!
-"
+text = "Siamo arrivati al terzo livello.
+Prova a rispondere!"
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
@@ -263,7 +262,7 @@ margin_left = 675.231
 margin_top = 360.244
 margin_right = 1001.23
 margin_bottom = 418.244
-custom_fonts/normal_font = SubResource( 9 )
+custom_fonts/normal_font = SubResource( 10 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Hint: blablabla"
 __meta__ = {
@@ -339,14 +338,15 @@ __meta__ = {
 }
 
 [node name="CorrectText" type="RichTextLabel" parent="PanelCorrect"]
-margin_left = 658.285
-margin_top = 394.367
-margin_right = 1645.28
-margin_bottom = 531.367
-custom_fonts/normal_font = SubResource( 9 )
+margin_left = 658.0
+margin_top = 367.0
+margin_right = 1425.0
+margin_bottom = 531.0
+custom_fonts/normal_font = SubResource( 10 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 custom_colors/selection_color = Color( 0, 0, 0, 1 )
-text = "Congratulazioni!"
+text = "Congratulazioni!
+scopriamo cos'è successo negli ultimi due livelli"
 __meta__ = {
 "_edit_use_anchors_": false
 }

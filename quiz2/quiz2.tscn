@@ -15,7 +15,7 @@
 [ext_resource path="res://resources/bottone_def.png" type="Texture" id=15]
 
 [sub_resource type="DynamicFont" id=1]
-size = 35
+size = 40
 extra_spacing_bottom = 2
 font_data = ExtResource( 14 )
 
@@ -48,6 +48,7 @@ texture = ExtResource( 13 )
 centered = false
 
 [node name="PanelQuiz" type="Sprite" parent="background"]
+visible = false
 position = Vector2( 1268.65, 525.521 )
 scale = Vector2( 0.884574, 1.09011 )
 z_as_relative = false
@@ -57,29 +58,30 @@ anchor_left = -1437.98
 anchor_top = -486.189
 anchor_right = -1437.98
 anchor_bottom = -486.189
-margin_left = 898.585
-margin_top = 259.373
-margin_right = 1757.59
-margin_bottom = 377.373
+margin_left = 864.98
+margin_top = 263.189
+margin_right = 1949.98
+margin_bottom = 653.189
 rect_clip_content = false
 mouse_filter = 2
 size_flags_vertical = 4
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
-text = "qui devi scrivere \"anna\" (premi invio per inviare la tua risposta)"
+text = "In uno stagno ci sono delle ninfee che ogni giorno raddoppiano la loro estensione sulla superficie dell'acqua. 
+Se impiegano 48 giorni per ricoprire l'intera superficie del lago, quanti giorni impiegano per coprirne la metà? "
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
 [node name="QuizTitle" type="RichTextLabel" parent="background/PanelQuiz"]
-margin_left = -167.0
-margin_top = -386.0
-margin_right = 90.0
-margin_bottom = -263.0
+margin_left = -529.803
+margin_top = -360.315
+margin_right = 478.197
+margin_bottom = -237.315
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
-text = "Crt 1"
+text = "l'enigma dello stagno"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -99,7 +101,7 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
 clear_button_enabled = true
-placeholder_text = "Inserisci qui"
+placeholder_text = "Inserisci qui il numero"
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -133,7 +135,6 @@ __meta__ = {
 }
 
 [node name="Comic" type="Sprite" parent="background"]
-visible = false
 position = Vector2( -743.637, 405.21 )
 texture = ExtResource( 5 )
 centered = false
@@ -144,17 +145,16 @@ anchor_left = -1437.98
 anchor_top = -486.189
 anchor_right = -1437.98
 anchor_bottom = -486.189
-margin_left = 2.76238e+06
+margin_left = 2.76246e+06
 margin_top = 525061.0
-margin_right = 2.76324e+06
-margin_bottom = 525179.0
+margin_right = 2.76305e+06
+margin_bottom = 525186.0
 rect_clip_content = false
 mouse_filter = 2
 size_flags_vertical = 4
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
-text = "Ciao sei in ____!
-Risolviamo il secondo indovinello!"
+text = "passiamo ora al secondo livello!"
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""

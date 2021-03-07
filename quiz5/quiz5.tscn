@@ -26,7 +26,7 @@ size = 35
 font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 50
+size = 35
 font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=3]
@@ -79,16 +79,18 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="background/Comic"]
-margin_left = 1494.51
-margin_top = -40.3185
-margin_right = 2204.51
-margin_bottom = 235.681
+margin_left = 1515.28
+margin_top = -76.1857
+margin_right = 2225.28
+margin_bottom = 199.814
 rect_clip_content = false
 mouse_filter = 2
 size_flags_vertical = 4
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Rispondi al quinto indovinello!
+text = "Forza, ancora un ultimo sforzo!
+Vediamo se questo livello ti risulta più semplice.
+
 "
 __meta__ = {
 "_edit_use_anchors_": false,
@@ -115,25 +117,29 @@ scale = Vector2( 0.884574, 1.09011 )
 z_as_relative = false
 
 [node name="QuizText" type="RichTextLabel" parent="background/PanelQuiz"]
-margin_left = -619.971
-margin_top = -295.386
-margin_right = 591.029
-margin_bottom = -154.386
+margin_left = -608.0
+margin_top = -275.0
+margin_right = 591.0
+margin_bottom = 357.0
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
-text = "seleziona la carta B e C"
+text = "Ci sono quattro persone in un bar. 
+Di ognuna conosci o l’età o cosa beve. 
+Sei un poliziotto e devi verificare che sia rispettata questa regola:  se una persona beve un alcolico, allora deve avere più di 18 anni. 
+Per verificarlo puoi controllare due persone. Chi controlleresti?
+"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="QuizTitle" type="RichTextLabel" parent="background/PanelQuiz"]
-margin_left = -195.0
-margin_top = -401.0
-margin_right = 192.0
-margin_bottom = -205.0
+margin_left = -529.803
+margin_top = -389.896
+margin_right = 518.197
+margin_bottom = -193.896
 custom_fonts/normal_font = SubResource( 3 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
-text = "Wason 2"
+text = "Se fossi un poliziotto..."
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -142,10 +148,10 @@ __meta__ = {
 script = ExtResource( 6 )
 
 [node name="Card1" type="TextureButton" parent="background/PanelQuiz/Options"]
-margin_left = -619.971
-margin_top = -154.386
-margin_right = 766.031
-margin_bottom = 736.615
+margin_left = -620.0
+margin_top = 102.499
+margin_right = 766.002
+margin_bottom = 993.5
 rect_scale = Vector2( 0.2, 0.4 )
 toggle_mode = true
 texture_normal = ExtResource( 9 )
@@ -172,9 +178,9 @@ __meta__ = {
 
 [node name="Card2" type="TextureButton" parent="background/PanelQuiz/Options"]
 margin_left = -302.315
-margin_top = -154.386
+margin_top = 138.252
 margin_right = 1083.69
-margin_bottom = 736.615
+margin_bottom = 1029.25
 rect_scale = Vector2( 0.2, 0.4 )
 toggle_mode = true
 texture_normal = ExtResource( 9 )
@@ -200,10 +206,10 @@ __meta__ = {
 }
 
 [node name="Card3" type="TextureButton" parent="background/PanelQuiz/Options"]
-margin_left = 0.472656
-margin_top = -151.615
-margin_right = 1386.47
-margin_bottom = 739.386
+margin_left = 12.8311
+margin_top = 120.935
+margin_right = 1398.83
+margin_bottom = 1011.94
 rect_scale = Vector2( 0.2, 0.4 )
 toggle_mode = true
 texture_normal = ExtResource( 9 )
@@ -229,10 +235,10 @@ __meta__ = {
 }
 
 [node name="Card4" type="TextureButton" parent="background/PanelQuiz/Options"]
-margin_left = 304.556
-margin_top = -150.004
-margin_right = 1690.56
-margin_bottom = 740.997
+margin_left = 296.425
+margin_top = 138.252
+margin_right = 1682.43
+margin_bottom = 1029.25
 rect_scale = Vector2( 0.2, 0.4 )
 toggle_mode = true
 texture_normal = ExtResource( 9 )
@@ -258,10 +264,10 @@ __meta__ = {
 }
 
 [node name="Answer" type="Button" parent="background/PanelQuiz"]
-margin_left = -152.625
-margin_top = 261.056
-margin_right = 257.375
-margin_bottom = 395.056
+margin_left = -144.645
+margin_top = 312.191
+margin_right = 269.355
+margin_bottom = 477.191
 rect_scale = Vector2( 0.7, 0.7 )
 disabled = true
 icon = ExtResource( 11 )
@@ -272,10 +278,10 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="background/PanelQuiz/Answer"]
-margin_left = 73.7685
-margin_top = 37.3602
-margin_right = 371.769
-margin_bottom = 152.36
+margin_left = 70.0
+margin_top = 37.0
+margin_right = 372.0
+margin_bottom = 152.0
 rect_clip_content = true
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 5 )
@@ -391,19 +397,20 @@ __meta__ = {
 }
 
 [node name="Hint" type="RichTextLabel" parent="PanelWrong"]
-margin_left = 675.231
-margin_top = 360.244
-margin_right = 1001.23
-margin_bottom = 418.244
+margin_left = 694.0
+margin_top = 367.0
+margin_right = 1426.0
+margin_bottom = 531.0
 custom_fonts/normal_font = SubResource( 9 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
-text = "Hint: blablabla"
+text = "La prossima spiegazione ti aiuterà a capire come arrivare alla soluzione"
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
 [node name="Retry" type="Button" parent="PanelWrong"]
+visible = false
 margin_left = 797.671
 margin_top = 524.396
 margin_right = 1211.67
@@ -480,24 +487,25 @@ __meta__ = {
 }
 
 [node name="CorrectText" type="RichTextLabel" parent="PanelCorrect"]
-margin_left = 658.285
-margin_top = 394.367
-margin_right = 1645.28
-margin_bottom = 531.367
+margin_left = 658.0
+margin_top = 394.0
+margin_right = 1481.0
+margin_bottom = 593.0
 custom_fonts/normal_font = SubResource( 9 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 custom_colors/selection_color = Color( 0, 0, 0, 1 )
-text = "COngratulazioni!"
+text = "Congratulazioni! 
+Scopriamo cos'è successo negli ultimi due livelli"
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
 [node name="Continue" type="Button" parent="PanelCorrect"]
-margin_left = 928.673
-margin_top = 498.391
-margin_right = 1342.67
-margin_bottom = 663.391
+margin_left = 1093.87
+margin_top = 524.055
+margin_right = 1507.87
+margin_bottom = 689.055
 rect_scale = Vector2( 0.6, 0.6 )
 icon = ExtResource( 11 )
 flat = true
@@ -508,10 +516,10 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="PanelCorrect/Continue"]
-margin_left = 61.3804
-margin_top = 42.3697
-margin_right = 353.38
-margin_bottom = 157.37
+margin_left = 61.2425
+margin_top = 42.7734
+margin_right = 353.242
+margin_bottom = 157.774
 custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Continua"

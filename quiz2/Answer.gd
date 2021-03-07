@@ -1,7 +1,7 @@
 extends LineEdit
 
 
-var CORR_ANSWER = "anna"
+var CORR_ANSWER = "47"
 var panel_wrong
 var panel_correct
 var brain_sprites

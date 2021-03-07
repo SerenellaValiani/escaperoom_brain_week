@@ -16,7 +16,7 @@
 size = 50
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=9]
 size = 40
 font_data = ExtResource( 3 )
 
@@ -43,10 +43,10 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="background/WelcomeStartButton"]
-margin_left = 129.186
-margin_top = 56.006
-margin_right = 482.185
-margin_bottom = 196.006
+margin_left = 129.0
+margin_top = 56.0
+margin_right = 338.0
+margin_bottom = 126.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Start"
@@ -112,9 +112,9 @@ texture = ExtResource( 9 )
 
 [node name="AudioButton" type="Button" parent="background"]
 light_mask = -2147483648
-margin_left = 1459.0
+margin_left = 1459.49
 margin_top = 120.0
-margin_right = 1772.0
+margin_right = 1772.49
 margin_bottom = 280.0
 toggle_mode = true
 icon = ExtResource( 2 )
@@ -131,7 +131,7 @@ margin_left = 67.8057
 margin_top = 48.7354
 margin_right = 254.806
 margin_bottom = 104.735
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Audio On"
 __meta__ = {
@@ -144,7 +144,7 @@ margin_left = 58.8057
 margin_top = 52.7354
 margin_right = 267.806
 margin_bottom = 108.735
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Audio Off"
 __meta__ = {
