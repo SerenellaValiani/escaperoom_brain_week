@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://quiz2/ForwardButton.gd" type="Script" id=1]
 [ext_resource path="res://resources/brainy_thinking.png" type="Texture" id=2]
@@ -14,8 +14,9 @@
 [ext_resource path="res://resources/CantedComic Regular.otf" type="DynamicFontData" id=14]
 [ext_resource path="res://resources/bottone_def.png" type="Texture" id=15]
 
-[sub_resource type="DynamicFont" id=1]
-size = 50
+[sub_resource type="DynamicFont" id=9]
+size = 35
+extra_spacing_bottom = 2
 font_data = ExtResource( 14 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -29,16 +30,8 @@ bg_color = Color( 0.831373, 0.509804, 0.380392, 1 )
 size = 60
 font_data = ExtResource( 14 )
 
-[sub_resource type="DynamicFont" id=5]
-size = 35
-font_data = ExtResource( 14 )
-
 [sub_resource type="DynamicFont" id=6]
 size = 45
-font_data = ExtResource( 14 )
-
-[sub_resource type="DynamicFont" id=7]
-size = 35
 font_data = ExtResource( 14 )
 
 [sub_resource type="DynamicFont" id=8]
@@ -46,27 +39,37 @@ size = 60
 font_data = ExtResource( 14 )
 
 [node name="Node2D" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ -15.8608 ]
+}
 
 [node name="background" type="Sprite" parent="."]
 texture = ExtResource( 13 )
 centered = false
 
 [node name="PanelQuiz" type="Sprite" parent="background"]
-visible = false
 position = Vector2( 1268.65, 525.521 )
 scale = Vector2( 0.884574, 1.09011 )
 z_as_relative = false
 
 [node name="QuizText" type="RichTextLabel" parent="background/PanelQuiz"]
-margin_left = -608.0
-margin_top = -205.0
-margin_right = 563.0
-margin_bottom = 44.0
-custom_fonts/normal_font = SubResource( 1 )
+anchor_left = -1437.98
+anchor_top = -486.189
+anchor_right = -1437.98
+anchor_bottom = -486.189
+margin_left = 898.585
+margin_top = 259.373
+margin_right = 1757.59
+margin_bottom = 377.373
+rect_clip_content = false
+mouse_filter = 2
+size_flags_vertical = 4
+custom_fonts/normal_font = SubResource( 9 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "qui devi scrivere \"anna\" (premi invio per inviare la tua risposta)"
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_editor_description_": ""
 }
 
 [node name="QuizTitle" type="RichTextLabel" parent="background/PanelQuiz"]
@@ -130,34 +133,39 @@ __meta__ = {
 }
 
 [node name="Comic" type="Sprite" parent="background"]
+visible = false
 position = Vector2( -743.637, 405.21 )
 texture = ExtResource( 5 )
 centered = false
 offset = Vector2( 742.888, -404.461 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="background/Comic"]
-margin_left = 1494.51
-margin_top = -40.3185
-margin_right = 2204.51
-margin_bottom = 235.681
+anchor_left = -1437.98
+anchor_top = -486.189
+anchor_right = -1437.98
+anchor_bottom = -486.189
+margin_left = 2.76238e+06
+margin_top = 525061.0
+margin_right = 2.76324e+06
+margin_bottom = 525179.0
 rect_clip_content = false
 mouse_filter = 2
 size_flags_vertical = 4
-custom_fonts/normal_font = SubResource( 5 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Siamo adesso nel ________!
-Rispondi al secondo indovinello!
-"
+custom_fonts/normal_font = SubResource( 9 )
+custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "Ciao sei in ____!
+Risolviamo il secondo indovinello!"
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
 [node name="ForwardButton" type="Button" parent="background/Comic"]
-margin_left = 2013.56
-margin_top = 89.9798
-margin_right = 2151.56
-margin_bottom = 225.98
+margin_left = 2030.91
+margin_top = 119.691
+margin_right = 2168.91
+margin_bottom = 255.691
+rect_scale = Vector2( 0.65, 0.65 )
 icon = ExtResource( 12 )
 flat = true
 script = ExtResource( 1 )
@@ -185,15 +193,23 @@ __meta__ = {
 }
 
 [node name="Hint" type="RichTextLabel" parent="PanelWrong"]
-margin_left = 675.231
-margin_top = 360.244
-margin_right = 1001.23
-margin_bottom = 418.244
-custom_fonts/normal_font = SubResource( 7 )
+anchor_left = -1437.98
+anchor_top = -486.189
+anchor_right = -1437.98
+anchor_bottom = -486.189
+margin_left = 2.76162e+06
+margin_top = 525458.0
+margin_right = 2.76221e+06
+margin_bottom = 525576.0
+rect_clip_content = false
+mouse_filter = 2
+size_flags_vertical = 4
+custom_fonts/normal_font = SubResource( 9 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Hint: blablabla"
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_editor_description_": ""
 }
 
 [node name="Retry" type="Button" parent="PanelWrong"]
@@ -265,22 +281,29 @@ __meta__ = {
 }
 
 [node name="CorrectText" type="RichTextLabel" parent="PanelCorrect"]
-margin_left = 658.285
-margin_top = 394.367
-margin_right = 1645.28
-margin_bottom = 531.367
-custom_fonts/normal_font = SubResource( 7 )
+anchor_left = -1437.98
+anchor_top = -486.189
+anchor_right = -1437.98
+anchor_bottom = -486.189
+margin_left = 2.76159e+06
+margin_top = 525473.0
+margin_right = 2.76206e+06
+margin_bottom = 525591.0
+rect_clip_content = false
+mouse_filter = 2
+size_flags_vertical = 4
+custom_fonts/normal_font = SubResource( 9 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
-custom_colors/selection_color = Color( 0, 0, 0, 1 )
 text = "Congratulazioni!"
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_editor_description_": ""
 }
 
 [node name="Continue" type="Button" parent="PanelCorrect"]
-margin_left = 936.288
+margin_left = 935.842
 margin_top = 523.193
-margin_right = 1350.29
+margin_right = 1349.84
 margin_bottom = 688.193
 rect_scale = Vector2( 0.6, 0.6 )
 icon = ExtResource( 15 )
