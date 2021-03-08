@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://resources/Amarillo.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://quiz4/Retry_wason.gd" type="Script" id=2]
@@ -8,7 +8,7 @@
 [ext_resource path="res://quiz4/Options.gd" type="Script" id=6]
 [ext_resource path="res://resources/fumetto.png" type="Texture" id=7]
 [ext_resource path="res://resources/CantedComic Regular.otf" type="DynamicFontData" id=8]
-[ext_resource path="res://resources/panel.png" type="Texture" id=9]
+[ext_resource path="res://resources/card_omino_birra_scuro.png" type="Texture" id=9]
 [ext_resource path="res://welcome/AudioButton.gd" type="Script" id=10]
 [ext_resource path="res://resources/bottone_def.png" type="Texture" id=11]
 [ext_resource path="res://quiz4/Answer.gd" type="Script" id=12]
@@ -22,6 +22,13 @@
 [ext_resource path="res://quiz3/Forward2.gd" type="Script" id=20]
 [ext_resource path="res://resources/audio_on.png" type="Texture" id=21]
 [ext_resource path="res://resources/audio_off.png" type="Texture" id=22]
+[ext_resource path="res://resources/card_omino_birra.png" type="Texture" id=23]
+[ext_resource path="res://resources/card_omino_15_scuro.png" type="Texture" id=24]
+[ext_resource path="res://resources/card_omino_32_scuro.png" type="Texture" id=25]
+[ext_resource path="res://resources/card_omino_acqua_scuro.png" type="Texture" id=26]
+[ext_resource path="res://resources/card_omino_acqua.png" type="Texture" id=27]
+[ext_resource path="res://resources/card_omino_32.png" type="Texture" id=28]
+[ext_resource path="res://resources/card_omino_15.png" type="Texture" id=29]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -36,35 +43,31 @@ size = 70
 font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 300
-font_data = ExtResource( 8 )
-
-[sub_resource type="DynamicFont" id=5]
 size = 60
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=5]
 size = 80
 outline_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=6]
 size = 60
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=7]
 size = 40
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=8]
 size = 45
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=9]
 size = 35
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=10]
 size = 60
 font_data = ExtResource( 8 )
 
@@ -120,7 +123,6 @@ __meta__ = {
 }
 
 [node name="PanelQuiz" type="Sprite" parent="background"]
-visible = false
 position = Vector2( 1268.65, 525.521 )
 z_as_relative = false
 
@@ -156,113 +158,49 @@ __meta__ = {
 script = ExtResource( 6 )
 
 [node name="Card1" type="TextureButton" parent="background/PanelQuiz/Options"]
-margin_left = -620.0
-margin_top = 102.499
-margin_right = 766.002
-margin_bottom = 993.5
-rect_scale = Vector2( 0.2, 0.4 )
+margin_left = -240.891
+margin_top = 110.0
+margin_right = -53.891
+margin_bottom = 365.0
 toggle_mode = true
-texture_normal = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="background/PanelQuiz/Options/Card1"]
-margin_left = 551.424
-margin_top = 200.677
-margin_right = 792.424
-margin_bottom = 1931.68
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "A
-
-"
+texture_normal = ExtResource( 28 )
+texture_pressed = ExtResource( 25 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Card2" type="TextureButton" parent="background/PanelQuiz/Options"]
-margin_left = -302.315
-margin_top = 138.252
-margin_right = 1083.69
-margin_bottom = 1029.25
-rect_scale = Vector2( 0.2, 0.4 )
+margin_left = -473.0
+margin_top = 110.0
+margin_right = -286.0
+margin_bottom = 365.0
 toggle_mode = true
-texture_normal = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="background/PanelQuiz/Options/Card2"]
-margin_left = 560.364
-margin_top = 165.454
-margin_right = 802.364
-margin_bottom = 1896.45
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "B
-
-"
+texture_normal = ExtResource( 23 )
+texture_pressed = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Card3" type="TextureButton" parent="background/PanelQuiz/Options"]
-margin_left = 12.8311
-margin_top = 120.935
-margin_right = 1398.83
-margin_bottom = 1011.94
-rect_scale = Vector2( 0.2, 0.4 )
+margin_left = 231.854
+margin_top = 110.0
+margin_right = 418.854
+margin_bottom = 365.0
 toggle_mode = true
-texture_normal = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="background/PanelQuiz/Options/Card3"]
-margin_left = 560.333
-margin_top = 169.495
-margin_right = 824.333
-margin_bottom = 1900.5
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "C
-
-"
+texture_normal = ExtResource( 29 )
+texture_pressed = ExtResource( 24 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Card4" type="TextureButton" parent="background/PanelQuiz/Options"]
-margin_left = 296.425
-margin_top = 138.252
-margin_right = 1682.43
-margin_bottom = 1029.25
-rect_scale = Vector2( 0.2, 0.4 )
+margin_left = 0.473
+margin_top = 110.0
+margin_right = 187.473
+margin_bottom = 365.0
 toggle_mode = true
-texture_normal = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="background/PanelQuiz/Options/Card4"]
-margin_left = 533.606
-margin_top = 178.404
-margin_right = 800.606
-margin_bottom = 1909.41
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
-custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "D
-
-"
+texture_normal = ExtResource( 27 )
+texture_pressed = ExtResource( 26 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -288,7 +226,7 @@ margin_right = 372.0
 margin_bottom = 152.0
 rect_clip_content = true
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -320,6 +258,7 @@ texture = ExtResource( 15 )
 centered = false
 
 [node name="LoSapeviChe" type="Sprite" parent="background"]
+visible = false
 texture = ExtResource( 3 )
 centered = false
 
@@ -328,7 +267,7 @@ margin_left = 730.52
 margin_top = 100.491
 margin_right = 1514.52
 margin_bottom = 307.491
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 5 )
 custom_colors/default_color = Color( 0.666667, 0.278431, 0.278431, 1 )
 text = "
 Lo sapevi che..."
@@ -355,7 +294,7 @@ margin_left = 98.8201
 margin_top = 42.2596
 margin_right = 348.82
 margin_bottom = 126.26
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Avanti"
 __meta__ = {
@@ -412,7 +351,7 @@ margin_left = 67.8057
 margin_top = 48.7354
 margin_right = 254.806
 margin_bottom = 104.735
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Audio On"
 __meta__ = {
@@ -425,7 +364,7 @@ margin_left = 58.8057
 margin_top = 52.7354
 margin_right = 267.806
 margin_bottom = 108.735
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Audio Off"
 __meta__ = {
@@ -446,7 +385,7 @@ margin_left = 763.0
 margin_top = 325.0
 margin_right = 1322.0
 margin_bottom = 416.0
-custom_fonts/normal_font = SubResource( 9 )
+custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 text = "Risposta Sbagliata!"
 __meta__ = {
@@ -459,7 +398,7 @@ margin_left = 650.8
 margin_top = 408.636
 margin_right = 1382.8
 margin_bottom = 572.636
-custom_fonts/normal_font = SubResource( 10 )
+custom_fonts/normal_font = SubResource( 9 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = " La prossima spiegazione ti aiuterà a capire come arrivare alla soluzione!"
 __meta__ = {
@@ -487,7 +426,7 @@ margin_left = 80.4871
 margin_top = 42.2596
 margin_right = 367.487
 margin_bottom = 146.26
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "ritenta"
 __meta__ = {
@@ -514,7 +453,7 @@ margin_left = 61.3804
 margin_top = 42.3697
 margin_right = 353.38
 margin_bottom = 157.37
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Continua"
 __meta__ = {
@@ -536,7 +475,7 @@ margin_left = 793.0
 margin_top = 325.0
 margin_right = 1280.0
 margin_bottom = 423.0
-custom_fonts/normal_font = SubResource( 9 )
+custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 text = "Risposta esatta!"
 __meta__ = {
@@ -549,7 +488,7 @@ margin_left = 684.727
 margin_top = 410.036
 margin_right = 1507.73
 margin_bottom = 609.036
-custom_fonts/normal_font = SubResource( 10 )
+custom_fonts/normal_font = SubResource( 9 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 custom_colors/selection_color = Color( 0, 0, 0, 1 )
 text = "Congratulazioni! Scopriamo cos'è successo negli ultimi due livelli!"
@@ -577,7 +516,7 @@ margin_left = 61.2425
 margin_top = 42.7734
 margin_right = 353.242
 margin_bottom = 157.774
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Continua"
 __meta__ = {
