@@ -15,6 +15,6 @@ func _on_Button4_pressed():
 	for node in get_parent().get_children():
 		node.disabled = true
 	panel_correct.set_visible(true)
-	brain_sprites[1].set_visible(false)
+	brain_sprites[0].set_visible(false)
 	brain_sprites[3].set_visible(true)
 	

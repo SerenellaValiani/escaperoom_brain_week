@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://quiz2/ForwardButton.gd" type="Script" id=1]
 [ext_resource path="res://resources/brainy_thinking.png" type="Texture" id=2]
@@ -34,14 +34,10 @@ size = 40
 font_data = ExtResource( 14 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 40
-font_data = ExtResource( 14 )
-
-[sub_resource type="DynamicFont" id=6]
 size = 45
 font_data = ExtResource( 14 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=6]
 size = 60
 font_data = ExtResource( 14 )
 
@@ -180,57 +176,17 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="AudioButton" type="Button" parent="background"]
+[node name="AudioButton" type="TextureButton" parent="background"]
 light_mask = -2147483648
-margin_left = 1459.49
-margin_top = 120.0
-margin_right = 1772.49
-margin_bottom = 280.0
+margin_left = 1661.32
+margin_top = 146.675
+margin_right = 2435.32
+margin_bottom = 835.675
+rect_scale = Vector2( 0.12, 0.12 )
 toggle_mode = true
-flat = true
-expand_icon = true
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 16 )
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": ""
-}
-
-[node name="AudioOn" type="Sprite" parent="background/AudioButton"]
-position = Vector2( 292.591, 47.0452 )
-scale = Vector2( 0.12, 0.12 )
-texture = ExtResource( 6 )
-
-[node name="AudioOff" type="Sprite" parent="background/AudioButton"]
-visible = false
-position = Vector2( 292.591, 47.0452 )
-scale = Vector2( 0.12, 0.12 )
-texture = ExtResource( 16 )
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="AudioOn1" type="Label" parent="background/AudioButton"]
-visible = false
-margin_left = 67.8057
-margin_top = 48.7354
-margin_right = 254.806
-margin_bottom = 104.735
-custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Audio On"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AudioOff1" type="Label" parent="background/AudioButton"]
-visible = false
-margin_left = 58.8057
-margin_top = 52.7354
-margin_right = 267.806
-margin_bottom = 108.735
-custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Audio Off"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -246,7 +202,7 @@ margin_left = 763.0
 margin_top = 325.0
 margin_right = 1322.0
 margin_bottom = 416.0
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 5 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 text = "Risposta Sbagliata!"
 __meta__ = {
@@ -292,7 +248,7 @@ margin_left = 80.4871
 margin_top = 42.2596
 margin_right = 330.487
 margin_bottom = 126.26
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "ritenta"
 __meta__ = {
@@ -317,7 +273,7 @@ margin_left = 64.7139
 margin_top = 42.3697
 margin_right = 356.714
 margin_bottom = 157.37
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Continua"
 __meta__ = {
@@ -335,7 +291,7 @@ margin_left = 793.0
 margin_top = 325.0
 margin_right = 1231.0
 margin_bottom = 405.0
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 5 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 text = "Risposta esatta!"
 __meta__ = {
@@ -380,7 +336,7 @@ margin_left = 62.527
 margin_top = 40.7457
 margin_right = 354.527
 margin_bottom = 155.745
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Continua"
 __meta__ = {
@@ -388,7 +344,7 @@ __meta__ = {
 }
 [connection signal="text_entered" from="background/PanelQuiz/AnswerLine" to="background/PanelQuiz/AnswerLine" method="_on_Answer_text_entered"]
 [connection signal="pressed" from="background/Comic/ForwardButton" to="background/Comic/ForwardButton" method="_on_ForwardButton_pressed"]
-[connection signal="pressed" from="background/AudioButton" to="background/AudioButton" method="_on_AudioButton_pressed"]
+[connection signal="toggled" from="background/AudioButton" to="background/AudioButton" method="_on_AudioButton_toggled"]
 [connection signal="pressed" from="PanelWrong/Retry" to="PanelWrong/Retry" method="_on_Retry_pressed"]
 [connection signal="pressed" from="PanelWrong/Continue" to="PanelWrong/Continue" method="_on_Continue_pressed"]
 [connection signal="pressed" from="PanelCorrect/Continue" to="PanelCorrect/Continue" method="_on_Continue_pressed"]

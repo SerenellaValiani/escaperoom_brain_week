@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://quiz1/ForwardButton.gd" type="Script" id=1]
 [ext_resource path="res://resources/VID_20210104_104801.ogv" type="VideoStream" id=2]
@@ -23,6 +23,8 @@
 [ext_resource path="res://resources/audio_on.png" type="Texture" id=21]
 [ext_resource path="res://resources/audio_off.png" type="Texture" id=22]
 [ext_resource path="res://resources/brainy_thinking.png" type="Texture" id=23]
+[ext_resource path="res://quiz1/Replay.gd" type="Script" id=24]
+[ext_resource path="res://quiz1/VideoPlayer.gd" type="Script" id=25]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -51,14 +53,10 @@ size = 50
 font_data = ExtResource( 15 )
 
 [sub_resource type="DynamicFont" id=7]
-size = 40
-font_data = ExtResource( 15 )
-
-[sub_resource type="DynamicFont" id=8]
 size = 45
 font_data = ExtResource( 15 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=8]
 size = 60
 font_data = ExtResource( 15 )
 
@@ -70,7 +68,6 @@ texture = ExtResource( 12 )
 centered = false
 
 [node name="PanelQuiz" type="Sprite" parent="background"]
-visible = false
 position = Vector2( 1268.65, 525.521 )
 z_as_relative = false
 
@@ -165,16 +162,16 @@ margin_right = 522.381
 margin_bottom = 103.903
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
-text = "un0"
+text = "uno"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button3" type="Button" parent="background/PanelQuiz/Options"]
 margin_left = 162.092
-margin_top = 104.557
-margin_right = 689.092
-margin_bottom = 306.557
+margin_top = 108.557
+margin_right = 669.087
+margin_bottom = 310.557
 rect_scale = Vector2( 0.6, 0.6 )
 icon = ExtResource( 14 )
 flat = true
@@ -185,10 +182,12 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="background/PanelQuiz/Options/Button3"]
-margin_left = 195.0
-margin_top = 62.0
-margin_right = 513.0
-margin_bottom = 166.0
+anchor_top = 0.277
+anchor_bottom = 0.277
+margin_left = 197.381
+margin_top = -0.0968246
+margin_right = 522.381
+margin_bottom = 103.903
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "due"
@@ -198,9 +197,9 @@ __meta__ = {
 
 [node name="Button4" type="Button" parent="background/PanelQuiz/Options"]
 margin_left = 162.092
-margin_top = -157.794
-margin_right = 680.093
-margin_bottom = 44.2057
+margin_top = -155.646
+margin_right = 669.087
+margin_bottom = 46.3542
 rect_scale = Vector2( 0.6, 0.6 )
 icon = ExtResource( 14 )
 flat = true
@@ -211,20 +210,17 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="background/PanelQuiz/Options/Button4"]
-anchor_left = -1437.98
-anchor_top = -486.189
-anchor_right = -1437.98
-anchor_bottom = -486.189
-margin_left = 745046.0
-margin_top = 98270.8
-margin_right = 745258.0
-margin_bottom = 98365.8
+anchor_top = 0.277
+anchor_bottom = 0.277
+margin_left = 197.0
+margin_top = 0.045948
+margin_right = 389.0
+margin_bottom = 104.046
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "zero"
 __meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": ""
+"_edit_use_anchors_": false
 }
 
 [node name="BrainSprites" type="Node" parent="background"]
@@ -375,19 +371,26 @@ margin_bottom = 774.0
 stream = ExtResource( 2 )
 autoplay = true
 paused = true
+bus = "Video"
+script = ExtResource( 25 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Play" type="Button" parent="background/LoSapeviChe/VideoPlayer"]
-margin_left = 192.0
-margin_top = 482.0
-margin_right = 512.0
-margin_bottom = 604.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 231.028
+margin_top = 462.278
+margin_right = -250.972
+margin_bottom = 138.278
 icon = ExtResource( 14 )
 flat = true
 expand_icon = true
 script = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="LabelPlay" type="Label" parent="background/LoSapeviChe/VideoPlayer/Play"]
 margin_left = 93.3163
@@ -408,57 +411,43 @@ custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "pause"
 
-[node name="AudioButton" type="Button" parent="background"]
-light_mask = -2147483648
-margin_left = 1459.49
-margin_top = 120.0
-margin_right = 1772.49
-margin_bottom = 280.0
-toggle_mode = true
+[node name="Replay" type="Button" parent="background/LoSapeviChe/VideoPlayer"]
+visible = false
+margin_left = 231.028
+margin_top = 462.278
+margin_right = 551.028
+margin_bottom = 584.278
+icon = ExtResource( 14 )
 flat = true
 expand_icon = true
-script = ExtResource( 20 )
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": ""
-}
-
-[node name="AudioOn" type="Sprite" parent="background/AudioButton"]
-position = Vector2( 292.591, 47.0452 )
-scale = Vector2( 0.12, 0.12 )
-texture = ExtResource( 21 )
-
-[node name="AudioOff" type="Sprite" parent="background/AudioButton"]
-visible = false
-position = Vector2( 292.591, 47.0452 )
-scale = Vector2( 0.12, 0.12 )
-texture = ExtResource( 22 )
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="AudioOn1" type="Label" parent="background/AudioButton"]
-visible = false
-margin_left = 67.8057
-margin_top = 48.7354
-margin_right = 254.806
-margin_bottom = 104.735
-custom_fonts/font = SubResource( 7 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Audio On"
+script = ExtResource( 24 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioOff1" type="Label" parent="background/AudioButton"]
-visible = false
-margin_left = 58.8057
-margin_top = 52.7354
-margin_right = 267.806
-margin_bottom = 108.735
-custom_fonts/font = SubResource( 7 )
+[node name="LabelPlay" type="Label" parent="background/LoSapeviChe/VideoPlayer/Replay"]
+margin_left = 68.3163
+margin_top = 29.141
+margin_right = 264.316
+margin_bottom = 99.141
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Audio Off"
+text = "replay"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioButton" type="TextureButton" parent="background"]
+light_mask = -2147483648
+margin_left = 1607.32
+margin_top = 158.141
+margin_right = 2381.32
+margin_bottom = 847.141
+rect_scale = Vector2( 0.12, 0.12 )
+toggle_mode = true
+texture_normal = ExtResource( 21 )
+texture_pressed = ExtResource( 22 )
+script = ExtResource( 20 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -474,7 +463,7 @@ margin_left = 763.0
 margin_top = 325.0
 margin_right = 1254.0
 margin_bottom = 420.0
-custom_fonts/normal_font = SubResource( 8 )
+custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 text = "Risposta sbagliata!"
 __meta__ = {
@@ -522,7 +511,7 @@ margin_left = 61.3804
 margin_top = 42.3697
 margin_right = 353.38
 margin_bottom = 157.37
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Continua"
 __meta__ = {
@@ -540,7 +529,7 @@ margin_left = 793.0
 margin_top = 325.0
 margin_right = 1231.0
 margin_bottom = 405.0
-custom_fonts/normal_font = SubResource( 8 )
+custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 text = "Risposta esatta!"
 __meta__ = {
@@ -588,7 +577,7 @@ margin_left = 61.3804
 margin_top = 42.3697
 margin_right = 353.38
 margin_bottom = 157.37
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Continua"
 __meta__ = {
@@ -601,7 +590,9 @@ __meta__ = {
 [connection signal="pressed" from="background/Comic/ForwardButton" to="background/Comic/ForwardButton" method="_on_ForwardButton_pressed"]
 [connection signal="pressed" from="background/LoSapeviChe/Forward" to="background/LoSapeviChe/Forward" method="_on_Forward_pressed"]
 [connection signal="pressed" from="background/LoSapeviChe/Forward2" to="background/LoSapeviChe/Forward2" method="_on_Forward2_pressed"]
+[connection signal="finished" from="background/LoSapeviChe/VideoPlayer" to="background/LoSapeviChe/VideoPlayer" method="_on_VideoPlayer_finished"]
 [connection signal="pressed" from="background/LoSapeviChe/VideoPlayer/Play" to="background/LoSapeviChe/VideoPlayer/Play" method="_on_Play_pressed"]
-[connection signal="pressed" from="background/AudioButton" to="background/AudioButton" method="_on_AudioButton_pressed"]
+[connection signal="pressed" from="background/LoSapeviChe/VideoPlayer/Replay" to="background/LoSapeviChe/VideoPlayer/Replay" method="_on_Replay_pressed"]
+[connection signal="toggled" from="background/AudioButton" to="background/AudioButton" method="_on_AudioButton_toggled"]
 [connection signal="pressed" from="PanelWrong/Continue" to="PanelWrong/Continue" method="_on_Continue_pressed"]
 [connection signal="pressed" from="PanelCorrect/Continue" to="PanelCorrect/Continue" method="_on_Continue_pressed"]
