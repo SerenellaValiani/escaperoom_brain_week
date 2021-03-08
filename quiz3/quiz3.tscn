@@ -1,9 +1,9 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://quiz2/ForwardButton.gd" type="Script" id=1]
 [ext_resource path="res://resources/brainy_thinking.png" type="Texture" id=2]
 [ext_resource path="res://resources/quiz3.png" type="Texture" id=3]
-[ext_resource path="res://quiz2/Answer.gd" type="Script" id=4]
+[ext_resource path="res://quiz3/Answer.gd" type="Script" id=4]
 [ext_resource path="res://resources/fumetto.png" type="Texture" id=5]
 [ext_resource path="res://resources/Amarillo.otf" type="DynamicFontData" id=6]
 [ext_resource path="res://quiz2/Retry.gd" type="Script" id=7]
@@ -20,6 +20,8 @@
 [ext_resource path="res://welcome/AudioButton.gd" type="Script" id=18]
 [ext_resource path="res://resources/audio_on.png" type="Texture" id=19]
 [ext_resource path="res://resources/audio_off.png" type="Texture" id=20]
+[ext_resource path="res://quiz2/ContinueWrong.gd" type="Script" id=21]
+[ext_resource path="res://quiz2/Continue.gd" type="Script" id=22]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -56,6 +58,19 @@ font_data = ExtResource( 14 )
 
 [sub_resource type="DynamicFont" id=9]
 size = 35
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 45
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 35
+extra_spacing_bottom = 2
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 60
 font_data = ExtResource( 14 )
 
 [node name="Node2D" type="Node2D"]
@@ -258,86 +273,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PanelWrong" type="Sprite" parent="."]
-visible = false
-z_index = 1
-texture = ExtResource( 5 )
-centered = false
-
-[node name="WrongTitle" type="RichTextLabel" parent="PanelWrong"]
-margin_left = 763.0
-margin_top = 325.0
-margin_right = 1322.0
-margin_bottom = 416.0
-custom_fonts/normal_font = SubResource( 8 )
-custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
-text = "Risposta Sbagliata!"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Hint" type="RichTextLabel" parent="PanelWrong"]
-margin_left = 677.476
-margin_top = 418.612
-margin_right = 1003.47
-margin_bottom = 476.612
-custom_fonts/normal_font = SubResource( 9 )
-custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
-text = "Hint: blablabla"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Retry" type="Button" parent="PanelWrong"]
-margin_left = 758.0
-margin_top = 505.0
-margin_right = 1172.0
-margin_bottom = 670.0
-rect_scale = Vector2( 0.6, 0.6 )
-icon = ExtResource( 15 )
-flat = true
-script = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="PanelWrong/Retry"]
-margin_left = 80.4871
-margin_top = 42.2596
-margin_right = 330.487
-margin_bottom = 126.26
-custom_fonts/font = SubResource( 7 )
-custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
-text = "ritenta"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Continue" type="Button" parent="PanelWrong"]
-margin_left = 1012.0
-margin_top = 505.0
-margin_right = 1426.0
-margin_bottom = 670.0
-rect_scale = Vector2( 0.6, 0.6 )
-icon = ExtResource( 15 )
-flat = true
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="PanelWrong/Continue"]
-margin_left = 61.3804
-margin_top = 42.3697
-margin_right = 353.38
-margin_bottom = 157.37
-custom_fonts/font = SubResource( 7 )
-custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
-text = "Continua"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="PanelCorrect" type="Sprite" parent="."]
 visible = false
 z_index = 1
@@ -393,11 +328,148 @@ text = "Continua"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PanelWrong" type="Sprite" parent="."]
+visible = false
+z_index = 1
+texture = ExtResource( 5 )
+centered = false
+
+[node name="WrongTitle" type="RichTextLabel" parent="PanelWrong"]
+margin_left = 763.0
+margin_top = 325.0
+margin_right = 1322.0
+margin_bottom = 416.0
+custom_fonts/normal_font = SubResource( 10 )
+custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
+text = "Risposta Sbagliata!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hint" type="RichTextLabel" parent="PanelWrong"]
+anchor_left = -1437.98
+anchor_top = -486.189
+anchor_right = -1437.98
+anchor_bottom = -486.189
+margin_left = 2.7616e+06
+margin_top = 525482.0
+margin_right = 2.76219e+06
+margin_bottom = 525600.0
+rect_clip_content = false
+mouse_filter = 2
+size_flags_vertical = 4
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "        mi dispiace, hai sbagliato
+            "
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Correct" type="RichTextLabel" parent="PanelWrong"]
+visible = false
+anchor_left = -1437.98
+anchor_top = -486.189
+anchor_right = -1437.98
+anchor_bottom = -486.189
+margin_left = 2.7616e+06
+margin_top = 525482.0
+margin_right = 2.76223e+06
+margin_bottom = 525600.0
+rect_clip_content = false
+mouse_filter = 2
+size_flags_vertical = 4
+custom_fonts/normal_font = SubResource( 11 )
+custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "    La risposta corretta era 5"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Retry" type="Button" parent="PanelWrong"]
+margin_left = 758.671
+margin_top = 505.0
+margin_right = 1172.67
+margin_bottom = 674.396
+rect_scale = Vector2( 0.6, 0.6 )
+icon = ExtResource( 15 )
+flat = true
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PanelWrong/Retry"]
+margin_left = 80.4871
+margin_top = 42.2596
+margin_right = 330.487
+margin_bottom = 126.26
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "ritenta"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" type="Button" parent="PanelWrong"]
+visible = false
+margin_left = 1012.04
+margin_top = 505.0
+margin_right = 1426.04
+margin_bottom = 674.055
+rect_scale = Vector2( 0.6, 0.6 )
+icon = ExtResource( 15 )
+flat = true
+script = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PanelWrong/Continue"]
+margin_left = 64.7139
+margin_top = 42.3697
+margin_right = 356.714
+margin_bottom = 157.37
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "Continua"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContinueWrong" type="Button" parent="PanelWrong"]
+margin_left = 1012.04
+margin_top = 505.0
+margin_right = 1426.04
+margin_bottom = 674.055
+rect_scale = Vector2( 0.6, 0.6 )
+icon = ExtResource( 15 )
+flat = true
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PanelWrong/ContinueWrong"]
+margin_left = 64.7139
+margin_top = 42.3697
+margin_right = 356.714
+margin_bottom = 157.37
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "Continua"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="text_entered" from="background/PanelQuiz/AnswerLine" to="background/PanelQuiz/AnswerLine" method="_on_Answer_text_entered"]
 [connection signal="pressed" from="background/Comic/ForwardButton" to="background/Comic/ForwardButton" method="_on_ForwardButton_pressed"]
 [connection signal="pressed" from="background/LoSapeviChe/Forward" to="background/LoSapeviChe/Forward" method="_on_Forward_pressed"]
 [connection signal="pressed" from="background/LoSapeviChe/Forward2" to="background/LoSapeviChe/Forward2" method="_on_Forward2_pressed"]
 [connection signal="toggled" from="background/AudioButton" to="background/AudioButton" method="_on_AudioButton_toggled"]
+[connection signal="pressed" from="PanelCorrect/Continue" to="PanelCorrect/Continue" method="_on_Continue_pressed"]
 [connection signal="pressed" from="PanelWrong/Retry" to="PanelWrong/Retry" method="_on_Retry_pressed"]
 [connection signal="pressed" from="PanelWrong/Continue" to="PanelWrong/Continue" method="_on_Continue_pressed"]
-[connection signal="pressed" from="PanelCorrect/Continue" to="PanelCorrect/Continue" method="_on_Continue_pressed"]
+[connection signal="pressed" from="PanelWrong/ContinueWrong" to="PanelWrong/ContinueWrong" method="_on_ContinueWrong_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://quiz1/ForwardButton.gd" type="Script" id=1]
 [ext_resource path="res://resources/VID_20210104_104801.ogv" type="VideoStream" id=2]
@@ -16,7 +16,6 @@
 [ext_resource path="res://resources/bottone_def.png" type="Texture" id=14]
 [ext_resource path="res://resources/CantedComic Regular.otf" type="DynamicFontData" id=15]
 [ext_resource path="res://quiz1/Forward.gd" type="Script" id=16]
-[ext_resource path="res://quiz3/Forward2.gd" type="Script" id=17]
 [ext_resource path="res://resources/illusione.png" type="Texture" id=18]
 [ext_resource path="res://quiz1/Play.gd" type="Script" id=19]
 [ext_resource path="res://welcome/AudioButton.gd" type="Script" id=20]
@@ -68,6 +67,7 @@ texture = ExtResource( 12 )
 centered = false
 
 [node name="PanelQuiz" type="Sprite" parent="background"]
+visible = false
 position = Vector2( 1268.65, 525.521 )
 z_as_relative = false
 
@@ -349,20 +349,6 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Forward2" type="Button" parent="background/LoSapeviChe"]
-visible = false
-margin_left = 1666.21
-margin_top = 865.844
-margin_right = 1804.21
-margin_bottom = 1001.84
-icon = ExtResource( 13 )
-flat = true
-script = ExtResource( 17 )
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": ""
-}
-
 [node name="VideoPlayer" type="VideoPlayer" parent="background/LoSapeviChe"]
 margin_left = 864.0
 margin_top = 328.0
@@ -589,7 +575,6 @@ __meta__ = {
 [connection signal="pressed" from="background/PanelQuiz/Options/Button4" to="background/PanelQuiz/Options/Button4" method="_on_Button4_pressed"]
 [connection signal="pressed" from="background/Comic/ForwardButton" to="background/Comic/ForwardButton" method="_on_ForwardButton_pressed"]
 [connection signal="pressed" from="background/LoSapeviChe/Forward" to="background/LoSapeviChe/Forward" method="_on_Forward_pressed"]
-[connection signal="pressed" from="background/LoSapeviChe/Forward2" to="background/LoSapeviChe/Forward2" method="_on_Forward2_pressed"]
 [connection signal="finished" from="background/LoSapeviChe/VideoPlayer" to="background/LoSapeviChe/VideoPlayer" method="_on_VideoPlayer_finished"]
 [connection signal="pressed" from="background/LoSapeviChe/VideoPlayer/Play" to="background/LoSapeviChe/VideoPlayer/Play" method="_on_Play_pressed"]
 [connection signal="pressed" from="background/LoSapeviChe/VideoPlayer/Replay" to="background/LoSapeviChe/VideoPlayer/Replay" method="_on_Replay_pressed"]

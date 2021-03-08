@@ -1,7 +1,7 @@
 extends LineEdit
 
 
-var CORR_ANSWER = "5"
+var CORR_ANSWER = ["5", "cinque"]
 var panel_wrong
 var panel_correct
 var brain_sprites
@@ -16,7 +16,7 @@ func _ready():
 
 func _on_Answer_text_entered(answer):
 	answer = answer.to_lower().replace(" ","")
-	if answer == CORR_ANSWER:
+	if answer in CORR_ANSWER:
 		panel_correct.set_visible(true)
 		brain_sprites[1].set_visible(false)
 		brain_sprites[3].set_visible(true)		
