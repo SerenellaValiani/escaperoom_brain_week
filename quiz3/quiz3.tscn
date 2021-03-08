@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://quiz2/ForwardButton.gd" type="Script" id=1]
 [ext_resource path="res://resources/brainy_thinking.png" type="Texture" id=2]
@@ -7,7 +7,7 @@
 [ext_resource path="res://resources/fumetto.png" type="Texture" id=5]
 [ext_resource path="res://resources/Amarillo.otf" type="DynamicFontData" id=6]
 [ext_resource path="res://quiz2/Retry.gd" type="Script" id=7]
-[ext_resource path="res://quiz3/Continue1.gd" type="Script" id=8]
+[ext_resource path="res://quiz3/Continue.gd" type="Script" id=8]
 [ext_resource path="res://resources/brainy_wrong.png" type="Texture" id=9]
 [ext_resource path="res://resources/brainy_base.png" type="Texture" id=10]
 [ext_resource path="res://resources/brainy_correct.png" type="Texture" id=11]
@@ -21,7 +21,6 @@
 [ext_resource path="res://resources/audio_on.png" type="Texture" id=19]
 [ext_resource path="res://resources/audio_off.png" type="Texture" id=20]
 [ext_resource path="res://quiz2/ContinueWrong.gd" type="Script" id=21]
-[ext_resource path="res://quiz2/Continue.gd" type="Script" id=22]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -423,7 +422,7 @@ margin_bottom = 674.055
 rect_scale = Vector2( 0.6, 0.6 )
 icon = ExtResource( 15 )
 flat = true
-script = ExtResource( 22 )
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

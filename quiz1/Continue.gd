@@ -24,6 +24,3 @@ func _on_Continue_pressed():
 	brain_sprites[3].set_visible(false)
 	brain_sprites[0].set_visible(true)
 
-
-func _on_Retry_pressed():
-	pass # Replace with function body.

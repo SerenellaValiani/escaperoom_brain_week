@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://resources/bottone_def.png" type="Texture" id=1]
 [ext_resource path="res://resources/logo/sysma.png" type="Texture" id=2]
@@ -14,12 +14,28 @@
 [ext_resource path="res://resources/brackgprund01_1.png" type="Texture" id=12]
 [ext_resource path="res://resources/brainy_victory.png" type="Texture" id=13]
 [ext_resource path="res://resources/fumetto_rev.png" type="Texture" id=14]
+[ext_resource path="res://end/Forward.gd" type="Script" id=15]
+[ext_resource path="res://resources/03_freccia_destra.png" type="Texture" id=16]
+[ext_resource path="res://end/LinkButton.gd" type="Script" id=17]
+[ext_resource path="res://end/PlayAgain.gd" type="Script" id=18]
 
 [sub_resource type="DynamicFont" id=1]
-size = 50
+size = 40
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
 size = 50
 font_data = ExtResource( 3 )
 
@@ -29,34 +45,113 @@ font_data = ExtResource( 3 )
 texture = ExtResource( 12 )
 centered = false
 
-[node name="cervello_05_victory" type="Sprite" parent="background"]
-position = Vector2( 1490.24, 719.274 )
-texture = ExtResource( 13 )
+[node name="Credits" type="RichTextLabel" parent="background"]
+visible = false
+margin_left = 289.118
+margin_top = 193.0
+margin_right = 1605.12
+margin_bottom = 905.0
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Questo gioco e` stato creato e realizzato da IMT Lucca.
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="FinishButton" type="Button" parent="background"]
-margin_left = 1357.31
-margin_top = 263.134
-margin_right = 1771.31
-margin_bottom = 428.134
+[node name="names" type="RichTextLabel" parent="background/Credits"]
+margin_top = 96.0
+margin_right = 1278.0
+margin_bottom = 327.0
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Hanno collaborato:
+Professori:  Gustavo Cevolani, Luca Polonio,  Gabriele Costa
+Studenti: Damiana Bergamo, Davide Coraci, Alessandro Demichelis, Marta Fantoni, Vittorio Mattei, Alessandro Pigoni, Roberto Pizziol, Veronica Pizziol, Francesca Randone, Serenella Valiani"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rating" type="RichTextLabel" parent="background/Credits"]
+margin_top = 327.0
+margin_right = 1041.0
+margin_bottom = 393.0
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Se vi siete divertiti lasciate un commento qui:"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="LinkButton" type="LinkButton" parent="background/Credits"]
+margin_left = 223.571
+margin_top = 393.0
+margin_right = 822.571
+margin_bottom = 463.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.247059, 0.737255, 0.929412, 1 )
+text = "lasciaci un commento"
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FinishButton" type="Button" parent="background/Credits"]
+margin_left = 67.4193
+margin_top = 470.0
+margin_right = 357.419
+margin_bottom = 583.0
 icon = ExtResource( 1 )
 flat = true
+expand_icon = true
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="background/FinishButton"]
-margin_left = 118.165
-margin_top = 54.0046
-margin_right = 422.166
-margin_bottom = 194.005
+[node name="Label" type="Label" parent="background/Credits/FinishButton"]
+margin_left = 78.0
+margin_top = 13.0
+margin_right = 230.0
+margin_bottom = 85.0
 rect_pivot_offset = Vector2( -180.522, -88.7579 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "chiudi"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="PlayAgain" type="Button" parent="background/Credits"]
+margin_left = 514.824
+margin_top = 470.0
+margin_right = 804.824
+margin_bottom = 583.0
+icon = ExtResource( 1 )
+flat = true
+expand_icon = true
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="background/Credits/PlayAgain"]
+margin_left = 43.893
+margin_top = 13.0
+margin_right = 244.893
+margin_bottom = 85.0
+rect_pivot_offset = Vector2( -180.522, -88.7579 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "ri-gioca"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cervello_05_victory" type="Sprite" parent="background"]
+position = Vector2( 1490.24, 719.274 )
+texture = ExtResource( 13 )
 
 [node name="AudioButton" type="TextureButton" parent="background"]
 light_mask = -2147483648
@@ -79,14 +174,14 @@ texture = ExtResource( 14 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="background/Fumetto"]
 margin_left = -395.49
-margin_top = -192.452
+margin_top = -229.301
 margin_right = 434.508
-margin_bottom = 34.5482
+margin_bottom = -2.30119
 rect_pivot_offset = Vector2( -180.522, -88.7579 )
 rect_clip_content = false
 mouse_filter = 2
 size_flags_vertical = 4
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 5 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "      Congratulazioni! 
 Siamo arrivati alla fine
@@ -94,6 +189,18 @@ Siamo arrivati alla fine
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
+}
+
+[node name="Forward" type="Button" parent="background/Fumetto"]
+margin_left = -164.234
+margin_top = -26.4285
+margin_right = -27.234
+margin_bottom = 96.5715
+icon = ExtResource( 16 )
+flat = true
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
 }
 
 [node name="loghi" type="Sprite" parent="background"]
@@ -122,5 +229,8 @@ texture = ExtResource( 11 )
 position = Vector2( 982.124, 864.255 )
 scale = Vector2( 0.19579, 0.191579 )
 texture = ExtResource( 4 )
-[connection signal="pressed" from="background/FinishButton" to="background/FinishButton" method="_on_FinishButton_pressed"]
+[connection signal="pressed" from="background/Credits/LinkButton" to="background/Credits/LinkButton" method="_on_LinkButton_pressed"]
+[connection signal="pressed" from="background/Credits/FinishButton" to="background/Credits/FinishButton" method="_on_FinishButton_pressed"]
+[connection signal="pressed" from="background/Credits/PlayAgain" to="background/Credits/PlayAgain" method="_on_PlayAgain_pressed"]
 [connection signal="toggled" from="background/AudioButton" to="background/AudioButton" method="_on_AudioButton_toggled"]
+[connection signal="pressed" from="background/Fumetto/Forward" to="background/Fumetto/Forward" method="_on_Forward_pressed"]
