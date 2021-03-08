@@ -1,9 +1,11 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://quiz2/ForwardButton.gd" type="Script" id=1]
 [ext_resource path="res://resources/brainy_thinking.png" type="Texture" id=2]
+[ext_resource path="res://welcome/AudioButton.gd" type="Script" id=3]
 [ext_resource path="res://quiz2/Answer.gd" type="Script" id=4]
 [ext_resource path="res://resources/fumetto.png" type="Texture" id=5]
+[ext_resource path="res://resources/audio_on.png" type="Texture" id=6]
 [ext_resource path="res://quiz2/Retry.gd" type="Script" id=7]
 [ext_resource path="res://quiz2/Continue.gd" type="Script" id=8]
 [ext_resource path="res://resources/brainy_wrong.png" type="Texture" id=9]
@@ -13,28 +15,33 @@
 [ext_resource path="res://resources/quiz2.png" type="Texture" id=13]
 [ext_resource path="res://resources/CantedComic Regular.otf" type="DynamicFontData" id=14]
 [ext_resource path="res://resources/bottone_def.png" type="Texture" id=15]
+[ext_resource path="res://resources/audio_off.png" type="Texture" id=16]
 
 [sub_resource type="DynamicFont" id=1]
-size = 40
+size = 35
 extra_spacing_bottom = 2
 font_data = ExtResource( 14 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 80
+size = 70
 font_data = ExtResource( 14 )
 
 [sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.831373, 0.509804, 0.380392, 1 )
+bg_color = Color( 0.717647, 0.360784, 0.333333, 1 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 60
+size = 40
 font_data = ExtResource( 14 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 45
+size = 40
 font_data = ExtResource( 14 )
 
 [sub_resource type="DynamicFont" id=6]
+size = 45
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=7]
 size = 60
 font_data = ExtResource( 14 )
 
@@ -50,7 +57,6 @@ centered = false
 [node name="PanelQuiz" type="Sprite" parent="background"]
 visible = false
 position = Vector2( 1268.65, 525.521 )
-scale = Vector2( 0.884574, 1.09011 )
 z_as_relative = false
 
 [node name="QuizText" type="RichTextLabel" parent="background/PanelQuiz"]
@@ -58,10 +64,10 @@ anchor_left = -1437.98
 anchor_top = -486.189
 anchor_right = -1437.98
 anchor_bottom = -486.189
-margin_left = 864.98
-margin_top = 263.189
-margin_right = 1949.98
-margin_bottom = 653.189
+margin_left = 937.98
+margin_top = 258.189
+margin_right = 1942.98
+margin_bottom = 648.189
 rect_clip_content = false
 mouse_filter = 2
 size_flags_vertical = 4
@@ -75,10 +81,10 @@ __meta__ = {
 }
 
 [node name="QuizTitle" type="RichTextLabel" parent="background/PanelQuiz"]
-margin_left = -529.803
-margin_top = -360.315
-margin_right = 478.197
-margin_bottom = -237.315
+margin_left = -450.803
+margin_top = -404.0
+margin_right = 557.197
+margin_bottom = -281.0
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 text = "l'enigma dello stagno"
@@ -87,10 +93,10 @@ __meta__ = {
 }
 
 [node name="AnswerLine" type="LineEdit" parent="background/PanelQuiz"]
-margin_left = -461.767
-margin_top = 167.392
-margin_right = 396.233
-margin_bottom = 251.392
+margin_left = -455.0
+margin_top = 170.0
+margin_right = 403.0
+margin_bottom = 254.0
 custom_styles/normal = SubResource( 3 )
 custom_fonts/font = SubResource( 4 )
 custom_colors/selection_color = Color( 0, 0, 0, 1 )
@@ -101,7 +107,7 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
 clear_button_enabled = true
-placeholder_text = "Inserisci qui il numero"
+placeholder_text = "Inserisci qui il numero e premi invio"
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -145,10 +151,10 @@ anchor_left = -1437.98
 anchor_top = -486.189
 anchor_right = -1437.98
 anchor_bottom = -486.189
-margin_left = 2.76246e+06
-margin_top = 525061.0
-margin_right = 2.76305e+06
-margin_bottom = 525186.0
+margin_left = 2.76235e+06
+margin_top = 525093.0
+margin_right = 2.76304e+06
+margin_bottom = 525218.0
 rect_clip_content = false
 mouse_filter = 2
 size_flags_vertical = 4
@@ -161,10 +167,10 @@ __meta__ = {
 }
 
 [node name="ForwardButton" type="Button" parent="background/Comic"]
-margin_left = 2030.91
-margin_top = 119.691
-margin_right = 2168.91
-margin_bottom = 255.691
+margin_left = 1961.0
+margin_top = 100.0
+margin_right = 2099.0
+margin_bottom = 236.0
 rect_scale = Vector2( 0.65, 0.65 )
 icon = ExtResource( 12 )
 flat = true
@@ -174,6 +180,61 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="AudioButton" type="Button" parent="background"]
+light_mask = -2147483648
+margin_left = 1459.49
+margin_top = 120.0
+margin_right = 1772.49
+margin_bottom = 280.0
+toggle_mode = true
+flat = true
+expand_icon = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="AudioOn" type="Sprite" parent="background/AudioButton"]
+position = Vector2( 292.591, 47.0452 )
+scale = Vector2( 0.12, 0.12 )
+texture = ExtResource( 6 )
+
+[node name="AudioOff" type="Sprite" parent="background/AudioButton"]
+visible = false
+position = Vector2( 292.591, 47.0452 )
+scale = Vector2( 0.12, 0.12 )
+texture = ExtResource( 16 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="AudioOn1" type="Label" parent="background/AudioButton"]
+visible = false
+margin_left = 67.8057
+margin_top = 48.7354
+margin_right = 254.806
+margin_bottom = 104.735
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Audio On"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioOff1" type="Label" parent="background/AudioButton"]
+visible = false
+margin_left = 58.8057
+margin_top = 52.7354
+margin_right = 267.806
+margin_bottom = 108.735
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Audio Off"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="PanelWrong" type="Sprite" parent="."]
 visible = false
 z_index = 1
@@ -181,11 +242,11 @@ texture = ExtResource( 5 )
 centered = false
 
 [node name="WrongTitle" type="RichTextLabel" parent="PanelWrong"]
-margin_left = 800.0
-margin_top = 276.0
-margin_right = 1359.0
-margin_bottom = 367.0
-custom_fonts/normal_font = SubResource( 5 )
+margin_left = 763.0
+margin_top = 325.0
+margin_right = 1322.0
+margin_bottom = 416.0
+custom_fonts/normal_font = SubResource( 6 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 text = "Risposta Sbagliata!"
 __meta__ = {
@@ -197,26 +258,27 @@ anchor_left = -1437.98
 anchor_top = -486.189
 anchor_right = -1437.98
 anchor_bottom = -486.189
-margin_left = 2.76162e+06
-margin_top = 525458.0
-margin_right = 2.76221e+06
-margin_bottom = 525576.0
+margin_left = 2.7616e+06
+margin_top = 525482.0
+margin_right = 2.76219e+06
+margin_bottom = 525600.0
 rect_clip_content = false
 mouse_filter = 2
 size_flags_vertical = 4
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
-text = "Hint: blablabla"
+text = "                Hint: blablabla
+             centrare il testo!"
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
 [node name="Retry" type="Button" parent="PanelWrong"]
-margin_left = 797.671
-margin_top = 524.396
-margin_right = 1211.67
-margin_bottom = 689.396
+margin_left = 758.671
+margin_top = 505.0
+margin_right = 1172.67
+margin_bottom = 674.396
 rect_scale = Vector2( 0.6, 0.6 )
 icon = ExtResource( 15 )
 flat = true
@@ -230,7 +292,7 @@ margin_left = 80.4871
 margin_top = 42.2596
 margin_right = 330.487
 margin_bottom = 126.26
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "ritenta"
 __meta__ = {
@@ -238,10 +300,10 @@ __meta__ = {
 }
 
 [node name="Continue" type="Button" parent="PanelWrong"]
-margin_left = 1057.04
-margin_top = 524.055
-margin_right = 1471.04
-margin_bottom = 689.055
+margin_left = 1012.04
+margin_top = 505.0
+margin_right = 1426.04
+margin_bottom = 674.055
 rect_scale = Vector2( 0.6, 0.6 )
 icon = ExtResource( 15 )
 flat = true
@@ -251,11 +313,11 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="PanelWrong/Continue"]
-margin_left = 61.3804
+margin_left = 64.7139
 margin_top = 42.3697
-margin_right = 353.38
+margin_right = 356.714
 margin_bottom = 157.37
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Continua"
 __meta__ = {
@@ -269,11 +331,11 @@ texture = ExtResource( 5 )
 centered = false
 
 [node name="CorrectTitle" type="RichTextLabel" parent="PanelCorrect"]
-margin_left = 842.0
-margin_top = 282.0
-margin_right = 1280.0
-margin_bottom = 362.0
-custom_fonts/normal_font = SubResource( 5 )
+margin_left = 793.0
+margin_top = 325.0
+margin_right = 1231.0
+margin_bottom = 405.0
+custom_fonts/normal_font = SubResource( 6 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 text = "Risposta esatta!"
 __meta__ = {
@@ -285,10 +347,10 @@ anchor_left = -1437.98
 anchor_top = -486.189
 anchor_right = -1437.98
 anchor_bottom = -486.189
-margin_left = 2.76159e+06
-margin_top = 525473.0
-margin_right = 2.76206e+06
-margin_bottom = 525591.0
+margin_left = 2.76176e+06
+margin_top = 525505.0
+margin_right = 2.76223e+06
+margin_bottom = 525623.0
 rect_clip_content = false
 mouse_filter = 2
 size_flags_vertical = 4
@@ -301,10 +363,10 @@ __meta__ = {
 }
 
 [node name="Continue" type="Button" parent="PanelCorrect"]
-margin_left = 935.842
-margin_top = 523.193
-margin_right = 1349.84
-margin_bottom = 688.193
+margin_left = 882.0
+margin_top = 520.0
+margin_right = 1296.0
+margin_bottom = 685.0
 rect_scale = Vector2( 0.6, 0.6 )
 icon = ExtResource( 15 )
 flat = true
@@ -318,7 +380,7 @@ margin_left = 62.527
 margin_top = 40.7457
 margin_right = 354.527
 margin_bottom = 155.745
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Continua"
 __meta__ = {
@@ -326,6 +388,7 @@ __meta__ = {
 }
 [connection signal="text_entered" from="background/PanelQuiz/AnswerLine" to="background/PanelQuiz/AnswerLine" method="_on_Answer_text_entered"]
 [connection signal="pressed" from="background/Comic/ForwardButton" to="background/Comic/ForwardButton" method="_on_ForwardButton_pressed"]
+[connection signal="pressed" from="background/AudioButton" to="background/AudioButton" method="_on_AudioButton_pressed"]
 [connection signal="pressed" from="PanelWrong/Retry" to="PanelWrong/Retry" method="_on_Retry_pressed"]
 [connection signal="pressed" from="PanelWrong/Continue" to="PanelWrong/Continue" method="_on_Continue_pressed"]
 [connection signal="pressed" from="PanelCorrect/Continue" to="PanelCorrect/Continue" method="_on_Continue_pressed"]

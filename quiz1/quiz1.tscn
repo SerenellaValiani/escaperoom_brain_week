@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://quiz1/ForwardButton.gd" type="Script" id=1]
 [ext_resource path="res://resources/VID_20210104_104801.ogv" type="VideoStream" id=2]
@@ -20,6 +20,9 @@
 [ext_resource path="res://resources/illusione.png" type="Texture" id=18]
 [ext_resource path="res://quiz1/Play.gd" type="Script" id=19]
 [ext_resource path="res://welcome/AudioButton.gd" type="Script" id=20]
+[ext_resource path="res://resources/audio_on.png" type="Texture" id=21]
+[ext_resource path="res://resources/audio_off.png" type="Texture" id=22]
+[ext_resource path="res://resources/brainy_thinking.png" type="Texture" id=23]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -47,15 +50,15 @@ font_data = ExtResource( 15 )
 size = 50
 font_data = ExtResource( 15 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=7]
 size = 40
 font_data = ExtResource( 15 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=8]
 size = 45
 font_data = ExtResource( 15 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=9]
 size = 60
 font_data = ExtResource( 15 )
 
@@ -81,10 +84,10 @@ anchor_left = -1437.98
 anchor_top = -486.189
 anchor_right = -1437.98
 anchor_bottom = -486.189
-margin_left = 929.092
-margin_top = 195.301
-margin_right = 1788.09
-margin_bottom = 313.301
+margin_left = 917.98
+margin_top = 206.189
+margin_right = 1776.98
+margin_bottom = 324.189
 rect_clip_content = false
 mouse_filter = 2
 size_flags_vertical = 4
@@ -236,6 +239,11 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="brainy_thinking" type="Sprite" parent="background/BrainSprites"]
+visible = false
+texture = ExtResource( 23 )
+centered = false
+
 [node name="brain_wrong" type="Sprite" parent="background/BrainSprites"]
 visible = false
 texture = ExtResource( 3 )
@@ -255,41 +263,42 @@ centered = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="background/Comic"]
 margin_left = 647.0
-margin_top = 366.0
-margin_right = 1614.0
-margin_bottom = 460.0
+margin_top = 378.0
+margin_right = 1389.0
+margin_bottom = 472.0
 rect_clip_content = false
 mouse_filter = 2
 size_flags_vertical = 4
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
-text = "        Eccoci arrivati nel cervello!"
+text = "      Eccoci arrivati nel cervello!"
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="background/Comic"]
-margin_left = 655.0
-margin_top = 438.0
-margin_right = 1488.0
-margin_bottom = 511.0
+margin_left = 780.0
+margin_top = 442.0
+margin_right = 1477.0
+margin_bottom = 566.0
 rect_clip_content = false
 mouse_filter = 2
 size_flags_vertical = 4
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
-text = "Vediamo insieme qual è la prima domanda!"
+text = "Vediamo insieme qual è
+    la prima domanda!"
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
 [node name="ForwardButton" type="Button" parent="background/Comic"]
-margin_left = 1286.12
-margin_top = 523.643
-margin_right = 1424.12
-margin_bottom = 659.643
+margin_left = 1220.0
+margin_top = 500.0
+margin_right = 1361.12
+margin_bottom = 640.643
 rect_scale = Vector2( 0.65, 0.65 )
 icon = ExtResource( 13 )
 flat = true
@@ -401,12 +410,11 @@ text = "pause"
 
 [node name="AudioButton" type="Button" parent="background"]
 light_mask = -2147483648
-margin_left = 1459.0
+margin_left = 1459.49
 margin_top = 120.0
-margin_right = 1772.0
+margin_right = 1772.49
 margin_bottom = 280.0
 toggle_mode = true
-icon = ExtResource( 14 )
 flat = true
 expand_icon = true
 script = ExtResource( 20 )
@@ -415,25 +423,40 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="AudioOn" type="Label" parent="background/AudioButton"]
+[node name="AudioOn" type="Sprite" parent="background/AudioButton"]
+position = Vector2( 292.591, 47.0452 )
+scale = Vector2( 0.12, 0.12 )
+texture = ExtResource( 21 )
+
+[node name="AudioOff" type="Sprite" parent="background/AudioButton"]
+visible = false
+position = Vector2( 292.591, 47.0452 )
+scale = Vector2( 0.12, 0.12 )
+texture = ExtResource( 22 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="AudioOn1" type="Label" parent="background/AudioButton"]
+visible = false
 margin_left = 67.8057
 margin_top = 48.7354
 margin_right = 254.806
 margin_bottom = 104.735
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Audio On"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioOff" type="Label" parent="background/AudioButton"]
+[node name="AudioOff1" type="Label" parent="background/AudioButton"]
 visible = false
 margin_left = 58.8057
 margin_top = 52.7354
 margin_right = 267.806
 margin_bottom = 108.735
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Audio Off"
 __meta__ = {
@@ -447,11 +470,11 @@ texture = ExtResource( 5 )
 centered = false
 
 [node name="WrongTitle" type="RichTextLabel" parent="PanelWrong"]
-margin_left = 792.0
-margin_top = 282.0
-margin_right = 1283.0
-margin_bottom = 377.0
-custom_fonts/normal_font = SubResource( 7 )
+margin_left = 763.0
+margin_top = 325.0
+margin_right = 1254.0
+margin_bottom = 420.0
+custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 text = "Risposta sbagliata!"
 __meta__ = {
@@ -464,10 +487,10 @@ anchor_left = -1437.98
 anchor_top = -486.189
 anchor_right = -1437.98
 anchor_bottom = -486.189
-margin_left = 2.76168e+06
-margin_top = 525461.0
+margin_left = 2.76163e+06
+margin_top = 525489.0
 margin_right = 2.7623e+06
-margin_bottom = 525579.0
+margin_bottom = 525607.0
 rect_clip_content = false
 mouse_filter = 2
 size_flags_vertical = 4
@@ -481,10 +504,10 @@ __meta__ = {
 }
 
 [node name="Continue" type="Button" parent="PanelWrong"]
-margin_left = 936.288
-margin_top = 523.193
-margin_right = 1350.29
-margin_bottom = 688.193
+margin_left = 882.0
+margin_top = 520.193
+margin_right = 1296.29
+margin_bottom = 685.193
 rect_scale = Vector2( 0.6, 0.6 )
 icon = ExtResource( 14 )
 flat = true
@@ -499,7 +522,7 @@ margin_left = 61.3804
 margin_top = 42.3697
 margin_right = 353.38
 margin_bottom = 157.37
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Continua"
 __meta__ = {
@@ -513,11 +536,11 @@ texture = ExtResource( 5 )
 centered = false
 
 [node name="CorrectTitle" type="RichTextLabel" parent="PanelCorrect"]
-margin_left = 842.0
-margin_top = 282.0
-margin_right = 1280.0
-margin_bottom = 362.0
-custom_fonts/normal_font = SubResource( 7 )
+margin_left = 793.0
+margin_top = 325.0
+margin_right = 1231.0
+margin_bottom = 405.0
+custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 text = "Risposta esatta!"
 __meta__ = {
@@ -530,27 +553,27 @@ anchor_left = -1437.98
 anchor_top = -486.189
 anchor_right = -1437.98
 anchor_bottom = -486.189
-margin_left = 2.76165e+06
-margin_top = 525461.0
-margin_right = 2.76232e+06
-margin_bottom = 525579.0
+margin_left = 2.76159e+06
+margin_top = 525489.0
+margin_right = 2.76226e+06
+margin_bottom = 525607.0
 rect_clip_content = false
 mouse_filter = 2
 size_flags_vertical = 4
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "                  complimenti!
-proseguiamo con il nostro viaggi0"
+Proseguiamo con il nostro viaggio!"
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
 [node name="Continue" type="Button" parent="PanelCorrect"]
-margin_left = 936.288
-margin_top = 523.193
-margin_right = 1350.29
-margin_bottom = 688.193
+margin_left = 882.0
+margin_top = 520.0
+margin_right = 1296.0
+margin_bottom = 685.0
 rect_scale = Vector2( 0.6, 0.6 )
 icon = ExtResource( 14 )
 flat = true
@@ -565,7 +588,7 @@ margin_left = 61.3804
 margin_top = 42.3697
 margin_right = 353.38
 margin_bottom = 157.37
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Continua"
 __meta__ = {

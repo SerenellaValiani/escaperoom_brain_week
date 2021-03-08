@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://instructions/ForwardButton.gd" type="Script" id=1]
 [ext_resource path="res://resources/fumetto2.png" type="Texture" id=2]
@@ -10,6 +10,9 @@
 [ext_resource path="res://instructions/LineEdit.gd" type="Script" id=8]
 [ext_resource path="res://instructions/ForwardButton1.gd" type="Script" id=9]
 [ext_resource path="res://instructions/ForwardButton2.gd" type="Script" id=10]
+[ext_resource path="res://welcome/AudioButton.gd" type="Script" id=11]
+[ext_resource path="res://resources/audio_on.png" type="Texture" id=12]
+[ext_resource path="res://resources/audio_off.png" type="Texture" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -17,10 +20,14 @@ extra_spacing_bottom = 2
 font_data = ExtResource( 6 )
 
 [sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.886275, 0.478431, 0.447059, 1 )
+bg_color = Color( 0.717647, 0.360784, 0.333333, 1 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 30
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
 font_data = ExtResource( 6 )
 
 [node name="Node2D" type="Node2D"]
@@ -30,10 +37,10 @@ texture = ExtResource( 5 )
 centered = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="background"]
-margin_left = 1128.64
-margin_top = 203.727
-margin_right = 1653.64
-margin_bottom = 321.727
+margin_left = 1126.64
+margin_top = 208.727
+margin_right = 1651.64
+margin_bottom = 326.727
 rect_clip_content = false
 mouse_filter = 2
 size_flags_vertical = 4
@@ -62,9 +69,9 @@ __meta__ = {
 
 [node name="LineEdit" type="LineEdit" parent="background"]
 margin_left = 1120.0
-margin_top = 333.0
+margin_top = 331.0
 margin_right = 1634.0
-margin_bottom = 382.0
+margin_bottom = 380.0
 custom_styles/normal = SubResource( 2 )
 custom_fonts/font = SubResource( 3 )
 custom_colors/selection_color = Color( 0, 0, 0, 1 )
@@ -205,6 +212,61 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioButton" type="Button" parent="."]
+light_mask = -2147483648
+margin_left = 1459.49
+margin_top = 120.0
+margin_right = 1772.49
+margin_bottom = 280.0
+toggle_mode = true
+flat = true
+expand_icon = true
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="AudioOn" type="Sprite" parent="AudioButton"]
+position = Vector2( 248.145, 81.5062 )
+scale = Vector2( 0.12, 0.12 )
+texture = ExtResource( 12 )
+
+[node name="AudioOff" type="Sprite" parent="AudioButton"]
+visible = false
+position = Vector2( 248.145, 81.5062 )
+scale = Vector2( 0.12, 0.12 )
+texture = ExtResource( 13 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="AudioOn1" type="Label" parent="AudioButton"]
+visible = false
+margin_left = 67.8057
+margin_top = 48.7354
+margin_right = 254.806
+margin_bottom = 104.735
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Audio On"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioOff1" type="Label" parent="AudioButton"]
+visible = false
+margin_left = 58.8057
+margin_top = 52.7354
+margin_right = 267.806
+margin_bottom = 108.735
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Audio Off"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="background/ForwardButton" to="background/ForwardButton" method="_on_ForwardButton_pressed"]
 [connection signal="mouse_exited" from="background/LineEdit" to="background/LineEdit" method="_on_LineEdit_mouse_exited"]
 [connection signal="text_changed" from="background/LineEdit" to="background/LineEdit" method="_on_LineEdit_text_changed"]
@@ -212,3 +274,4 @@ __meta__ = {
 [connection signal="pressed" from="background/Comic2/ForwardButton1" to="background/Comic2/ForwardButton1" method="_on_ForwardButton1_pressed"]
 [connection signal="pressed" from="background/Comic3/ForwardButton2" to="background/Comic3/ForwardButton2" method="_on_ForwardButton2_pressed"]
 [connection signal="pressed" from="background/Comic4/StartButton2" to="background/Comic4/StartButton2" method="_on_StartButton_pressed"]
+[connection signal="pressed" from="AudioButton" to="AudioButton" method="_on_AudioButton_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://resources/brackgprund01_1.png" type="Texture" id=1]
 [ext_resource path="res://resources/bottone_def.png" type="Texture" id=2]
@@ -11,12 +11,14 @@
 [ext_resource path="res://resources/logo/GameScienceRC.png" type="Texture" id=9]
 [ext_resource path="res://resources/logo/baw.png" type="Texture" id=10]
 [ext_resource path="res://welcome/AudioButton.gd" type="Script" id=11]
+[ext_resource path="res://resources/audio_on.png" type="Texture" id=12]
+[ext_resource path="res://resources/audio_off.png" type="Texture" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=2]
 size = 40
 font_data = ExtResource( 3 )
 
@@ -117,7 +119,6 @@ margin_top = 120.0
 margin_right = 1772.49
 margin_bottom = 280.0
 toggle_mode = true
-icon = ExtResource( 2 )
 flat = true
 expand_icon = true
 script = ExtResource( 11 )
@@ -126,25 +127,37 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="AudioOn" type="Label" parent="background/AudioButton"]
+[node name="AudioOn" type="Sprite" parent="background/AudioButton"]
+position = Vector2( 248.145, 81.5062 )
+scale = Vector2( 0.12, 0.12 )
+texture = ExtResource( 12 )
+
+[node name="AudioOff" type="Sprite" parent="background/AudioButton"]
+visible = false
+position = Vector2( 248.145, 81.506 )
+scale = Vector2( 0.12, 0.12 )
+texture = ExtResource( 13 )
+
+[node name="AudioOn1" type="Label" parent="background/AudioButton"]
+visible = false
 margin_left = 67.8057
 margin_top = 48.7354
 margin_right = 254.806
 margin_bottom = 104.735
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Audio On"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioOff" type="Label" parent="background/AudioButton"]
+[node name="AudioOff1" type="Label" parent="background/AudioButton"]
 visible = false
 margin_left = 58.8057
 margin_top = 52.7354
 margin_right = 267.806
 margin_bottom = 108.735
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Audio Off"
 __meta__ = {
