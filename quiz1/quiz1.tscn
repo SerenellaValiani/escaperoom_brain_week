@@ -263,9 +263,9 @@ centered = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="background/Comic"]
 margin_left = 647.0
-margin_top = 378.0
+margin_top = 384.0
 margin_right = 1389.0
-margin_bottom = 472.0
+margin_bottom = 478.0
 rect_clip_content = false
 mouse_filter = 2
 size_flags_vertical = 4

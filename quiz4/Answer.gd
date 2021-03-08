@@ -18,9 +18,9 @@ func _on_Answer_pressed():
 		option.disabled = true
 	if Cards.toggledCards[1] and Cards.toggledCards[2]:
 		panel_correct.set_visible(true)
-		brain_sprites[0].set_visible(false)
+		brain_sprites[1].set_visible(false)
 		brain_sprites[3].set_visible(true)	
 	else:
 		panel_wrong.set_visible(true)
-		brain_sprites[0].set_visible(false)
+		brain_sprites[1].set_visible(false)
 		brain_sprites[2].set_visible(true)		

@@ -69,6 +69,7 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="PanelQuiz" type="Sprite" parent="background"]
+visible = false
 position = Vector2( 1268.65, 525.521 )
 z_as_relative = false
 
@@ -147,7 +148,6 @@ __meta__ = {
 }
 
 [node name="Comic" type="Sprite" parent="background"]
-visible = false
 position = Vector2( -743.637, 405.21 )
 texture = ExtResource( 5 )
 centered = false
@@ -158,27 +158,27 @@ anchor_left = -1437.98
 anchor_top = -486.189
 anchor_right = -1437.98
 anchor_bottom = -486.189
-margin_left = 2.76238e+06
-margin_top = 525061.0
-margin_right = 2.76309e+06
-margin_bottom = 525222.0
+margin_left = 2.76234e+06
+margin_top = 525081.0
+margin_right = 2.76305e+06
+margin_bottom = 525242.0
 rect_clip_content = false
 mouse_filter = 2
 size_flags_vertical = 4
 custom_fonts/normal_font = SubResource( 5 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Siamo arrivati al terzo livello.
-Prova a rispondere!"
+          Prova a rispondere!"
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
 [node name="ForwardButton" type="Button" parent="background/Comic"]
-margin_left = 2030.91
-margin_top = 119.691
-margin_right = 2168.91
-margin_bottom = 255.691
+margin_left = 1961.0
+margin_top = 100.0
+margin_right = 2099.0
+margin_bottom = 236.0
 rect_scale = Vector2( 0.65, 0.65 )
 icon = ExtResource( 12 )
 flat = true
@@ -309,10 +309,10 @@ texture = ExtResource( 5 )
 centered = false
 
 [node name="WrongTitle" type="RichTextLabel" parent="PanelWrong"]
-margin_left = 800.0
-margin_top = 276.0
-margin_right = 1359.0
-margin_bottom = 367.0
+margin_left = 763.0
+margin_top = 325.0
+margin_right = 1322.0
+margin_bottom = 416.0
 custom_fonts/normal_font = SubResource( 9 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 text = "Risposta Sbagliata!"
@@ -321,10 +321,10 @@ __meta__ = {
 }
 
 [node name="Hint" type="RichTextLabel" parent="PanelWrong"]
-margin_left = 675.231
-margin_top = 360.244
-margin_right = 1001.23
-margin_bottom = 418.244
+margin_left = 677.476
+margin_top = 418.612
+margin_right = 1003.47
+margin_bottom = 476.612
 custom_fonts/normal_font = SubResource( 10 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Hint: blablabla"
@@ -333,10 +333,10 @@ __meta__ = {
 }
 
 [node name="Retry" type="Button" parent="PanelWrong"]
-margin_left = 797.671
-margin_top = 524.396
-margin_right = 1211.67
-margin_bottom = 689.396
+margin_left = 758.0
+margin_top = 505.0
+margin_right = 1172.0
+margin_bottom = 670.0
 rect_scale = Vector2( 0.6, 0.6 )
 icon = ExtResource( 15 )
 flat = true
@@ -358,10 +358,10 @@ __meta__ = {
 }
 
 [node name="Continue" type="Button" parent="PanelWrong"]
-margin_left = 1057.04
-margin_top = 524.055
-margin_right = 1471.04
-margin_bottom = 689.055
+margin_left = 1012.0
+margin_top = 505.0
+margin_right = 1426.0
+margin_bottom = 670.0
 rect_scale = Vector2( 0.6, 0.6 )
 icon = ExtResource( 15 )
 flat = true
@@ -389,10 +389,10 @@ texture = ExtResource( 5 )
 centered = false
 
 [node name="CorrectTitle" type="RichTextLabel" parent="PanelCorrect"]
-margin_left = 842.0
-margin_top = 282.0
-margin_right = 1280.0
-margin_bottom = 362.0
+margin_left = 793.0
+margin_top = 325.0
+margin_right = 1231.0
+margin_bottom = 405.0
 custom_fonts/normal_font = SubResource( 9 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 text = "Risposta esatta!"
@@ -401,22 +401,21 @@ __meta__ = {
 }
 
 [node name="CorrectText" type="RichTextLabel" parent="PanelCorrect"]
-margin_left = 658.0
-margin_top = 367.0
-margin_right = 1425.0
-margin_bottom = 531.0
+margin_left = 673.715
+margin_top = 406.409
+margin_right = 1440.71
+margin_bottom = 570.409
 custom_fonts/normal_font = SubResource( 10 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 custom_colors/selection_color = Color( 0, 0, 0, 1 )
-text = "Congratulazioni!
-scopriamo cos'è successo negli ultimi due livelli"
+text = "Congratulazioni! Scopriamo cos'è successo negli ultimi due livelli!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Continue" type="Button" parent="PanelCorrect"]
-margin_left = 936.288
-margin_top = 523.193
+margin_left = 882.0
+margin_top = 520.0
 margin_right = 1350.29
 margin_bottom = 688.193
 rect_scale = Vector2( 0.6, 0.6 )
