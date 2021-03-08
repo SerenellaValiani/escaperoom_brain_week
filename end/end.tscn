@@ -1,12 +1,19 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://resources/bottone_def.png" type="Texture" id=1]
-[ext_resource path="res://resources/sfondo_finale.png" type="Texture" id=2]
+[ext_resource path="res://resources/logo/sysma.png" type="Texture" id=2]
 [ext_resource path="res://resources/CantedComic Regular.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://resources/logo/GameScienceRC.png" type="Texture" id=4]
 [ext_resource path="res://end/FinishButton.gd" type="Script" id=5]
 [ext_resource path="res://welcome/AudioButton.gd" type="Script" id=6]
 [ext_resource path="res://resources/audio_on.png" type="Texture" id=7]
 [ext_resource path="res://resources/audio_off.png" type="Texture" id=8]
+[ext_resource path="res://resources/logo/logo.png" type="Texture" id=9]
+[ext_resource path="res://resources/logo/baw.png" type="Texture" id=10]
+[ext_resource path="res://resources/logo/momilab.png" type="Texture" id=11]
+[ext_resource path="res://resources/brackgprund01_1.png" type="Texture" id=12]
+[ext_resource path="res://resources/brainy_victory.png" type="Texture" id=13]
+[ext_resource path="res://resources/fumetto_rev.png" type="Texture" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -19,34 +26,18 @@ font_data = ExtResource( 3 )
 [node name="Node2D" type="Node2D"]
 
 [node name="background" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+texture = ExtResource( 12 )
 centered = false
 
 [node name="cervello_05_victory" type="Sprite" parent="background"]
-position = Vector2( 348.11, 767.383 )
-
-[node name="RichTextLabel" type="RichTextLabel" parent="background/cervello_05_victory"]
-margin_left = 310.102
-margin_top = -541.684
-margin_right = 1140.1
-margin_bottom = -314.684
-rect_pivot_offset = Vector2( -180.522, -88.7579 )
-rect_clip_content = false
-mouse_filter = 2
-size_flags_vertical = 4
-custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
-text = "congratulazioni! siamo arrivati alla fine di questo viaggio!"
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": ""
-}
+position = Vector2( 1490.24, 719.274 )
+texture = ExtResource( 13 )
 
 [node name="FinishButton" type="Button" parent="background"]
-margin_left = 1348.4
-margin_top = 767.383
-margin_right = 1762.4
-margin_bottom = 932.383
+margin_left = 1357.31
+margin_top = 263.134
+margin_right = 1771.31
+margin_bottom = 428.134
 icon = ExtResource( 1 )
 flat = true
 script = ExtResource( 5 )
@@ -55,12 +46,12 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="background/FinishButton"]
-margin_left = 134.201
-margin_top = 41.5321
-margin_right = 438.202
-margin_bottom = 181.532
+margin_left = 118.165
+margin_top = 54.0046
+margin_right = 422.166
+margin_bottom = 194.005
 rect_pivot_offset = Vector2( -180.522, -88.7579 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "chiudi"
 __meta__ = {
@@ -81,5 +72,55 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Fumetto" type="Sprite" parent="background"]
+position = Vector2( 968.176, 546.44 )
+texture = ExtResource( 14 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="background/Fumetto"]
+margin_left = -395.49
+margin_top = -192.452
+margin_right = 434.508
+margin_bottom = 34.5482
+rect_pivot_offset = Vector2( -180.522, -88.7579 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_vertical = 4
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "      Congratulazioni! 
+Siamo arrivati alla fine
+      di questo viaggio!"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="loghi" type="Sprite" parent="background"]
+
+[node name="baw" type="Sprite" parent="background/loghi"]
+position = Vector2( 251.887, 869.272 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 10 )
+
+[node name="imt" type="Sprite" parent="background/loghi"]
+position = Vector2( 575.43, 866.856 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 9 )
+
+[node name="sysma" type="Sprite" parent="background/loghi"]
+position = Vector2( 1161.67, 863.11 )
+scale = Vector2( 0.812308, 0.768787 )
+texture = ExtResource( 2 )
+
+[node name="momilab" type="Sprite" parent="background/loghi"]
+position = Vector2( 819.447, 864.765 )
+scale = Vector2( 0.293182, 0.264793 )
+texture = ExtResource( 11 )
+
+[node name="grs" type="Sprite" parent="background/loghi"]
+position = Vector2( 982.124, 864.255 )
+scale = Vector2( 0.19579, 0.191579 )
+texture = ExtResource( 4 )
 [connection signal="pressed" from="background/FinishButton" to="background/FinishButton" method="_on_FinishButton_pressed"]
 [connection signal="toggled" from="background/AudioButton" to="background/AudioButton" method="_on_AudioButton_toggled"]
