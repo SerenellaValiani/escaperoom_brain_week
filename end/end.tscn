@@ -46,11 +46,10 @@ texture = ExtResource( 12 )
 centered = false
 
 [node name="Credits" type="RichTextLabel" parent="background"]
-visible = false
 margin_left = 289.118
-margin_top = 193.0
+margin_top = 173.0
 margin_right = 1605.12
-margin_bottom = 905.0
+margin_bottom = 885.0
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Questo gioco e` stato creato e realizzato da IMT Lucca.
@@ -61,21 +60,25 @@ __meta__ = {
 
 [node name="names" type="RichTextLabel" parent="background/Credits"]
 margin_top = 96.0
-margin_right = 1278.0
+margin_right = 1440.0
 margin_bottom = 327.0
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Hanno collaborato:
-Professori:  Gustavo Cevolani, Luca Polonio,  Gabriele Costa
-Studenti: Damiana Bergamo, Davide Coraci, Alessandro Demichelis, Marta Fantoni, Vittorio Mattei, Alessandro Pigoni, Roberto Pizziol, Veronica Pizziol, Francesca Randone, Serenella Valiani"
+text = "Progettazione e Sviluppo: Serenella Valiani, Francesca Randone, Vittorio 
+                                                Mattei, Roberto Pizziol
+Contenuti: Damiana Bergamo, Davide Coraci, Alessandro Demichelis, Marta 
+                    Fantoni, Alessandro Pigoni, Veronica Pizziol
+Supervisione: Prof. Gustavo Cevolani, Prof. Luca Polonio,  Prof. Gabriele Costa
+
+"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="rating" type="RichTextLabel" parent="background/Credits"]
-margin_top = 327.0
+margin_top = 347.011
 margin_right = 1041.0
-margin_bottom = 393.0
+margin_bottom = 413.011
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
@@ -98,10 +101,10 @@ __meta__ = {
 }
 
 [node name="FinishButton" type="Button" parent="background/Credits"]
-margin_left = 67.4193
-margin_top = 470.0
-margin_right = 357.419
-margin_bottom = 583.0
+margin_left = 165.419
+margin_top = 483.0
+margin_right = 455.419
+margin_bottom = 596.0
 icon = ExtResource( 1 )
 flat = true
 expand_icon = true
@@ -124,10 +127,10 @@ __meta__ = {
 }
 
 [node name="PlayAgain" type="Button" parent="background/Credits"]
-margin_left = 514.824
-margin_top = 470.0
-margin_right = 804.824
-margin_bottom = 583.0
+margin_left = 534.824
+margin_top = 483.0
+margin_right = 824.824
+margin_bottom = 596.0
 icon = ExtResource( 1 )
 flat = true
 expand_icon = true
@@ -169,6 +172,7 @@ __meta__ = {
 }
 
 [node name="Fumetto" type="Sprite" parent="background"]
+visible = false
 position = Vector2( 968.176, 546.44 )
 texture = ExtResource( 14 )
 
