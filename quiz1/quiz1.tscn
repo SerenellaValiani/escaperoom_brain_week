@@ -1,7 +1,7 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://quiz1/ForwardButton.gd" type="Script" id=1]
-[ext_resource path="res://resources/VID_20210104_104801.ogv" type="VideoStream" id=2]
+[ext_resource path="res://resources/01.ogv" type="VideoStream" id=2]
 [ext_resource path="res://resources/brainy_wrong.png" type="Texture" id=3]
 [ext_resource path="res://quiz1/ButtonWrong.gd" type="Script" id=4]
 [ext_resource path="res://resources/fumetto.png" type="Texture" id=5]
@@ -47,15 +47,25 @@ font_data = ExtResource( 6 )
 size = 60
 font_data = ExtResource( 15 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="DynamicFont" id=11]
 size = 50
 font_data = ExtResource( 15 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=12]
 size = 45
 font_data = ExtResource( 15 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=13]
 size = 60
 font_data = ExtResource( 15 )
 
@@ -370,6 +380,11 @@ margin_left = 231.028
 margin_top = 462.278
 margin_right = -250.972
 margin_bottom = 138.278
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
 icon = ExtResource( 14 )
 flat = true
 expand_icon = true
@@ -379,22 +394,22 @@ __meta__ = {
 }
 
 [node name="LabelPlay" type="Label" parent="background/LoSapeviChe/VideoPlayer/Play"]
-margin_left = 93.3163
-margin_top = 32.141
-margin_right = 222.316
-margin_bottom = 102.141
-custom_fonts/font = SubResource( 6 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+margin_left = 89.0785
+margin_top = 25.7842
+margin_right = 218.079
+margin_bottom = 95.7842
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "play"
 
 [node name="LabelPause" type="Label" parent="background/LoSapeviChe/VideoPlayer/Play"]
 visible = false
-margin_left = 93.3163
-margin_top = 32.141
-margin_right = 222.316
-margin_bottom = 102.141
-custom_fonts/font = SubResource( 6 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+margin_left = 80.6027
+margin_top = 25.7842
+margin_right = 237.603
+margin_bottom = 95.7842
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "pause"
 
 [node name="Replay" type="Button" parent="background/LoSapeviChe/VideoPlayer"]
@@ -412,12 +427,12 @@ __meta__ = {
 }
 
 [node name="LabelPlay" type="Label" parent="background/LoSapeviChe/VideoPlayer/Replay"]
-margin_left = 68.3163
-margin_top = 29.141
-margin_right = 264.316
-margin_bottom = 99.141
-custom_fonts/font = SubResource( 6 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+margin_left = 55.6027
+margin_top = 22.7842
+margin_right = 251.603
+margin_bottom = 92.7842
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "replay"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -425,10 +440,10 @@ __meta__ = {
 
 [node name="AudioButton" type="TextureButton" parent="background"]
 light_mask = -2147483648
-margin_left = 1693.32
-margin_top = 158.141
-margin_right = 2467.32
-margin_bottom = 847.141
+margin_left = 1706.0
+margin_top = 118.0
+margin_right = 2480.0
+margin_bottom = 807.0
 rect_scale = Vector2( 0.12, 0.12 )
 toggle_mode = true
 texture_normal = ExtResource( 21 )
@@ -449,7 +464,7 @@ margin_left = 763.0
 margin_top = 325.0
 margin_right = 1254.0
 margin_bottom = 420.0
-custom_fonts/normal_font = SubResource( 7 )
+custom_fonts/normal_font = SubResource( 12 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 text = "Risposta sbagliata!"
 __meta__ = {
@@ -497,7 +512,7 @@ margin_left = 61.3804
 margin_top = 42.3697
 margin_right = 353.38
 margin_bottom = 157.37
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Continua"
 __meta__ = {
@@ -515,7 +530,7 @@ margin_left = 793.0
 margin_top = 325.0
 margin_right = 1231.0
 margin_bottom = 405.0
-custom_fonts/normal_font = SubResource( 7 )
+custom_fonts/normal_font = SubResource( 12 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 text = "Risposta esatta!"
 __meta__ = {
@@ -563,7 +578,7 @@ margin_left = 61.3804
 margin_top = 42.3697
 margin_right = 353.38
 margin_bottom = 157.37
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Continua"
 __meta__ = {

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://resources/Amarillo.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://quiz4/Retry_wason.gd" type="Script" id=2]
@@ -29,6 +29,10 @@
 [ext_resource path="res://resources/card_omino_acqua.png" type="Texture" id=27]
 [ext_resource path="res://resources/card_omino_32.png" type="Texture" id=28]
 [ext_resource path="res://resources/card_omino_15.png" type="Texture" id=29]
+[ext_resource path="res://quiz1/VideoPlayer.gd" type="Script" id=30]
+[ext_resource path="res://quiz1/Replay.gd" type="Script" id=31]
+[ext_resource path="res://quiz1/Play.gd" type="Script" id=32]
+[ext_resource path="res://resources/03.ogv" type="VideoStream" id=33]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -55,15 +59,29 @@ font_data = ExtResource( 1 )
 size = 60
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="DynamicFont" id=12]
+size = 50
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=13]
 size = 45
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=14]
 size = 35
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=15]
 size = 60
 font_data = ExtResource( 8 )
 
@@ -312,12 +330,94 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="VideoPlayer" type="VideoPlayer" parent="background/LoSapeviChe"]
+margin_left = 864.0
+margin_top = 328.0
+margin_right = 1666.0
+margin_bottom = 774.0
+stream = ExtResource( 33 )
+autoplay = true
+paused = true
+bus = "Video"
+script = ExtResource( 30 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="background/LoSapeviChe/VideoPlayer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 231.028
+margin_top = 462.278
+margin_right = -250.972
+margin_bottom = 138.278
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+script = ExtResource( 32 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelPlay" type="Label" parent="background/LoSapeviChe/VideoPlayer/Play"]
+margin_left = 87.9708
+margin_top = 23.232
+margin_right = 216.971
+margin_bottom = 93.232
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelPause" type="Label" parent="background/LoSapeviChe/VideoPlayer/Play"]
+visible = false
+margin_left = 78.0619
+margin_top = 26.7956
+margin_right = 235.062
+margin_bottom = 96.7956
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "pause"
+
+[node name="Replay" type="Button" parent="background/LoSapeviChe/VideoPlayer"]
+margin_left = 231.028
+margin_top = 462.278
+margin_right = 551.028
+margin_bottom = 584.278
+icon = ExtResource( 11 )
+flat = true
+expand_icon = true
+script = ExtResource( 31 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelPlay" type="Label" parent="background/LoSapeviChe/VideoPlayer/Replay"]
+margin_left = 57.6255
+margin_top = 23.7956
+margin_right = 253.626
+margin_bottom = 93.7956
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "replay"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="AudioButton" type="TextureButton" parent="background"]
 light_mask = -2147483648
-margin_left = 1661.32
-margin_top = 146.675
-margin_right = 2435.32
-margin_bottom = 835.675
+margin_left = 1706.0
+margin_top = 118.0
+margin_right = 2480.0
+margin_bottom = 807.0
 rect_scale = Vector2( 0.12, 0.12 )
 toggle_mode = true
 texture_normal = ExtResource( 21 )
@@ -341,7 +441,7 @@ margin_left = 763.0
 margin_top = 325.0
 margin_right = 1322.0
 margin_bottom = 416.0
-custom_fonts/normal_font = SubResource( 7 )
+custom_fonts/normal_font = SubResource( 13 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 text = "Risposta Sbagliata!"
 __meta__ = {
@@ -354,7 +454,7 @@ margin_left = 650.8
 margin_top = 408.636
 margin_right = 1382.8
 margin_bottom = 572.636
-custom_fonts/normal_font = SubResource( 8 )
+custom_fonts/normal_font = SubResource( 14 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = " La prossima spiegazione ti aiuterà a capire come arrivare alla soluzione!"
 __meta__ = {
@@ -382,7 +482,7 @@ margin_left = 80.4871
 margin_top = 42.2596
 margin_right = 367.487
 margin_bottom = 146.26
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "ritenta"
 __meta__ = {
@@ -409,7 +509,7 @@ margin_left = 61.3804
 margin_top = 42.3697
 margin_right = 353.38
 margin_bottom = 157.37
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Continua"
 __meta__ = {
@@ -431,7 +531,7 @@ margin_left = 793.0
 margin_top = 325.0
 margin_right = 1280.0
 margin_bottom = 423.0
-custom_fonts/normal_font = SubResource( 7 )
+custom_fonts/normal_font = SubResource( 13 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 text = "Risposta esatta!"
 __meta__ = {
@@ -444,7 +544,7 @@ margin_left = 684.727
 margin_top = 410.036
 margin_right = 1507.73
 margin_bottom = 609.036
-custom_fonts/normal_font = SubResource( 8 )
+custom_fonts/normal_font = SubResource( 14 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 custom_colors/selection_color = Color( 0, 0, 0, 1 )
 text = "Congratulazioni! Scopriamo cos'è successo negli ultimi due livelli!"
@@ -472,7 +572,7 @@ margin_left = 61.2425
 margin_top = 42.7734
 margin_right = 353.242
 margin_bottom = 157.774
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Continua"
 __meta__ = {
@@ -487,6 +587,9 @@ __meta__ = {
 [connection signal="pressed" from="background/PanelQuiz/Answer" to="background/PanelQuiz/Answer" method="_on_Answer_pressed"]
 [connection signal="pressed" from="background/LoSapeviChe/Forward" to="background/LoSapeviChe/Forward" method="_on_Forward_pressed"]
 [connection signal="pressed" from="background/LoSapeviChe/Forward2" to="background/LoSapeviChe/Forward2" method="_on_Forward2_pressed"]
+[connection signal="finished" from="background/LoSapeviChe/VideoPlayer" to="background/LoSapeviChe/VideoPlayer" method="_on_VideoPlayer_finished"]
+[connection signal="pressed" from="background/LoSapeviChe/VideoPlayer/Play" to="background/LoSapeviChe/VideoPlayer/Play" method="_on_Play_pressed"]
+[connection signal="pressed" from="background/LoSapeviChe/VideoPlayer/Replay" to="background/LoSapeviChe/VideoPlayer/Replay" method="_on_Replay_pressed"]
 [connection signal="toggled" from="background/AudioButton" to="background/AudioButton" method="_on_AudioButton_toggled"]
 [connection signal="pressed" from="PanelWrong/Retry" to="PanelWrong/Retry" method="_on_Retry_pressed"]
 [connection signal="pressed" from="PanelWrong/Continue" to="PanelWrong/Continue" method="_on_Continue_pressed"]

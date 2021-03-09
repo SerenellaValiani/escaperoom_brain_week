@@ -142,9 +142,9 @@ __meta__ = {
 }
 
 [node name="FinishButton" type="Button" parent="background/Credits"]
-margin_left = 218.419
+margin_left = 246.419
 margin_top = 514.0
-margin_right = 508.419
+margin_right = 536.419
 margin_bottom = 627.0
 rect_scale = Vector2( 0.9, 0.9 )
 icon = ExtResource( 1 )
@@ -169,9 +169,9 @@ __meta__ = {
 }
 
 [node name="PlayAgain" type="Button" parent="background/Credits"]
-margin_left = 616.824
+margin_left = 574.824
 margin_top = 516.0
-margin_right = 906.824
+margin_right = 864.824
 margin_bottom = 629.0
 rect_scale = Vector2( 0.9, 0.9 )
 icon = ExtResource( 1 )
@@ -220,9 +220,9 @@ texture = ExtResource( 14 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="background/Fumetto"]
 margin_left = -355.805
-margin_top = -227.714
+margin_top = -210.253
 margin_right = 474.193
-margin_bottom = -0.713791
+margin_bottom = 16.7476
 rect_pivot_offset = Vector2( -180.522, -88.7579 )
 rect_clip_content = false
 mouse_filter = 2

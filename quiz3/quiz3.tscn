@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://quiz2/ForwardButton.gd" type="Script" id=1]
 [ext_resource path="res://resources/brainy_thinking.png" type="Texture" id=2]
@@ -21,6 +21,10 @@
 [ext_resource path="res://resources/audio_on.png" type="Texture" id=19]
 [ext_resource path="res://resources/audio_off.png" type="Texture" id=20]
 [ext_resource path="res://quiz2/ContinueWrong.gd" type="Script" id=21]
+[ext_resource path="res://quiz1/VideoPlayer.gd" type="Script" id=22]
+[ext_resource path="res://quiz1/Replay.gd" type="Script" id=23]
+[ext_resource path="res://quiz1/Play.gd" type="Script" id=24]
+[ext_resource path="res://resources/02.ogv" type="VideoStream" id=25]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -51,24 +55,38 @@ font_data = ExtResource( 6 )
 size = 60
 font_data = ExtResource( 14 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="DynamicFont" id=13]
+size = 50
+font_data = ExtResource( 14 )
+
+[sub_resource type="DynamicFont" id=14]
 size = 45
 font_data = ExtResource( 14 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=15]
 size = 35
 font_data = ExtResource( 14 )
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=16]
 size = 45
 font_data = ExtResource( 14 )
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=17]
 size = 35
 extra_spacing_bottom = 2
 font_data = ExtResource( 14 )
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=18]
 size = 60
 font_data = ExtResource( 14 )
 
@@ -199,7 +217,6 @@ __meta__ = {
 }
 
 [node name="LoSapeviChe" type="Sprite" parent="background"]
-visible = false
 texture = ExtResource( 16 )
 centered = false
 
@@ -257,12 +274,94 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="VideoPlayer" type="VideoPlayer" parent="background/LoSapeviChe"]
+margin_left = 864.0
+margin_top = 328.0
+margin_right = 1666.0
+margin_bottom = 774.0
+stream = ExtResource( 25 )
+autoplay = true
+paused = true
+bus = "Video"
+script = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="background/LoSapeviChe/VideoPlayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 231.028
+margin_top = 462.278
+margin_right = -250.972
+margin_bottom = 138.278
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 12 )
+icon = ExtResource( 15 )
+flat = true
+expand_icon = true
+script = ExtResource( 24 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelPlay" type="Label" parent="background/LoSapeviChe/VideoPlayer/Play"]
+margin_left = 85.3163
+margin_top = 25.141
+margin_right = 214.316
+margin_bottom = 95.141
+custom_fonts/font = SubResource( 13 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "play"
+
+[node name="LabelPause" type="Label" parent="background/LoSapeviChe/VideoPlayer/Play"]
+visible = false
+margin_left = 79.3163
+margin_top = 24.141
+margin_right = 236.316
+margin_bottom = 94.141
+custom_fonts/font = SubResource( 13 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "pause"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Replay" type="Button" parent="background/LoSapeviChe/VideoPlayer"]
+visible = false
+margin_left = 231.028
+margin_top = 462.278
+margin_right = 551.028
+margin_bottom = 584.278
+icon = ExtResource( 15 )
+flat = true
+expand_icon = true
+script = ExtResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelPlay" type="Label" parent="background/LoSapeviChe/VideoPlayer/Replay"]
+margin_left = 59.3366
+margin_top = 24.6511
+margin_right = 255.337
+margin_bottom = 94.6511
+custom_fonts/font = SubResource( 13 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "replay"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="AudioButton" type="TextureButton" parent="background"]
 light_mask = -2147483648
-margin_left = 1661.32
-margin_top = 146.675
-margin_right = 2435.32
-margin_bottom = 835.675
+margin_left = 1706.0
+margin_top = 118.0
+margin_right = 2480.0
+margin_bottom = 807.0
 rect_scale = Vector2( 0.12, 0.12 )
 toggle_mode = true
 texture_normal = ExtResource( 19 )
@@ -283,7 +382,7 @@ margin_left = 793.0
 margin_top = 325.0
 margin_right = 1231.0
 margin_bottom = 405.0
-custom_fonts/normal_font = SubResource( 8 )
+custom_fonts/normal_font = SubResource( 14 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 text = "Risposta esatta!"
 __meta__ = {
@@ -295,7 +394,7 @@ margin_left = 673.715
 margin_top = 406.409
 margin_right = 1440.71
 margin_bottom = 570.409
-custom_fonts/normal_font = SubResource( 9 )
+custom_fonts/normal_font = SubResource( 15 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 custom_colors/selection_color = Color( 0, 0, 0, 1 )
 text = "Congratulazioni! Scopriamo cos'è successo negli ultimi due livelli!"
@@ -339,7 +438,7 @@ margin_left = 763.0
 margin_top = 325.0
 margin_right = 1322.0
 margin_bottom = 416.0
-custom_fonts/normal_font = SubResource( 10 )
+custom_fonts/normal_font = SubResource( 16 )
 custom_colors/default_color = Color( 0.74902, 0.32549, 0.32549, 1 )
 text = "Risposta Sbagliata!"
 __meta__ = {
@@ -352,13 +451,13 @@ anchor_top = -486.189
 anchor_right = -1437.98
 anchor_bottom = -486.189
 margin_left = 2.7616e+06
-margin_top = 525482.0
+margin_top = 525515.0
 margin_right = 2.76219e+06
-margin_bottom = 525600.0
+margin_bottom = 525633.0
 rect_clip_content = false
 mouse_filter = 2
 size_flags_vertical = 4
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 17 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "        mi dispiace, hai sbagliato
             "
@@ -380,7 +479,7 @@ margin_bottom = 525600.0
 rect_clip_content = false
 mouse_filter = 2
 size_flags_vertical = 4
-custom_fonts/normal_font = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 17 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "    La risposta corretta era 5"
 __meta__ = {
@@ -406,7 +505,7 @@ margin_left = 80.4871
 margin_top = 42.2596
 margin_right = 330.487
 margin_bottom = 126.26
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 18 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "ritenta"
 __meta__ = {
@@ -415,10 +514,10 @@ __meta__ = {
 
 [node name="Continue" type="Button" parent="PanelWrong"]
 visible = false
-margin_left = 1012.04
-margin_top = 505.0
-margin_right = 1426.04
-margin_bottom = 674.055
+margin_left = 877.04
+margin_top = 508.0
+margin_right = 1291.04
+margin_bottom = 677.055
 rect_scale = Vector2( 0.6, 0.6 )
 icon = ExtResource( 15 )
 flat = true
@@ -432,7 +531,7 @@ margin_left = 64.7139
 margin_top = 42.3697
 margin_right = 356.714
 margin_bottom = 157.37
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 18 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Continua"
 __meta__ = {
@@ -457,7 +556,7 @@ margin_left = 64.7139
 margin_top = 42.3697
 margin_right = 356.714
 margin_bottom = 157.37
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 18 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Continua"
 __meta__ = {
@@ -467,6 +566,9 @@ __meta__ = {
 [connection signal="pressed" from="background/Comic/ForwardButton" to="background/Comic/ForwardButton" method="_on_ForwardButton_pressed"]
 [connection signal="pressed" from="background/LoSapeviChe/Forward" to="background/LoSapeviChe/Forward" method="_on_Forward_pressed"]
 [connection signal="pressed" from="background/LoSapeviChe/Forward2" to="background/LoSapeviChe/Forward2" method="_on_Forward2_pressed"]
+[connection signal="finished" from="background/LoSapeviChe/VideoPlayer" to="background/LoSapeviChe/VideoPlayer" method="_on_VideoPlayer_finished"]
+[connection signal="pressed" from="background/LoSapeviChe/VideoPlayer/Play" to="background/LoSapeviChe/VideoPlayer/Play" method="_on_Play_pressed"]
+[connection signal="pressed" from="background/LoSapeviChe/VideoPlayer/Replay" to="background/LoSapeviChe/VideoPlayer/Replay" method="_on_Replay_pressed"]
 [connection signal="toggled" from="background/AudioButton" to="background/AudioButton" method="_on_AudioButton_toggled"]
 [connection signal="pressed" from="PanelCorrect/Continue" to="PanelCorrect/Continue" method="_on_Continue_pressed"]
 [connection signal="pressed" from="PanelWrong/Retry" to="PanelWrong/Retry" method="_on_Retry_pressed"]

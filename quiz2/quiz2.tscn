@@ -179,10 +179,10 @@ __meta__ = {
 
 [node name="AudioButton" type="TextureButton" parent="background"]
 light_mask = -2147483648
-margin_left = 1661.32
-margin_top = 146.675
-margin_right = 2435.32
-margin_bottom = 835.675
+margin_left = 1706.0
+margin_top = 118.0
+margin_right = 2480.0
+margin_bottom = 807.0
 rect_scale = Vector2( 0.12, 0.12 )
 toggle_mode = true
 texture_normal = ExtResource( 6 )
@@ -216,15 +216,15 @@ anchor_top = -486.189
 anchor_right = -1437.98
 anchor_bottom = -486.189
 margin_left = 2.7616e+06
-margin_top = 525482.0
+margin_top = 525504.0
 margin_right = 2.76219e+06
-margin_bottom = 525600.0
+margin_bottom = 525622.0
 rect_clip_content = false
 mouse_filter = 2
 size_flags_vertical = 4
 custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
-text = "        mi dispiace, hai sbagliato
+text = "        Mi dispiace, hai sbagliato!
           "
 __meta__ = {
 "_edit_use_anchors_": false,
@@ -279,10 +279,10 @@ __meta__ = {
 
 [node name="Continue" type="Button" parent="PanelWrong"]
 visible = false
-margin_left = 1012.04
-margin_top = 505.0
-margin_right = 1426.04
-margin_bottom = 674.055
+margin_left = 884.04
+margin_top = 508.0
+margin_right = 1298.04
+margin_bottom = 677.055
 rect_scale = Vector2( 0.6, 0.6 )
 icon = ExtResource( 15 )
 flat = true
