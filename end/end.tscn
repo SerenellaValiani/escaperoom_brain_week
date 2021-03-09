@@ -21,10 +21,12 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
+extra_spacing_char = 1
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 30
+extra_spacing_char = 1
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=3]
@@ -32,11 +34,11 @@ size = 50
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 50
+size = 45
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 50
+size = 45
 font_data = ExtResource( 3 )
 
 [node name="Node2D" type="Node2D"]
@@ -46,29 +48,53 @@ texture = ExtResource( 12 )
 centered = false
 
 [node name="Credits" type="RichTextLabel" parent="background"]
-margin_left = 289.118
-margin_top = 173.0
-margin_right = 1605.12
-margin_bottom = 885.0
+visible = false
+margin_left = 198.0
+margin_top = 155.0
+margin_right = 1718.0
+margin_bottom = 834.0
 custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Questo gioco e` stato creato e realizzato da IMT Lucca.
+custom_colors/default_color = Color( 0.611765, 0.266667, 0.266667, 1 )
+text = "    Questo gioco e` stato creato e realizzato da IMT Lucca.
 "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="names" type="RichTextLabel" parent="background/Credits"]
-margin_top = 96.0
-margin_right = 1440.0
-margin_bottom = 327.0
+margin_left = 54.0
+margin_top = 82.0
+margin_right = 1401.0
+margin_bottom = 246.0
 custom_fonts/normal_font = SubResource( 2 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Progettazione e Sviluppo: Serenella Valiani, Francesca Randone, Vittorio 
-                                                Mattei, Roberto Pizziol
-Contenuti: Damiana Bergamo, Davide Coraci, Alessandro Demichelis, Marta 
-                    Fantoni, Alessandro Pigoni, Veronica Pizziol
-Supervisione: Prof. Gustavo Cevolani, Prof. Luca Polonio,  Prof. Gabriele Costa
+                                              Mattei, Roberto Pizziol"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="names2" type="RichTextLabel" parent="background/Credits"]
+margin_left = 53.307
+margin_top = 184.238
+margin_right = 1493.31
+margin_bottom = 296.238
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "Contenuti: Damiana Bergamo, Davide Coraci, Alessandro Demichelis, Marta 
+                    Fantoni, Alessandro Pigoni, Veronica Pizziol"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="names3" type="RichTextLabel" parent="background/Credits"]
+margin_left = 54.1464
+margin_top = 289.587
+margin_right = 1519.15
+margin_bottom = 520.587
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+text = "Supervisione: Prof. Gustavo Cevolani, Prof. Luca Polonio,  Prof. Gabriele Costa
 
 "
 __meta__ = {
@@ -76,24 +102,39 @@ __meta__ = {
 }
 
 [node name="rating" type="RichTextLabel" parent="background/Credits"]
-margin_top = 347.011
-margin_right = 1041.0
-margin_bottom = 413.011
+margin_left = 46.5103
+margin_top = 377.175
+margin_right = 1133.51
+margin_bottom = 443.175
 mouse_filter = 2
 custom_fonts/normal_font = SubResource( 1 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "Se vi siete divertiti lasciate un commento qui:"
 __meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="rating2" type="RichTextLabel" parent="background/Credits"]
+margin_left = 46.5103
+margin_top = 377.175
+margin_right = 1133.51
+margin_bottom = 443.175
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
 [node name="LinkButton" type="LinkButton" parent="background/Credits"]
-margin_left = 223.571
-margin_top = 393.0
-margin_right = 822.571
-margin_bottom = 463.0
+margin_left = 242.571
+margin_top = 434.0
+margin_right = 841.571
+margin_bottom = 504.0
 custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.247059, 0.737255, 0.929412, 1 )
+custom_colors/font_color = Color( 0.172549, 0.733333, 0.792157, 1 )
 text = "lasciaci un commento"
 script = ExtResource( 17 )
 __meta__ = {
@@ -101,10 +142,11 @@ __meta__ = {
 }
 
 [node name="FinishButton" type="Button" parent="background/Credits"]
-margin_left = 165.419
-margin_top = 483.0
-margin_right = 455.419
-margin_bottom = 596.0
+margin_left = 218.419
+margin_top = 514.0
+margin_right = 508.419
+margin_bottom = 627.0
+rect_scale = Vector2( 0.9, 0.9 )
 icon = ExtResource( 1 )
 flat = true
 expand_icon = true
@@ -114,23 +156,24 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="background/Credits/FinishButton"]
-margin_left = 78.0
-margin_top = 13.0
-margin_right = 230.0
-margin_bottom = 85.0
+margin_left = 71.0
+margin_top = 22.0
+margin_right = 223.0
+margin_bottom = 94.0
 rect_pivot_offset = Vector2( -180.522, -88.7579 )
 custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "chiudi"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PlayAgain" type="Button" parent="background/Credits"]
-margin_left = 534.824
-margin_top = 483.0
-margin_right = 824.824
-margin_bottom = 596.0
+margin_left = 616.824
+margin_top = 516.0
+margin_right = 906.824
+margin_bottom = 629.0
+rect_scale = Vector2( 0.9, 0.9 )
 icon = ExtResource( 1 )
 flat = true
 expand_icon = true
@@ -140,13 +183,13 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="background/Credits/PlayAgain"]
-margin_left = 43.893
-margin_top = 13.0
-margin_right = 244.893
-margin_bottom = 85.0
+margin_left = 50.5597
+margin_top = 23.0
+margin_right = 251.56
+margin_bottom = 95.0
 rect_pivot_offset = Vector2( -180.522, -88.7579 )
 custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "ri-gioca"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -172,15 +215,14 @@ __meta__ = {
 }
 
 [node name="Fumetto" type="Sprite" parent="background"]
-visible = false
 position = Vector2( 968.176, 546.44 )
 texture = ExtResource( 14 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="background/Fumetto"]
-margin_left = -395.49
-margin_top = -229.301
-margin_right = 434.508
-margin_bottom = -2.30119
+margin_left = -355.805
+margin_top = -227.714
+margin_right = 474.193
+margin_bottom = -0.713791
 rect_pivot_offset = Vector2( -180.522, -88.7579 )
 rect_clip_content = false
 mouse_filter = 2
@@ -196,10 +238,11 @@ __meta__ = {
 }
 
 [node name="Forward" type="Button" parent="background/Fumetto"]
-margin_left = -164.234
-margin_top = -26.4285
-margin_right = -27.234
-margin_bottom = 96.5715
+margin_left = 19.9043
+margin_top = 2.14465
+margin_right = 156.904
+margin_bottom = 125.145
+rect_scale = Vector2( 0.6, 0.6 )
 icon = ExtResource( 16 )
 flat = true
 script = ExtResource( 15 )

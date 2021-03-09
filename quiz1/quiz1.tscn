@@ -425,9 +425,9 @@ __meta__ = {
 
 [node name="AudioButton" type="TextureButton" parent="background"]
 light_mask = -2147483648
-margin_left = 1607.32
+margin_left = 1693.32
 margin_top = 158.141
-margin_right = 2381.32
+margin_right = 2467.32
 margin_bottom = 847.141
 rect_scale = Vector2( 0.12, 0.12 )
 toggle_mode = true
