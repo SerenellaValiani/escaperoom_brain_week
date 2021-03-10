@@ -68,8 +68,8 @@ margin_right = 1401.0
 margin_bottom = 246.0
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
-text = "Progettazione e Sviluppo: Serenella Valiani, Francesca Randone, Vittorio 
-                                              Mattei, Roberto Pizziol"
+text = "Progettazione e Sviluppo: Serenella Valiani, Francesca Randone, 
+                                               Vittorio Mattei, Roberto Pizziol"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -81,8 +81,8 @@ margin_right = 1493.31
 margin_bottom = 296.238
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
-text = "Contenuti: Damiana Bergamo, Davide Coraci, Alessandro Demichelis, Marta 
-                    Fantoni, Alessandro Pigoni, Veronica Pizziol"
+text = "Contenuti: Damiana Bergamo, Davide Coraci, Alessandro Demichelis, 
+                    Marta Fantoni, Alessandro Pigoni, Veronica Pizziol"
 __meta__ = {
 "_edit_use_anchors_": false
 }

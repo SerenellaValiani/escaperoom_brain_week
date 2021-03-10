@@ -99,7 +99,7 @@ margin_right = 1747.0
 margin_bottom = 795.0
 custom_fonts/normal_font = SubResource( 3 )
 custom_colors/default_color = Color( 0.733333, 0.270588, 0.270588, 1 )
-text = "Anche quest'anno l'evento non si ferma  e sara` di nuovo fruibile interamente online."
+text = "Anche quest'anno l'evento non si ferma  e sarà di nuovo fruibile interamente online."
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
