@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://resources/Amarillo.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://quiz4/Retry_wason.gd" type="Script" id=2]
@@ -33,6 +33,7 @@
 [ext_resource path="res://quiz1/Replay.gd" type="Script" id=31]
 [ext_resource path="res://quiz1/Play.gd" type="Script" id=32]
 [ext_resource path="res://resources/03.ogv" type="VideoStream" id=33]
+[ext_resource path="res://resources/alep.png" type="Texture" id=34]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -411,6 +412,12 @@ text = "replay"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="alep" type="Sprite" parent="background/LoSapeviChe"]
+visible = false
+position = Vector2( 1349.94, 733.211 )
+scale = Vector2( 0.623685, 0.656185 )
+texture = ExtResource( 34 )
 
 [node name="AudioButton" type="TextureButton" parent="background"]
 light_mask = -2147483648

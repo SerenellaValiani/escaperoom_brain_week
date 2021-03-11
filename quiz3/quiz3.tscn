@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://quiz2/ForwardButton.gd" type="Script" id=1]
 [ext_resource path="res://resources/brainy_thinking.png" type="Texture" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://quiz1/Replay.gd" type="Script" id=23]
 [ext_resource path="res://quiz1/Play.gd" type="Script" id=24]
 [ext_resource path="res://resources/02.ogv" type="VideoStream" id=25]
+[ext_resource path="res://resources/aled.png" type="Texture" id=26]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -217,6 +218,7 @@ __meta__ = {
 }
 
 [node name="LoSapeviChe" type="Sprite" parent="background"]
+visible = false
 texture = ExtResource( 16 )
 centered = false
 
@@ -316,6 +318,9 @@ margin_bottom = 95.141
 custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="LabelPause" type="Label" parent="background/LoSapeviChe/VideoPlayer/Play"]
 visible = false
@@ -355,6 +360,12 @@ text = "replay"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Aled" type="Sprite" parent="background/LoSapeviChe"]
+visible = false
+position = Vector2( 1342.24, 725.572 )
+scale = Vector2( 0.575552, 0.610456 )
+texture = ExtResource( 26 )
 
 [node name="AudioButton" type="TextureButton" parent="background"]
 light_mask = -2147483648

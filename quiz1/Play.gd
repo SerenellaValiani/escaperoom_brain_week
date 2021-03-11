@@ -18,6 +18,7 @@ func _on_Play_pressed():
 	if get_parent().paused:
 		get_parent().paused = false
 		get_parent().set_stream_position(stream_pos)
+		get_tree().get_root().get_node("/root/Node2D/background/LoSapeviChe").get_children()[3].set_visible(true)
 		get_children()[0].set_visible(false)
 		get_children()[1].set_visible(true)
 	else:

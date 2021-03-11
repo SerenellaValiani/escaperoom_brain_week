@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://quiz1/ForwardButton.gd" type="Script" id=1]
 [ext_resource path="res://resources/01.ogv" type="VideoStream" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://resources/bottone_def.png" type="Texture" id=14]
 [ext_resource path="res://resources/CantedComic Regular.otf" type="DynamicFontData" id=15]
 [ext_resource path="res://quiz1/Forward.gd" type="Script" id=16]
+[ext_resource path="res://resources/damiana.png" type="Texture" id=17]
 [ext_resource path="res://resources/illusione.png" type="Texture" id=18]
 [ext_resource path="res://quiz1/Play.gd" type="Script" id=19]
 [ext_resource path="res://welcome/AudioButton.gd" type="Script" id=20]
@@ -437,6 +438,12 @@ text = "replay"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Damiana" type="Sprite" parent="background/LoSapeviChe"]
+visible = false
+position = Vector2( 1357.16, 730.8 )
+scale = Vector2( 0.586966, 0.609438 )
+texture = ExtResource( 17 )
 
 [node name="AudioButton" type="TextureButton" parent="background"]
 light_mask = -2147483648
