@@ -222,6 +222,13 @@ visible = false
 texture = ExtResource( 16 )
 centered = false
 
+[node name="Aled" type="Sprite" parent="background/LoSapeviChe"]
+visible = false
+position = Vector2( 1342.24, 725.572 )
+scale = Vector2( 0.575552, 0.610456 )
+z_index = 1
+texture = ExtResource( 26 )
+
 [node name="RichTextLabel" type="RichTextLabel" parent="background/LoSapeviChe"]
 margin_left = 730.52
 margin_top = 100.491
@@ -360,12 +367,6 @@ text = "replay"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Aled" type="Sprite" parent="background/LoSapeviChe"]
-visible = false
-position = Vector2( 1342.24, 725.572 )
-scale = Vector2( 0.575552, 0.610456 )
-texture = ExtResource( 26 )
 
 [node name="AudioButton" type="TextureButton" parent="background"]
 light_mask = -2147483648

@@ -277,6 +277,13 @@ visible = false
 texture = ExtResource( 3 )
 centered = false
 
+[node name="alep" type="Sprite" parent="background/LoSapeviChe"]
+visible = false
+position = Vector2( 1349.94, 733.211 )
+scale = Vector2( 0.623685, 0.656185 )
+z_index = 1
+texture = ExtResource( 34 )
+
 [node name="RichTextLabel" type="RichTextLabel" parent="background/LoSapeviChe"]
 margin_left = 730.52
 margin_top = 100.491
@@ -346,7 +353,6 @@ __meta__ = {
 }
 
 [node name="Play" type="Button" parent="background/LoSapeviChe/VideoPlayer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 231.028
@@ -389,6 +395,7 @@ custom_colors/font_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 text = "pause"
 
 [node name="Replay" type="Button" parent="background/LoSapeviChe/VideoPlayer"]
+visible = false
 margin_left = 231.028
 margin_top = 462.278
 margin_right = 551.028
@@ -412,12 +419,6 @@ text = "replay"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="alep" type="Sprite" parent="background/LoSapeviChe"]
-visible = false
-position = Vector2( 1349.94, 733.211 )
-scale = Vector2( 0.623685, 0.656185 )
-texture = ExtResource( 34 )
 
 [node name="AudioButton" type="TextureButton" parent="background"]
 light_mask = -2147483648

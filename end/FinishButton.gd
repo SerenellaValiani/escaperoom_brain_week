@@ -10,5 +10,4 @@ func _ready():
 #	pass
 
 func _on_FinishButton_pressed():
-	get_tree().quit()
-	
+	JavaScript.eval("window.close()")
