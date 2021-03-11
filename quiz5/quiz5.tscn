@@ -548,10 +548,10 @@ __meta__ = {
 }
 
 [node name="CorrectText" type="RichTextLabel" parent="PanelCorrect"]
-margin_left = 684.727
-margin_top = 410.036
-margin_right = 1507.73
-margin_bottom = 609.036
+margin_left = 685.0
+margin_top = 410.0
+margin_right = 1349.0
+margin_bottom = 609.0
 custom_fonts/normal_font = SubResource( 14 )
 custom_colors/default_color = Color( 0.329412, 0.0745098, 0.0745098, 1 )
 custom_colors/selection_color = Color( 0, 0, 0, 1 )
