@@ -573,6 +573,7 @@ text = "Continua"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="text_changed" from="background/PanelQuiz/AnswerLine" to="background/PanelQuiz/AnswerLine" method="_on_AnswerLine_text_changed"]
 [connection signal="text_entered" from="background/PanelQuiz/AnswerLine" to="background/PanelQuiz/AnswerLine" method="_on_Answer_text_entered"]
 [connection signal="pressed" from="background/Comic/ForwardButton" to="background/Comic/ForwardButton" method="_on_ForwardButton_pressed"]
 [connection signal="pressed" from="background/LoSapeviChe/Forward" to="background/LoSapeviChe/Forward" method="_on_Forward_pressed"]

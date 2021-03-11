@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://quiz2/ForwardButton.gd" type="Script" id=1]
 [ext_resource path="res://resources/brainy_thinking.png" type="Texture" id=2]
@@ -26,6 +26,9 @@ font_data = ExtResource( 14 )
 [sub_resource type="DynamicFont" id=2]
 size = 70
 font_data = ExtResource( 14 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.717647, 0.360784, 0.333333, 1 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.717647, 0.360784, 0.333333, 1 )
@@ -94,6 +97,7 @@ margin_left = -455.0
 margin_top = 170.0
 margin_right = 403.0
 margin_bottom = 254.0
+custom_styles/read_only = SubResource( 7 )
 custom_styles/normal = SubResource( 3 )
 custom_fonts/font = SubResource( 4 )
 custom_colors/selection_color = Color( 0, 0, 0, 1 )
@@ -102,12 +106,13 @@ custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
 custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 1, 1, 1, 1 )
 clear_button_enabled = true
-placeholder_text = "Inserisci qui il numero e premi invio"
+placeholder_text = "inserisci qui il numero e premi invio"
 script = ExtResource( 4 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_editor_description_": ""
 }
 
 [node name="BrainSprites" type="Node" parent="background"]
@@ -390,6 +395,7 @@ text = "Continua"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="text_changed" from="background/PanelQuiz/AnswerLine" to="background/PanelQuiz/AnswerLine" method="_on_AnswerLine_text_changed"]
 [connection signal="text_entered" from="background/PanelQuiz/AnswerLine" to="background/PanelQuiz/AnswerLine" method="_on_Answer_text_entered"]
 [connection signal="pressed" from="background/Comic/ForwardButton" to="background/Comic/ForwardButton" method="_on_ForwardButton_pressed"]
 [connection signal="toggled" from="background/AudioButton" to="background/AudioButton" method="_on_AudioButton_toggled"]
