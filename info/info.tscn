@@ -108,27 +108,27 @@ __meta__ = {
 [node name="loghi" type="Sprite" parent="background"]
 
 [node name="baw" type="Sprite" parent="background/loghi"]
-position = Vector2( 251.887, 869.272 )
-scale = Vector2( 0.7, 0.7 )
+position = Vector2( 305.194, 866.991 )
+scale = Vector2( 1.13284, 1.13317 )
 texture = ExtResource( 11 )
 
 [node name="imt" type="Sprite" parent="background/loghi"]
-position = Vector2( 575.43, 866.856 )
-scale = Vector2( 0.7, 0.7 )
+position = Vector2( 669.43, 873.856 )
+scale = Vector2( 0.68, 0.68 )
 texture = ExtResource( 7 )
 
 [node name="sysma" type="Sprite" parent="background/loghi"]
-position = Vector2( 1161.67, 863.11 )
+position = Vector2( 1214.67, 873.11 )
 scale = Vector2( 0.812308, 0.768787 )
 texture = ExtResource( 9 )
 
 [node name="momilab" type="Sprite" parent="background/loghi"]
-position = Vector2( 819.447, 864.765 )
+position = Vector2( 894.447, 869.765 )
 scale = Vector2( 0.293182, 0.264793 )
 texture = ExtResource( 8 )
 
 [node name="grs" type="Sprite" parent="background/loghi"]
-position = Vector2( 982.124, 864.255 )
+position = Vector2( 1044.12, 873.255 )
 scale = Vector2( 0.19579, 0.191579 )
 texture = ExtResource( 10 )
 
