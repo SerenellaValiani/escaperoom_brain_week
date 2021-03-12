@@ -17,4 +17,4 @@ func _ready():
 
 
 func _on_LinkButton_pressed():
-	OS.shell_open("https://docs.google.com/forms/d/e/1FAIpQLScyzMrmFRkzkjOGjWWlivebYIHaF9ENt5iKhRDx4Wa09GcuEw/viewform")
+	OS.shell_open("https://forms.gle/kv6dsEc5FCUdT8Rj6")
