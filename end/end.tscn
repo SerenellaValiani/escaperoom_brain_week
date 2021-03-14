@@ -58,6 +58,7 @@ texture = ExtResource( 12 )
 centered = false
 
 [node name="Credits" type="RichTextLabel" parent="background"]
+visible = false
 margin_left = 198.0
 margin_top = 155.0
 margin_right = 1718.0
@@ -230,7 +231,6 @@ __meta__ = {
 }
 
 [node name="Fumetto" type="Sprite" parent="background"]
-visible = false
 position = Vector2( 968.176, 546.44 )
 texture = ExtResource( 14 )
 
